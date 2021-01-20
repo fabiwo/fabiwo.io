@@ -1,0 +1,83 @@
+nav {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    backdrop-filter: saturate(250%) blur(15px);
+
+    &.scrolled {
+        @apply bg-white bg-opacity-20 shadow-sm
+    }
+}
+
+.active {
+    color: #CD5858 !important;
+
+    &:after {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    &.borderFade::after {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
+
+
+
+.btn--primary {
+    @apply py-2 px-4 w-full bg-red-500 text-white font-semibold rounded-lg shadow-md;
+
+    &:hover {
+        @apply shadow-lg bg-red-600
+    }
+
+    &:focus {
+        @apply outline-none
+    }
+}
+
+.borderFade {
+    position: relative;
+}
+
+.borderFade::after {
+    content: '';
+    position: absolute;
+    height: 4px;
+    width: 100%;
+    left: 0;
+    bottom: 0px;
+    opacity: 0;
+    transform: translateY(3px);
+    background: #CD5858;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.borderFade:hover::after {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.project-image {
+    background-image: url(../public/images/projects/ternary-thumbnail.svg);
+    display: block;
+    position: relative;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    transition: all 1s;
+    background-color: #e8e8e8;
+    margin-top: -20px;
+    border-radius: 10px;
+    will-change: transform;
+    transition: transform .3s cubic-bezier(.52, .28, .47, 1.15);
+
+}
+
+.project-holder:hover {
+    .project-image {
+        transform: translateY(-5px)
+    }
+}

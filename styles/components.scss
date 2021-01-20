@@ -1,0 +1,76 @@
+body {
+    font-family: Poppins;
+    overflow-y: scroll;
+    background: #F2F5F8;
+}
+
+
+.blog__grid {
+    display: grid;
+    grid-template-columns: 1fr minmax(56rem, 56rem) 1fr;
+    grid-template-rows: repeat(2, auto) 1fr;
+    gap: 0px 0px;
+    justify-content: center;
+    grid-template-areas:
+        "hexnav maincontent .";
+}
+
+.hd {
+    grid-area: hd;
+}
+
+.mtr {
+    grid-area: mtr;
+}
+
+.ct {
+    grid-area: ct;
+}
+
+.hexnav {
+    grid-area: hexnav;
+}
+
+.mainimg {
+    grid-area: mainimg;
+}
+
+.inline_code {
+    font-family: Inter;
+    @apply inline-block px-3 py-1 m-0 text-lg font-bold text-red-600 bg-red-200 rounded #{!important};
+
+    &:before {
+        content: "" !important;
+    }
+
+    &:after {
+        content: "" !important;
+    }
+}
+
+.katex {
+    font-size: 2em !important;
+    font-weight: 800 !important;
+}
+
+// Centers next.js Image Component
+.image-column>div {
+    margin: 0 auto;
+}
+
+
+// Change Bullet Point of List
+// .prose ul>li::before {
+//     content: '';
+//     display: inline-block;
+//     height: 1.75rem;
+//     width: 1.75rem;
+//     background-size: contain;
+//     background-repeat: no-repeat;
+//     background-image: url("../public/images/check-o.svg");
+// }
+
+// .prose ul>li {
+//     position: relative;
+//     padding-left: 3em;
+// }
