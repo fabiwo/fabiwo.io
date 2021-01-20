@@ -1,6 +1,6 @@
 import React from 'react'
 
-const postStats = ({ views, readTime }) => {
+const PostStats = ({ views, readTime }) => {
   return (
     <>
       <svg
@@ -43,4 +43,4 @@ const postStats = ({ views, readTime }) => {
   )
 }
 
-export default postStats
+export default PostStats
