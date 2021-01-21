@@ -19,7 +19,7 @@ export default function BlogPostCard({
       <article className='flex w-full mb-3 bg-white rounded-lg shadow cursor-pointer hover:shadow-lg'>
         <img
           className='object-cover w-64 rounded-l-lg '
-          src={hasThumbnail ? image : '/images/Placeholder.svg'}
+          src={hasThumbnail ? image : '/images/placeholder.svg'}
           alt=''
         />
         <div className='flex flex-col py-7 px-7'>
