@@ -21,9 +21,10 @@ export default function BlogPostCard({
           className='object-cover w-64 rounded-l-lg '
           src={hasThumbnail ? image : '/images/placeholder.svg'}
           alt=''
+          loading='lazy'
         />
-        <div className='flex flex-col py-7 px-7'>
-          <h2 className='max-w-sm font-bold'>{title}</h2>
+        <div className='flex flex-col max-w-sm py-7 px-7'>
+          <h2 className='text-xl font-bold '>{title}</h2>
           <p className='my-2 text-gray-500 '>{description}</p>
           <ul className='flex mb-5 space-x-1'>
             {tags.map((tag, i) => (
@@ -56,7 +57,13 @@ export function NewestBlogPostCard({
   return (
     <Link href={`/blog/${id}`}>
       <article className='relative flex flex-col w-full mb-5 bg-white rounded-lg shadow cursor-pointer hover:shadow-lg'>
-        <img className='w-full rounded-t-lg ' src='images/_dummy.jpg' alt='' />
+        <Image
+          width={700}
+          height={400}
+          className='object-cover w-full rounded-t-lg '
+          src='/images/_dummy.jpg'
+          alt=''
+        />
         <p className='absolute left-0 px-5 py-1 text-lg text-white bg-red-600 rounded-r text-bold top-10'>
           NEW! 🔥
         </p>

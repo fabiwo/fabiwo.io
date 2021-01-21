@@ -6,6 +6,7 @@ import hydrate from 'next-mdx-remote/hydrate'
 import MDXComponents from '../../components/MDXComponents'
 import PostStats from '../../components/PostStats'
 import NewsletterForm from '../../components/NewsletterForm'
+import Image from 'next/image'
 
 export default function Post({ source, frontMatter, API_KEY }) {
   const content = hydrate(source, {
@@ -22,10 +23,12 @@ export default function Post({ source, frontMatter, API_KEY }) {
         <div className='max-w-2xl mx-auto'>
           <h1 className='mb-1 text-5xl font-bold'>{frontMatter.title}</h1>
           <div className='flex w-full py-5 space-x-2 '>
-            <img
-              className='w-12 h-12 rounded-full'
+            <Image
+              alt='Fabian Wolff'
+              height={40}
+              width={40}
               src='/images/fabiwo.jpg'
-              alt=''
+              className='rounded-full'
             />
             <div className='flex flex-col justify-end'>
               <p className='text-sm font-semibold'>
@@ -37,14 +40,17 @@ export default function Post({ source, frontMatter, API_KEY }) {
               <PostStats readTime={frontMatter.readTimeString} />
             </div>
           </div>
-          <img
-            className='w-full mb-10 rounded shadow'
+          <Image
+            width={500}
+            height={400}
+            layout={'responsive'}
+            className='object-cover rounded shadow'
             src={
               frontMatter.image ? frontMatter.image : '/images/placeholder.svg'
             }
             alt={frontMatter.alt}
           />
-          <div className='prose'>{content}</div>
+          <div className='w-full mt-5 prose max-w-none'>{content}</div>
           <NewsletterForm API_KEY={API_KEY} />
         </div>
       </article>
