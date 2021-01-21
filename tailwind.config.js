@@ -1,5 +1,11 @@
 module.exports = {
-  purge: ['./components/**/*.js', './pages/**/*.js'],
+  purge: [
+    './components/**/*.jsx',
+    './components/**/*.js',
+    './pages/**/*.js',
+    './layouts/**/*.js',
+    './layouts/**/*.jsx',
+  ],
   theme: {
     extend: {
       typography: {
