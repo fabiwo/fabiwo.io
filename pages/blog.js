@@ -17,7 +17,7 @@ import { getSortedSlugs } from '../lib/mdx'
 
 const title = 'Fabian Wolff - Blog'
 
-export default function Blog({ allPostsData, API_KEY }) {
+export default function Blog({ allPostsData }) {
   const [searchValue, setSearchValue] = useState('')
 
   const filteredBlogPosts = allPostsData.filter((post) =>
@@ -83,7 +83,7 @@ export default function Blog({ allPostsData, API_KEY }) {
             ))}
           </ul>
         </section>
-        <NewsletterForm API_KEY={API_KEY} />
+        <NewsletterForm />
       </ContentLayout>
     </MainLayout>
   )
@@ -91,11 +91,9 @@ export default function Blog({ allPostsData, API_KEY }) {
 
 export async function getStaticProps() {
   const allPostsData = getSortedSlugs('blog-posts')
-  const API_KEY = process.env.BUTTONDOWN_API_KEY
   return {
     props: {
       allPostsData,
-      API_KEY,
     },
   }
 }

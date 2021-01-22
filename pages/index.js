@@ -10,7 +10,7 @@ import { getSortedSlugs } from '../lib/mdx'
 
 const title = 'Fabian Wolff'
 
-export default function Home({ newesPosts, allProjectData, API_KEY }) {
+export default function Home({ newesPosts, allProjectData }) {
   return (
     <MainLayout home={true}>
       {/* Initialize head of page with title etc. */}{' '}
@@ -40,7 +40,7 @@ export default function Home({ newesPosts, allProjectData, API_KEY }) {
             <ProjectItem key={i} {...project} />
           ))}
         </HomeSection>
-        <NewsletterForm API_KEY={API_KEY} />
+        <NewsletterForm />
       </ContentLayout>
     </MainLayout>
   )
@@ -51,12 +51,10 @@ export async function getStaticProps() {
   const allProjectData = getSortedSlugs('projects')
   const nNewest = 3
   const newesPosts = allPostsData.splice(0, nNewest)
-  const API_KEY = process.env.BUTTONDOWN_API_KEY
   return {
     props: {
       newesPosts,
       allProjectData,
-      API_KEY,
     },
   }
 }

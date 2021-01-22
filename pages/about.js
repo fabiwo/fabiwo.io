@@ -8,7 +8,7 @@ import Image from 'next/image'
 
 const title = 'Fabian Wolff - About Me'
 
-export default function About({ API_KEY }) {
+export default function About() {
   return (
     <MainLayout>
       {/* Initialize head of page with title etc. */}{' '}

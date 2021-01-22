@@ -2,7 +2,7 @@ import React, { useState, useRef } from 'react'
 import ErrorMessage from '../atoms/ErrorMessage'
 import SuccessMessage from '../atoms/SuccessMessage'
 
-const NewsletterForm = ({ API_KEY }) => {
+const NewsletterForm = () => {
   const [form, setForm] = useState(false)
   const inputEl = useRef(null)
 

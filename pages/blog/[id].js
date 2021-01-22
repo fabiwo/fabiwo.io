@@ -8,7 +8,7 @@ import PostStats from '../../components/molecules/PostStats'
 import NewsletterForm from '../../components/molecules/NewsletterForm'
 import Image from 'next/image'
 
-export default function Post({ source, frontMatter, API_KEY }) {
+export default function Post({ source, frontMatter }) {
   const content = hydrate(source, {
     components: MDXComponents,
   })
@@ -51,7 +51,7 @@ export default function Post({ source, frontMatter, API_KEY }) {
             alt={frontMatter.alt}
           />
           <div className='w-full mt-5 prose max-w-none'>{content}</div>
-          <NewsletterForm API_KEY={API_KEY} />
+          <NewsletterForm />
         </div>
       </article>
     </MainLayout>
@@ -60,12 +60,10 @@ export default function Post({ source, frontMatter, API_KEY }) {
 
 export async function getStaticProps({ params }) {
   const postData = await getSlugData(params.id, 'blog-posts')
-  const API_KEY = process.env.BUTTONDOWN_API_KEY
   return {
     props: {
       source: postData.mdxSource,
       frontMatter: postData.frontMatter,
-      API_KEY,
     },
   }
 }
