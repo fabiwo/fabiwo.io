@@ -81,3 +81,23 @@ nav {
         transform: translateY(-5px)
     }
 }
+
+
+.hoverfill {
+    transition: 0.25s ease-out;
+
+    &:hover {
+        fill: #1b1b1b;
+        transform: scale(1.2)
+    }
+}
+
+.hoverstroke {
+    transition: 0.25s ease-out;
+
+    &:hover {
+        stroke: #1b1b1b;
+        transform: scale(1.2)
+    }
+
+}

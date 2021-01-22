@@ -16,7 +16,7 @@ export default function BlogPostCard({
 
   return (
     <Link href={`/blog/${id}`}>
-      <article className='flex w-full mb-3 bg-white rounded-lg shadow cursor-pointer hover:shadow-lg'>
+      <article className='flex w-full mb-3 bg-white bg-opacity-50 rounded-lg shadow cursor-pointer hover:shadow-md hover:bg-opacity-100'>
         <img
           className='object-cover w-64 rounded-l-lg '
           src={hasThumbnail ? image : '/images/placeholder.svg'}
