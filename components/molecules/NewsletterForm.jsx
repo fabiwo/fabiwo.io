@@ -1,4 +1,6 @@
 import React, { useState, useRef } from 'react'
+import ErrorMessage from '../atoms/ErrorMessage'
+import SuccessMessage from '../atoms/SuccessMessage'
 
 const NewsletterForm = ({ API_KEY }) => {
   const [form, setForm] = useState(false)
@@ -8,50 +10,34 @@ const NewsletterForm = ({ API_KEY }) => {
     e.preventDefault()
     setForm({ state: 'loading' })
 
-    const email = inputEl.current.value
+    const res = await fetch('/api/subscribe', {
+      body: JSON.stringify({
+        email: inputEl.current.value,
+      }),
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      method: 'POST',
+    })
 
-    if (!email) {
+    const { error } = await res.json()
+    if (error) {
       setForm({
         state: 'error',
-        message: 'An email is required',
+        message: error,
       })
       return
     }
 
-    try {
-      const response = await fetch(
-        `https://api.buttondown.email/v1/subscribers`,
-        {
-          body: JSON.stringify({ email }),
-          headers: {
-            Authorization: `Token ${API_KEY}`,
-            'Content-Type': 'application/json',
-          },
-          method: 'POST',
-        }
-      )
-
-      if (response.status >= 400) {
-        console.log(response)
-        setForm({
-          state: 'error',
-          message: `Another error`,
-        })
-        return
-      }
-
-      setForm({
-        state: 'success',
-        message: `Hooray! You're now on the list.`,
-      })
-      return
-    } catch (error) {
-      setForm({
-        state: 'error',
-        message: 'Error from buttondown',
-      })
-      return
-    }
+    inputEl.current.value = ''
+    setForm({
+      state: 'success',
+      message: `Welcome to the club! 🥳`,
+    })
+    // Close the message after 5 seconds
+    setTimeout(() => {
+      setForm(false)
+    }, 5000)
   }
 
   return (
@@ -71,6 +57,7 @@ const NewsletterForm = ({ API_KEY }) => {
           placeholder='pepethefrog@gmail.com'
           type='email'
           autoComplete='email'
+          required
           className='block w-full px-4 py-2 mt-1 text-gray-900 bg-white border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-800 dark:text-gray-100'
         />
         <button
@@ -80,7 +67,13 @@ const NewsletterForm = ({ API_KEY }) => {
           {form.state === 'loading' ? '⏳' : 'Subscribe'}
         </button>
       </form>
-      {form.message}
+      {form.state === 'error' ? (
+        <ErrorMessage>{form.message}</ErrorMessage>
+      ) : form.state === 'success' ? (
+        <SuccessMessage>{form.message}</SuccessMessage>
+      ) : (
+        ''
+      )}
     </div>
   )
 }
