@@ -24,7 +24,7 @@ const ScrollToTop = () => {
 
   return (
     <div
-      className={`fixed p-2 bg-gray-900 rounded-full cursor-pointer bottom-10 right-10 transition duration-200 ${
+      className={`fixed p-2 bg-gray-800 rounded-full cursor-pointer bottom-10 right-10 transition duration-200 ${
         isVisible ? 'opacity-100' : 'opacity-0'
       }`}
       onClick={() => handleScroll()}

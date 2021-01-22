@@ -14,8 +14,9 @@ export default function Footer() {
   ]
 
   return (
-    <footer className='flex flex-col w-full py-10 space-y-5'>
-      <div className='flex justify-center space-x-5'>
+    <footer className='flex flex-col w-full max-w-2xl py-10 mx-auto'>
+      <hr className='w-full mb-8 border-gray-300 border-1' />
+      <div className='flex justify-center space-x-7'>
         <a
           target='_blank'
           rel='noopener noreferrer'

@@ -1,6 +1,5 @@
 import Head from 'next/head'
 import MainLayout from '../layouts/Blog'
-import ContentLayout from '../layouts/ContentLayout'
 import ResponsiveSectionHeading from '../components/atoms/ResponsiveSectionHeading'
 import Centre from '../components/atoms/Centre'
 
@@ -15,10 +14,8 @@ export default function About() {
       <Head>
         <title> {title} </title>
       </Head>
-      <ContentLayout>
-        <ResponsiveSectionHeading text={'ABOUT ME'} />
-        <h1>Under Construction</h1>
-      </ContentLayout>
+      <ResponsiveSectionHeading text={'ABOUT ME'} />
+      <h1>Under Construction</h1>
     </MainLayout>
   )
 }
