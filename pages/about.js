@@ -18,9 +18,6 @@ export default function About() {
       <ContentLayout>
         <ResponsiveSectionHeading text={'ABOUT ME'} />
         <h1>Under Construction</h1>
-        <Centre>
-          <Image src={'/images/coming-soon.svg'} height={600} width={600} />
-        </Centre>
       </ContentLayout>
     </MainLayout>
   )

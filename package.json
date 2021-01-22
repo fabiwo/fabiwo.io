@@ -1,13 +1,17 @@
 {
-  "name": "learn-starter",
-  "version": "0.1.0",
-  "private": true,
+  "name": "fabiwo.io",
+  "description": "My personal website.",
+  "version": "0.0.0",
+  "author": {
+    "name": "Fabian Wolff",
+    "email": "fabiandwolff@gmail.com"
+  },
+  "license": "MIT",
   "scripts": {
     "dev": "NODE_OPTIONS='--inspect' next",
-    "build": "next build && next export",
+    "build": "next build",
     "start": "next start",
-    "lint": "eslint . --fix --cache --ext js,jsx,ts,tsx",
-    "format": "prettier --write --config .prettierrc.yaml ."
+    "export": "next build && next export"
   },
   "dependencies": {
     "@matejmazur/react-katex": "^3.1.3",
