@@ -1,5 +1,5 @@
 import React from 'react'
-import ToolImage from './ToolImage'
+import ToolImage from '../atoms/ToolImage'
 
 export default function ProjectItem({
   title,

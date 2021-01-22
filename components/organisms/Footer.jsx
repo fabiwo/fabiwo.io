@@ -1,11 +1,11 @@
 import React from 'react'
-import FooterLink from '../_atoms/FooterLink'
+import FooterLink from '../atoms/FooterLink'
 import Github, {
   Mail,
   LinkedIn,
   Twitter,
   Instagram,
-} from '../_atoms/icons/HexSocial'
+} from '../atoms/icons/HexSocial'
 
 export default function Footer() {
   const footerLinks = [

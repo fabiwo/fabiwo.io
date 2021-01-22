@@ -1,11 +1,11 @@
 import MainLayout from '../../layouts/Blog'
-import Date from '../../components/Date'
+import Date from '../../components/atoms/Date'
 import Head from 'next/head'
 import { getAllSlugIds, getSlugData } from '../../lib/mdx'
 import hydrate from 'next-mdx-remote/hydrate'
 import MDXComponents from '../../components/MDXComponents'
-import PostStats from '../../components/PostStats'
-import NewsletterForm from '../../components/NewsletterForm'
+import PostStats from '../../components/molecules/PostStats'
+import NewsletterForm from '../../components/molecules/NewsletterForm'
 import Image from 'next/image'
 
 export default function Post({ source, frontMatter, API_KEY }) {

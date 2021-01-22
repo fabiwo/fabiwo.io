@@ -1,6 +1,6 @@
 import React from 'react'
 import Link from 'next/link'
-import Date from './Date'
+import Date from '../atoms/Date'
 import Image from 'next/image'
 
 export default function BlogPostCard({

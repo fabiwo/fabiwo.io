@@ -4,12 +4,14 @@ import Image from 'next/image'
 import MainLayout from '../layouts/Blog'
 import ContentLayout from '../layouts/ContentLayout'
 import HomeSection from '../layouts/HomeSection'
-import ResponsiveSectionHeading from '../components/ResponsiveSectionHeading'
-import BlogPostCard, { NewestBlogPostCard } from '../components/BlogPostCard'
-import Centre from '../components/Centre'
-//import SearchBar from '../components/_atoms/SearchBar'
-import FoundTag from '../components/_atoms/FoundTag'
-import NewsletterForm from '../components/NewsletterForm'
+import ResponsiveSectionHeading from '../components/atoms/ResponsiveSectionHeading'
+import BlogPostCard, {
+  NewestBlogPostCard,
+} from '../components/molecules/BlogPostCard'
+import Centre from '../components/atoms/Centre'
+//import SearchBar from '../components/atoms/SearchBar'
+import FoundTag from '../components/atoms/FoundTag'
+import NewsletterForm from '../components/molecules/NewsletterForm'
 
 import { getSortedSlugs } from '../lib/mdx'
 

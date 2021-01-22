@@ -32,6 +32,7 @@ const NewsletterForm = ({ API_KEY }) => {
       )
 
       if (response.status >= 400) {
+        console.log(response)
         setForm({
           state: 'error',
           message: `Another error`,

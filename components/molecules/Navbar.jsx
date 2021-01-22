@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
-import Navlink, { ActiveLink } from './Navlink'
+import Navlink, { ActiveLink } from '../atoms/Navlink'
 
 const name = 'Fabian Wolff'
 

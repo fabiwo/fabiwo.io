@@ -1,8 +1,8 @@
 import Head from 'next/head'
 import MainLayout from '../layouts/Blog'
 import ContentLayout from '../layouts/ContentLayout'
-import ResponsiveSectionHeading from '../components/ResponsiveSectionHeading'
-import Centre from '../components/Centre'
+import ResponsiveSectionHeading from '../components/atoms/ResponsiveSectionHeading'
+import Centre from '../components/atoms/Centre'
 
 import Image from 'next/image'
 

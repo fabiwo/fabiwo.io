@@ -1,7 +1,7 @@
-import CodeBlock from './_atoms/CodeBlock'
-import { TeXBlock } from './_atoms/TeXBlock'
-import CodeText from './_atoms/CodeText'
-import Centre from './Centre'
+import CodeBlock from './atoms/CodeBlock'
+import { TeXBlock } from './atoms/TeXBlock'
+import CodeText from './atoms/CodeText'
+import Centre from './atoms/Centre'
 import Image from 'next/image'
 
 const MDXComponents = {

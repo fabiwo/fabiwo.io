@@ -1,7 +1,7 @@
 import Head from 'next/head'
-import Navbar from '../components/Navbar'
-import Footer from '../components/_organisms/Footer'
-import ScrollToTop from '../components/ScrollToTop'
+import Navbar from '../components/molecules/Navbar'
+import Footer from '../components/organisms/Footer'
+import ScrollToTop from '../components/atoms/ScrollToTop'
 // Component renders main page layout with the same styling and fills with content
 
 export default function MainLayout({ children }) {
