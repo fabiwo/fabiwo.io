@@ -1,6 +1,7 @@
 import React, { useState, useRef } from 'react'
 import ErrorMessage from '../atoms/ErrorMessage'
 import SuccessMessage from '../atoms/SuccessMessage'
+import CubeSpinner from '../atoms/CubeSpinner'
 
 const NewsletterForm = () => {
   const [form, setForm] = useState(false)
@@ -64,13 +65,15 @@ const NewsletterForm = () => {
           className='absolute flex items-center justify-center h-8 px-5 font-bold text-gray-800 bg-blue-300 rounded right-1 top-1 dark:bg-gray-700 dark:text-gray-100 w-28'
           type='submit'
         >
-          {form.state === 'loading' ? '⏳' : 'Subscribe'}
+          Subscribe
         </button>
       </form>
       {form.state === 'error' ? (
         <ErrorMessage>{form.message}</ErrorMessage>
       ) : form.state === 'success' ? (
         <SuccessMessage>{form.message}</SuccessMessage>
+      ) : form.state === 'loading' ? (
+        <CubeSpinner />
       ) : (
         ''
       )}
