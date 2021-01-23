@@ -1,5 +1,5 @@
 html {
-    font-family: Poppins;
+    font-family: Inter;
     overflow-y: scroll;
     scroll-behavior: smooth;
     background: #F2F5F8;
@@ -37,7 +37,6 @@ html {
 }
 
 .inline_code {
-    font-family: Inter;
     @apply inline-block px-3 py-1 m-0 text-lg font-bold text-red-600 bg-red-200 rounded #{!important};
 
     &:before {
