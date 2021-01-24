@@ -5,6 +5,12 @@ html {
     background: #F2F5F8;
 }
 
+@media (max-width:640px) {
+    html {
+        font-size: 12px
+    }
+}
+
 
 .blog__grid {
     display: grid;

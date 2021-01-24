@@ -4,7 +4,7 @@ const Hamburger = ({ isOpen, setOpen }) => {
   return (
     <button
       onClick={() => setOpen(!isOpen)}
-      className={`hamburger hamburger--collapse lg:hidden z-50 ${
+      className={`hamburger hamburger--collapse md:hidden z-50 ${
         isOpen ? 'is-active' : ''
       }`}
       type='button'

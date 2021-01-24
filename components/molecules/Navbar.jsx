@@ -25,13 +25,18 @@ export default function Navbar() {
 
   return (
     <>
-      <nav className={`nav py-2 mb-20 px-5` + (isScrolling ? ' scrolled' : '')}>
-        <div className='flex items-center justify-between max-w-4xl p-5 mx-auto my-0'>
+      <nav
+        className={
+          `sticky md:static top-0 py-1 mb-20 px-2 z-50` +
+          (isScrolling ? ' scrolled' : '')
+        }
+      >
+        <div className='flex items-center justify-between max-w-3xl p-5 mx-auto my-0'>
           <Link href='/'>
             <img
               src='/images/logo.svg'
               alt={name}
-              className='order-1 w-12 h-12 cursor-pointer lg:order-none'
+              className='order-1 w-12 h-12 cursor-pointer md:order-none'
             />
           </Link>
           <Hamburger isOpen={isOpen} setOpen={setOpen} />

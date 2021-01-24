@@ -24,15 +24,15 @@ const ScrollToTop = () => {
 
   return (
     <div
-      className={`fixed p-2 bg-gray-800 rounded-full cursor-pointer bottom-10 right-10 transition duration-200 ${
+      className={`fixed p-2 bg-gray-800 rounded-full cursor-pointer bottom-10 right-5 transition duration-200 ${
         isVisible ? 'opacity-100' : 'opacity-0'
       }`}
       onClick={() => handleScroll()}
     >
       <svg
         xmlns='http://www.w3.org/2000/svg'
-        width='24'
-        height='24'
+        width='17'
+        height='17'
         viewBox='0 0 24 24'
       >
         <path

@@ -24,7 +24,7 @@ const ActiveLink = ({ activeClassName, text, href, as }) => {
 
   return (
     <Link href={href}>
-      <a className={`text-lg hoverlink ${className || ''}`}>{text}</a>
+      <a className={`text-md hoverlink ${className || ''}`}>{text}</a>
     </Link>
   )
 }
