@@ -51,6 +51,8 @@ export function NewestBlogPostCard({
   title,
   description,
   tags,
+  image,
+  alt,
   date,
   views,
 }) {
@@ -61,7 +63,7 @@ export function NewestBlogPostCard({
           width={700}
           height={400}
           className='object-cover w-full rounded-t-lg '
-          src='/images/_dummy.jpg'
+          src={image ? image : '/images/placeholder.svg'}
           alt=''
         />
         <p className='absolute left-0 px-5 py-1 text-white bg-red-600 rounded-r text-md text-bold top-5'>
