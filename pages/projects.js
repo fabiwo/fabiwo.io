@@ -15,7 +15,7 @@ export default function Projects({}) {
         <title> {title} </title>
       </Head>
       <ResponsiveSectionHeading text={'PROJECTS'} />
-      <h1>Under Construction</h1>
+      <h1 className='py-5 text-3xl'>Under Construction 🚧👷</h1>
     </MainLayout>
   )
 }

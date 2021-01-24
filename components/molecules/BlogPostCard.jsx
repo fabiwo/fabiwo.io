@@ -10,17 +10,16 @@ export default function BlogPostCard({
   image,
   tags,
   date,
+  alt,
   views,
 }) {
-  const hasThumbnail = image
-
   return (
     <Link href={`/blog/${id}`}>
       <article className='flex flex-col w-full mb-3 bg-white bg-opacity-50 rounded-lg shadow cursor-pointer md:flex-row hover:shadow-md hover:bg-opacity-100'>
         <img
           className='object-cover rounded-t-lg max-h-52 md:rounded-l-lg md:rounded-t-none md:w-64 md:max-h-full'
-          src={hasThumbnail ? image : '/images/placeholder.svg'}
-          alt=''
+          src={image ? image : '/images/placeholder.svg'}
+          alt={alt ? alt : 'Placeholder'}
           loading='lazy'
         />
         <div className='flex flex-col max-w-sm py-7 px-7'>
@@ -64,7 +63,7 @@ export function NewestBlogPostCard({
           height={400}
           className='object-cover w-full rounded-t-lg '
           src={image ? image : '/images/placeholder.svg'}
-          alt=''
+          alt={alt ? alt : 'Placeholder'}
         />
         <p className='absolute left-0 px-5 py-1 text-white bg-red-600 rounded-r text-md text-bold top-5'>
           NEW! 🔥

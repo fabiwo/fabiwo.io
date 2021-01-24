@@ -1,5 +1,5 @@
 .active {
-    color: #CD5858 !important;
+    @apply bg-red-50 text-red-800;
 
     &:after {
         opacity: 1;
@@ -13,10 +13,29 @@
 
 }
 
+.rotate {
+    &:hover {
+        animation-name: spin;
+        animation-duration: 8000ms;
+        animation-iteration-count: infinite;
+        animation-timing-function: cubic-bezier(0.175, 0.885, 0.5, 1.275);
+
+    }
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
 
 
 .btn--primary {
-    @apply py-2 px-4 w-full bg-red-500 text-white font-semibold rounded-lg shadow-md;
+    @apply py-2 px-4 bg-red-500 text-white font-semibold rounded-md shadow-md;
 
     &:hover {
         @apply shadow-lg bg-red-600
@@ -28,10 +47,10 @@
 }
 
 .hoverlink {
-    transition: 0.25s ease-out;
+    transition: 0.25s ease-in-out;
 
     &:hover {
-        color: #CD5858;
+        @apply bg-red-50 text-red-800;
     }
 }
 
@@ -39,7 +58,8 @@
 .project-image {
     background-image: url(../public/images/projects/ternary-thumbnail.svg);
     display: block;
-    position: relative;    background-size: cover;
+    position: relative;
+    background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     transition: all 1s;

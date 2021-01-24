@@ -33,11 +33,6 @@ export default function Blog({ allPostsData }) {
         <NewestBlogPostCard {...allPostsData[0]} />
       </PageSection>
       <ResponsiveSectionHeading text={'ALL POSTS'} />
-      <p className='mb-4'>
-        I've been writing online since 2014, mostly about web development and
-        tech careers. In total, I've written articles on this site. Use the
-        search below to filter by title.
-      </p>
       <div className='relative w-full mb-3'>
         <input
           aria-label='Search articles'
@@ -67,7 +62,7 @@ export default function Blog({ allPostsData }) {
           <Centre>
             <Image
               src='/images/astronaut.svg'
-              alt='Picture of the author'
+              alt='No entries found placeholder'
               width={500}
               height={500}
             />
@@ -84,7 +79,7 @@ export default function Blog({ allPostsData }) {
 }
 
 export async function getStaticProps() {
-  const allPostsData = getSortedSlugs('blog-posts')
+  const allPostsData = getSortedSlugs('blog')
   return {
     props: {
       allPostsData,

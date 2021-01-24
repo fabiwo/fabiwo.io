@@ -41,6 +41,7 @@
     "eslint-plugin-react": "^7.22.0",
     "eslint-plugin-react-hooks": "^4.2.0",
     "eslint-plugin-unused-imports": "^1.0.1",
+    "globby": "^11.0.2",
     "gray-matter": "^4.0.2",
     "postcss": "8.1.10",
     "postcss-preset-env": "^6.7.0",

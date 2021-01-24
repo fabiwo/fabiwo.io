@@ -42,13 +42,17 @@ const NewsletterForm = () => {
   }
 
   return (
-    <div className='w-full p-6 my-4 border border-blue-300 rounded-lg shadow-lg bg-blue-50'>
-      <h5 className='text-lg font-bold text-gray-900'>
-        Subscribe to the newsletter 📧
-      </h5>
+    <div className='relative w-full p-6 my-4 bg-white border border-red-300 rounded-lg shadow-lg'>
+      <img
+        src='/images/logo.svg'
+        alt={'Fabian Wolff Logo'}
+        className='absolute z-0 w-12 h-12 -top-5 -left-5 rotate'
+      />
+      <h5 className='text-lg font-bold text-gray-900'>Join the newsletter</h5>
       <p className='my-1 text-gray-800'>
-        Be up to date! Get emails from me about new interesting topics and early
-        access to <strong>new articles🚀</strong>.
+        Be part of my journey and get informed about interesting{' '}
+        <strong>new articles</strong>,<strong> topics</strong> and{' '}
+        <strong>projects</strong> 🚀
       </p>
 
       <form className='relative my-4' onSubmit={subscribe}>
@@ -59,12 +63,9 @@ const NewsletterForm = () => {
           type='email'
           autoComplete='email'
           required
-          className='block w-full px-4 py-2 mt-1 text-gray-900 bg-white border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-800 dark:text-gray-100'
+          className='block w-full px-4 py-2 mt-1 text-gray-900 rounded bg-gray-50 focus:ring-gray-500 focus:border-gray-500 '
         />
-        <button
-          className='absolute flex items-center justify-center h-8 px-5 font-bold text-gray-800 bg-blue-300 rounded right-1 top-1 dark:bg-gray-700 dark:text-gray-100 w-28'
-          type='submit'
-        >
+        <button className='absolute top-0 right-0 btn--primary' type='submit'>
           Subscribe
         </button>
       </form>

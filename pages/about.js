@@ -15,7 +15,7 @@ export default function About() {
         <title> {title} </title>
       </Head>
       <ResponsiveSectionHeading text={'ABOUT ME'} />
-      <h1>Under Construction</h1>
+      <h1 className='py-5 text-3xl'>Under Construction 🚧👷</h1>
     </MainLayout>
   )
 }

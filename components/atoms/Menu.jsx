@@ -3,8 +3,8 @@ const Menu = ({ isOpen, setOpen, children }) => {
     <nav
       className={
         isOpen
-          ? `flex flex-col z-40 pt-20 pl-8 w-64 space-y-5 bg-white shadow h-screen absolute top-0 left-0`
-          : 'hidden md:flex md:space-x-7 '
+          ? `flex flex-col z-40 pt-20 pl-8 w-64 space-y-5 bg-white h-screen absolute top-0 left-0`
+          : 'hidden md:flex md:space-x-1 '
       }
     >
       {children}

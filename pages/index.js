@@ -1,5 +1,6 @@
 import Head from 'next/head'
 import MainLayout, { siteTitle } from '../layouts/Blog'
+import Link from 'next/link'
 import ResponsiveSectionHeading from '../components/atoms/ResponsiveSectionHeading'
 import ProjectItem from '../components/molecules/ProjectItem'
 import BlogPostCard from '../components/molecules/BlogPostCard'
@@ -22,6 +23,9 @@ export default function Home({ newesPosts, allProjectData }) {
           I'm a chemical engineer 🧪 and aspiring developer 👾. I created this
           blog to document my journey, share information and showcase my work!
         </h2>
+        <Link href='/about'>
+          <button className='mt-5 btn--primary'>More about me</button>
+        </Link>
       </section>
       <ResponsiveSectionHeading text={'BLOG'} />
       <PageSection>
@@ -42,7 +46,7 @@ export default function Home({ newesPosts, allProjectData }) {
 }
 
 export async function getStaticProps() {
-  const allPostsData = getSortedSlugs('blog-posts')
+  const allPostsData = getSortedSlugs('blog')
   const allProjectData = getSortedSlugs('projects')
   const nNewest = 3
   const newesPosts = allPostsData.splice(0, nNewest)

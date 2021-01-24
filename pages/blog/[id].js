@@ -62,7 +62,7 @@ export default function Post({ source, frontMatter }) {
 }
 
 export async function getStaticProps({ params }) {
-  const postData = await getSlugData(params.id, 'blog-posts')
+  const postData = await getSlugData(params.id, 'blog')
   return {
     props: {
       source: postData.mdxSource,
@@ -72,7 +72,7 @@ export async function getStaticProps({ params }) {
 }
 
 export async function getStaticPaths() {
-  const paths = getAllSlugIds('blog-posts')
+  const paths = getAllSlugIds('blog')
   return {
     paths,
     fallback: false,
