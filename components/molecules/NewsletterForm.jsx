@@ -44,7 +44,7 @@ const NewsletterForm = () => {
   return (
     <div className='relative w-full p-6 my-4 bg-white border border-red-300 rounded-lg shadow-lg'>
       <img
-        src='/images/logo.svg'
+        src='/static/images/hexagon.svg'
         alt={'Fabian Wolff Logo'}
         className='absolute z-0 w-12 h-12 -top-5 -left-5 rotate'
       />

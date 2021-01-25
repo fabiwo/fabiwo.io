@@ -32,7 +32,7 @@ export default function Navbar() {
         <div className='flex justify-between max-w-3xl p-2 mx-auto md:justify-center'>
           {/* <Link href='/'>
             <img
-              src='/images/logo.svg'
+              src='/static/images/hexagon.svg'
               alt={'Fabian Wolff Logo'}
               className='order-1 w-12 h-12 cursor-pointer md:order-none rotate'
             />

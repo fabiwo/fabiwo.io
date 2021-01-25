@@ -29,7 +29,7 @@ export default function Post({ source, frontMatter }) {
               alt='Fabian Wolff'
               height={40}
               width={40}
-              src='/images/fabiwo.jpg'
+              src='/static/images/fabiwo.jpg'
               className='rounded-full'
             />
             <div className='flex flex-col justify-end'>
@@ -50,7 +50,9 @@ export default function Post({ source, frontMatter }) {
             layout={'responsive'}
             className='object-cover rounded shadow'
             src={
-              frontMatter.image ? frontMatter.image : '/images/placeholder.svg'
+              frontMatter.image
+                ? frontMatter.image
+                : '/static/images/placeholder.svg'
             }
             alt={frontMatter.alt}
           />

@@ -61,7 +61,7 @@ export default function Blog({ allPostsData }) {
         {!filteredBlogPosts.length && (
           <Centre>
             <Image
-              src='/images/astronaut.svg'
+              src='/static/images/astronaut.svg'
               alt='No entries found placeholder'
               width={500}
               height={500}
