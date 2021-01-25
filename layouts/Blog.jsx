@@ -11,7 +11,7 @@ export default function MainLayout({ children }) {
     <>
       {/* Html head information */}
       <Head>
-        <link rel='icon' href='/favicon.ico' />
+        <meta name='robots' content='follow, index' />
       </Head>
       {/* Head of the page  */}
       <Navbar />
