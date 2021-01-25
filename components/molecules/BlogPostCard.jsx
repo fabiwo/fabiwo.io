@@ -17,15 +17,15 @@ export default function BlogPostCard({
     <Link href={`/blog/${id}`}>
       <article className='flex flex-col w-full mb-3 bg-white bg-opacity-50 rounded-lg shadow cursor-pointer md:flex-row hover:shadow-md hover:bg-opacity-100'>
         <img
-          className='object-cover rounded-t-lg max-h-52 md:rounded-l-lg md:rounded-t-none md:w-64 md:max-h-full'
+          className='object-cover rounded-t-lg max-h-60 md:rounded-l-lg md:rounded-t-none md:w-52 md:max-h-full'
           src={image ? image : '/static/images/placeholder.svg'}
           alt={alt ? alt : 'Placeholder'}
           loading='lazy'
         />
-        <div className='flex flex-col max-w-sm py-7 px-7'>
-          <h2 className='text-xl font-bold '>{title}</h2>
-          <p className='my-2 text-gray-500 '>{description}</p>
-          <ul className='flex mb-5 space-x-1'>
+        <div className='flex flex-col max-w-sm py-5 px-7'>
+          <h2 className='text-lg font-bold '>{title}</h2>
+          <p className='my-2 text-gray-500 text-md '>{description}</p>
+          <ul className='flex mb-3 space-x-1'>
             {tags.map((tag, i) => (
               <li
                 key={i}
@@ -35,10 +35,8 @@ export default function BlogPostCard({
               </li>
             ))}
           </ul>
-          <p className='mt-auto text-sm text-gray-500'>
-            <Date dateString={date} />
-            {/* &#8226;{views} */}
-          </p>
+          <Date dateString={date} />
+          {/* &#8226;{views} */}
         </div>
       </article>
     </Link>

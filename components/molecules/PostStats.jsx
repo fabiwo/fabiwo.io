@@ -3,7 +3,7 @@ import React from 'react'
 const PostStats = ({ views, readTime }) => {
   return (
     <>
-      <svg
+      {/* <svg
         xmlns='http://www.w3.org/2000/svg'
         width='20'
         height='20'
@@ -22,7 +22,7 @@ const PostStats = ({ views, readTime }) => {
           clipRule='evenodd'
         />
       </svg>
-      <p className='mr-2 text-sm'>Coming soon</p>
+      <p className='mr-2 text-sm'>Coming soon</p> */}
       <svg
         xmlns='http://www.w3.org/2000/svg'
         width='20'
