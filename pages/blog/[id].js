@@ -19,7 +19,7 @@ export default function Post({ source, frontMatter }) {
         <title>{frontMatter.title}</title>
       </Head>
 
-      <article className='mb-10'>
+      <article className='max-w-full mb-10'>
         <h1 className='mb-1 text-4xl font-bold md:text-5xl'>
           {frontMatter.title}
         </h1>
@@ -57,7 +57,7 @@ export default function Post({ source, frontMatter }) {
             alt={frontMatter.alt}
           />
         </div>
-        <div className='w-full mt-5 prose max-w-none'>{content}</div>
+        <section className='w-full mt-5 prose'>{content}</section>
       </article>
     </MainLayout>
   )
