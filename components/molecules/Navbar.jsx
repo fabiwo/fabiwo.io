@@ -30,13 +30,13 @@ export default function Navbar() {
         }
       >
         <div className='flex justify-between max-w-3xl p-2 mx-auto md:justify-center'>
-          {/* <Link href='/'>
+          <Link href='/'>
             <img
-              src='/static/images/hexagon.svg'
+              src='/static/images/fw-logo.svg'
               alt={'Fabian Wolff Logo'}
-              className='order-1 w-12 h-12 cursor-pointer md:order-none rotate'
+              className='order-last w-12 h-12 p-2 bg-gray-900 shadow cursor-pointer rounded-2xl md:hidden '
             />
-          </Link> */}
+          </Link>
           <Hamburger isOpen={isOpen} setOpen={setOpen} />
           <Menu isOpen={isOpen} setOpen={setOpen}>
             <ActiveLink text='Home' href='/' activeClassName='active' />
