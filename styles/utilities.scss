@@ -1,99 +1,11 @@
 .active {
     @apply bg-red-50 text-red-800;
-
-    &:after {
-        opacity: 1;
-        transform: translateY(0);
-    }
-
-    &.borderFade::after {
-        opacity: 1;
-        transform: translateY(0);
-    }
-
 }
 
-.rotate {
+.hover-rotate {
     &:hover {
-        animation-name: spin;
-        animation-duration: 8000ms;
-        animation-iteration-count: infinite;
-        animation-timing-function: cubic-bezier(0.175, 0.885, 0.5, 1.275);
-
+        @apply animate-spin
     }
-}
-
-@keyframes spin {
-    from {
-        transform: rotate(0deg);
-    }
-
-    to {
-        transform: rotate(360deg);
-    }
-}
-
-
-.btn--primary {
-    @apply py-2 px-4 bg-red-500 text-white font-semibold rounded-md shadow-md;
-
-    &:hover {
-        @apply shadow-lg bg-red-600
-    }
-
-    &:focus {
-        @apply outline-none
-    }
-}
-
-.hoverlink {
-    transition: 0.25s ease-in-out;
-
-    &:hover {
-        @apply bg-red-50 text-red-800;
-    }
-}
-
-
-.project-image {
-    background-image: url(../public/static/images/projects/ternary-thumbnail.svg);
-    display: block;
-    position: relative;
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    transition: all 1s;
-    background-color: #e8e8e8;
-    margin-top: -20px;
-    border-radius: 10px;
-    will-change: transform;
-    transition: transform .3s cubic-bezier(.52, .28, .47, 1.15);
-}
-
-.project-holder:hover {
-    .project-image {
-        transform: translateY(-5px)
-    }
-}
-
-
-.hoverfill {
-    transition: 0.25s ease-out;
-
-    &:hover {
-        fill: #1b1b1b;
-        transform: scale(1.2)
-    }
-}
-
-.hoverstroke {
-    transition: 0.25s ease-out;
-
-    &:hover {
-        stroke: #1b1b1b;
-        transform: scale(1.2)
-    }
-
 }
 
 // Cube Spinner
@@ -188,7 +100,7 @@
     }
 }
 
-
+// Hamburger
 .hamburger {
     cursor: pointer;
     transition-property: opacity, filter;
@@ -297,8 +209,4 @@
     top: 0;
     transform: rotate(-90deg);
     transition: top 0.1s 0.16s cubic-bezier(0.33333, 0, 0.66667, 0.33333), transform 0.13s 0.25s cubic-bezier(0.215, 0.61, 0.355, 1);
-}
-
-.menu {
-    transition: transform 0.3s ease-in-out;
 }

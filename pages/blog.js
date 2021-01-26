@@ -7,6 +7,7 @@ import ResponsiveSectionHeading from '../components/atoms/ResponsiveSectionHeadi
 import BlogPostCard, {
   NewestBlogPostCard,
 } from '../components/molecules/BlogPostCard'
+import PostContainer from '../components/atoms/PostContainer'
 import Centre from '../components/atoms/Centre'
 //import SearchBar from '../components/atoms/SearchBar'
 import FoundTag from '../components/atoms/FoundTag'
@@ -57,7 +58,7 @@ export default function Blog({ allPostsData }) {
         </svg>
       </div>
       <FoundTag number={filteredBlogPosts.length} />
-      <section className='w-full'>
+      <section className='w-full mb-10'>
         {!filteredBlogPosts.length && (
           <Centre>
             <Image
@@ -68,11 +69,11 @@ export default function Blog({ allPostsData }) {
             />
           </Centre>
         )}
-        <ul>
+        <PostContainer>
           {filteredBlogPosts.map((post, i) => (
             <BlogPostCard key={i} {...post} />
           ))}
-        </ul>
+        </PostContainer>
       </section>
     </MainLayout>
   )

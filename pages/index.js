@@ -4,6 +4,7 @@ import Link from 'next/link'
 import ResponsiveSectionHeading from '../components/atoms/ResponsiveSectionHeading'
 import ProjectItem from '../components/molecules/ProjectItem'
 import BlogPostCard from '../components/molecules/BlogPostCard'
+import PostContainer from '../components/atoms/PostContainer'
 import PageSection from '../layouts/PageSection'
 import { getSortedSlugs } from '../lib/mdx'
 
@@ -29,11 +30,11 @@ export default function Home({ newesPosts, allProjectData }) {
       </section>
       <ResponsiveSectionHeading text={'BLOG'} />
       <PageSection>
-        <ul>
+        <PostContainer>
           {newesPosts.map((post, i) => (
             <BlogPostCard key={i} {...post} />
           ))}
-        </ul>
+        </PostContainer>
       </PageSection>
       <ResponsiveSectionHeading text={'PROJECTS'} />
       <PageSection>

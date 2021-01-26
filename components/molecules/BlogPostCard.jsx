@@ -1,4 +1,3 @@
-import React from 'react'
 import Link from 'next/link'
 import Date from '../atoms/Date'
 import Image from 'next/image'
@@ -15,7 +14,7 @@ export default function BlogPostCard({
 }) {
   return (
     <Link href={`/blog/${id}`}>
-      <article className='flex flex-col w-full mb-3 bg-white bg-opacity-50 rounded-lg shadow cursor-pointer md:flex-row hover:shadow-md hover:bg-opacity-100'>
+      <article className='flex flex-col w-full bg-white bg-opacity-50 rounded-lg shadow cursor-pointer md:flex-row hover:shadow-md hover:bg-opacity-100'>
         <img
           className='object-cover rounded-t-lg max-h-60 md:rounded-l-lg md:rounded-t-none md:w-52 md:max-h-full'
           src={image ? image : '/static/images/placeholder.svg'}

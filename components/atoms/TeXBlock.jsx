@@ -1,4 +1,3 @@
-import React from 'react'
 import TeX from '@matejmazur/react-katex'
 
 export const TeXBlock = ({ expression }) => {
