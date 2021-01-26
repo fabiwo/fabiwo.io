@@ -1,10 +1,10 @@
 .active {
-    @apply bg-red-50 text-red-800;
+    @apply bg-blue-50 text-blue-800;
 }
 
 .hover-rotate {
     &:hover {
-        @apply animate-spin
+        @apply animate-spin cursor-pointer
     }
 }
 

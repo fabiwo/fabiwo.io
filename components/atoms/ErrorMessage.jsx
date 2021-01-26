@@ -1,6 +1,6 @@
 export default function ErrorMessage({ children }) {
   return (
-    <p className='flex items-center p-5 text-sm font-bold text-red-800 bg-red-100 rounded-lg'>
+    <p className='flex items-center p-5 text-sm font-bold text-blue-800 bg-blue-100 rounded-lg'>
       <svg
         xmlns='http://www.w3.org/2000/svg'
         viewBox='0 0 20 20'

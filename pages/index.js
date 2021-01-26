@@ -25,7 +25,7 @@ export default function Home({ newesPosts, allProjectData }) {
           blog to document my journey, share information and showcase my work!
         </h2>
         <Link href='/about'>
-          <button className='mt-5 btn--primary'>More about me</button>
+          <button className='mt-5 btn--secondary'>More about me</button>
         </Link>
       </section>
       <ResponsiveSectionHeading text={'BLOG'} />
