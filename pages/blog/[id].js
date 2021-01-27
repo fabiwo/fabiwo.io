@@ -73,10 +73,10 @@ export async function getStaticProps({ params }) {
   }
 }
 
-// export async function getStaticPaths() {
-//   const paths = getAllSlugIds('blog')
-//   return {
-//     paths,
-//     fallback: false,
-//   }
-// }
+export async function getStaticPaths() {
+  const paths = getAllSlugIds('blog')
+  return {
+    paths,
+    fallback: false,
+  }
+}
