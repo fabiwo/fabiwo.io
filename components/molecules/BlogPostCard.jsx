@@ -14,26 +14,16 @@ export default function BlogPostCard({
 }) {
   return (
     <Link href={`/blog/${id}`}>
-      <article className='flex flex-col w-full bg-white bg-opacity-50 rounded-lg shadow cursor-pointer md:flex-row hover:shadow-md hover:bg-opacity-100'>
+      <article className='flex flex-col w-full bg-white bg-opacity-50 border rounded-lg shadow cursor-pointer md:flex-row hover:shadow-md hover:bg-opacity-100'>
         <img
           className='object-cover rounded-t-lg max-h-60 md:rounded-l-lg md:rounded-t-none md:w-52 md:max-h-full'
           src={image ? image : '/static/images/placeholder.svg'}
           alt={alt ? alt : 'Placeholder'}
           loading='lazy'
         />
-        <div className='flex flex-col max-w-sm py-5 px-7'>
+        <div className='flex flex-col max-w-sm px-10 py-7'>
           <h2 className='text-lg font-bold '>{title}</h2>
           <p className='my-2 text-gray-500 text-md '>{description}</p>
-          <ul className='flex mb-3 space-x-1'>
-            {tags.map((tag, i) => (
-              <li
-                key={i}
-                className='text-sm rounded py-0.5 px-2 text-white bg-gray-900'
-              >
-                {tag}
-              </li>
-            ))}
-          </ul>
           <Date dateString={date} />
           {/* &#8226;{views} */}
         </div>
@@ -54,7 +44,7 @@ export function NewestBlogPostCard({
 }) {
   return (
     <Link href={`/blog/${id}`}>
-      <article className='relative flex flex-col w-full mb-5 bg-white rounded-lg shadow cursor-pointer hover:shadow-lg'>
+      <article className='relative flex flex-col w-full mb-5 bg-white border rounded-lg shadow cursor-pointer hover:shadow-lg'>
         <Image
           width={700}
           height={400}

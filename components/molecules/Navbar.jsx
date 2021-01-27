@@ -29,14 +29,13 @@ export default function Navbar() {
           (isScrolling ? ' scrolled' : '')
         }
       >
-        <div className='flex justify-between max-w-3xl p-2 mx-auto md:justify-center'>
-          <Link href='/'>
-            <img
-              src='/static/images/fw-logo.svg'
-              alt={'Fabian Wolff Logo'}
-              className='order-last w-12 h-12 p-2 bg-gray-900 shadow cursor-pointer rounded-2xl md:hidden '
-            />
-          </Link>
+        {isOpen && (
+          <div
+            onClick={() => setOpen(false)}
+            className='fixed w-screen h-screen bg-black bg-opacity-30'
+          ></div>
+        )}
+        <div className='flex max-w-3xl p-2 mx-auto md:justify-center'>
           <Hamburger isOpen={isOpen} setOpen={setOpen} />
           <Menu isOpen={isOpen} setOpen={setOpen}>
             <ActiveLink text='Home' href='/' activeClassName='active' />

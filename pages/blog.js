@@ -29,11 +29,14 @@ export default function Blog({ allPostsData }) {
       <Head>
         <title> {title} </title>
       </Head>
-      <ResponsiveSectionHeading text={'🔥 MOST RECENT 🔥'} />
+      {/* <ResponsiveSectionHeading text={'🔥 MOST RECENT 🔥'} />
       <PageSection>
         <NewestBlogPostCard {...allPostsData[0]} />
-      </PageSection>
+      </PageSection> */}
       <ResponsiveSectionHeading text={'ALL POSTS'} />
+      <p className='mb-10 text-lg text-gray-800'>
+        Search through all my posts 🚀
+      </p>
       <div className='relative w-full mb-3'>
         <input
           aria-label='Search articles'

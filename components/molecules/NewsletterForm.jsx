@@ -43,11 +43,6 @@ const NewsletterForm = () => {
 
   return (
     <div className='relative w-full p-6 my-4 border border-blue-200 rounded-lg shadow-lg bg-blue-50'>
-      <img
-        src='/static/images/hexagon.svg'
-        alt={'Fabian Wolff Logo'}
-        className='absolute z-0 w-12 h-12 -top-5 -left-5 hover-rotate'
-      />
       <h5 className='text-lg font-bold text-gray-900'>Join the newsletter</h5>
       <p className='my-1 text-gray-800'>
         Be part of my journey and get informed about interesting{' '}

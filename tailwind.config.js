@@ -18,7 +18,7 @@ module.exports = {
               },
             },
             blockquote: {
-              borderLeftColor: '#CA5454',
+              borderLeftColor: '#377ebd',
               borderLeftWidth: '0.3rem',
               background: '#F1F1F1',
               padding: '1rem',

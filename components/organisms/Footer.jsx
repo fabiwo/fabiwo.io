@@ -3,14 +3,14 @@ import SocialIcon from '../atoms/SocialIcon'
 
 export default function Footer() {
   const socials = [
+    { href: 'https://github.com/fabiwo', type: 'github' },
     {
       href: 'https://www.linkedin.com/in/fabian-wolff-32931613a/',
       type: 'linkedin',
     },
-    { href: 'https://github.com/fabiwo', type: 'github' },
     { href: 'https://twitter.com/ffabiwo', type: 'twitter' },
-    { href: 'https://www.instagram.com/fabiwo/', type: 'instagram' },
     { href: 'mailto:fabiandwolff@gmail.com', type: 'mail' },
+    // { href: 'https://www.instagram.com/fabiwo/', type: 'instagram' },
   ]
 
   return (

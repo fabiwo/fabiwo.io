@@ -18,11 +18,14 @@ export default function Home({ newesPosts, allProjectData }) {
         <title> {title} </title>
       </Head>
       {/* Was steht im Main Block */} {/* Blog Post Section */}{' '}
-      <section className='mb-20'>
+      <section className='relative mb-20'>
+        <h1 className='absolute left-0 text-5xl md:-left-20 -top-20 md:top-0'>
+          👋
+        </h1>{' '}
         <h1 className='text-5xl font-bold mb-7'>Hey, I 'm Fabian Wolff</h1>{' '}
         <h2 className='text-lg text-gray-600 '>
-          I'm a chemical engineer 🧪 and aspiring developer 👾. I created this
-          blog to document my journey, share information and showcase my work!
+          I'm a chemical engineer and aspiring developer. I created this blog to
+          document my journey, share information and showcase my work!
         </h2>
         <Link href='/about'>
           <button className='mt-5 btn--secondary'>More about me</button>

@@ -46,7 +46,7 @@ export default function Post({ source, frontMatter }) {
         <div>
           <Image
             width={500}
-            height={400}
+            height={500 / (16 / 10)}
             layout={'responsive'}
             className='object-cover rounded shadow'
             src={
