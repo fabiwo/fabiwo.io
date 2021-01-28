@@ -12,7 +12,7 @@ export default function ProjectItem({
   tools,
 }) {
   return (
-    <div className='transition duration-300 ease-out transform bg-white shadow cursor-pointer hover:-translate-y-1 hover:shadow-lg rounded-xl'>
+    <div className='transition duration-300 ease-out transform bg-white rounded-md shadow cursor-pointer hover:-translate-y-1 hover:shadow-lg'>
       <a href={href} target='_blank' rel='noopener noreferrer'>
         <div className='relative'>
           <div className='absolute top-0 flex flex-col p-2 space-y-1 right-5'>
@@ -30,7 +30,7 @@ export default function ProjectItem({
             alt=''
             width={900}
             height={500}
-            className='object-cover rounded-t-xl'
+            className='object-cover rounded-t-md'
           />
         </div>
         <div className='flex flex-col p-10'>

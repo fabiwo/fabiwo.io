@@ -48,7 +48,7 @@ export default function Post({ source, frontMatter }) {
             width={500}
             height={500 / (16 / 10)}
             layout={'responsive'}
-            className='object-cover rounded shadow'
+            className='object-cover rounded-md shadow'
             src={
               frontMatter.image
                 ? frontMatter.image
