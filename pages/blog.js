@@ -35,7 +35,7 @@ export default function Blog({ allPostsData }) {
       </PageSection> */}
       <ResponsiveSectionHeading text={'ALL POSTS'} />
       <p className='mb-10 text-lg text-gray-800'>
-        Search through all my posts 🚀
+        Search through all my posts 🔍
       </p>
       <div className='relative w-full mb-3'>
         <input

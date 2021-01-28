@@ -3,33 +3,21 @@ title: Post Components
 date: '2021-01-26'
 description: Serves as a resource for all my components for use in blog posts
 author: Fabian Wolff
-image: ''
+image: '/static/images/blog/building-blocks.jpg'
 alt: ''
 tags:
   - mdx
   - React
 ---
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Luctus duis posuere velit duis quisque bibendum ut nulla. Ut
-pellentesque accumsan purus ultrices massa, magna libero. Proin eu ante velit nibh est suscipit. Sed dui nunc, aliquet
-eu amet. Maecenas egestas vitae proin ipsum pellentesque. Lacus phasellus tristique eget metus in ac. Arcu rutrum ac a
-nullam turpis feugiat tincidunt pellentesque id. Duis sed metus dictum aliquam mauris amet. Faucibus augue ante nibh
-vitae auctor ullamcorper tempus cras. Urna, aliquam tristique suspendisse tincidunt ut donec. Ut id pharetra sed
-convallis consequat bibendum eu. Fames morbi ut hac viverra massa sagittis semper fringilla. Luctus risus massa ac vitae
-neque proin sit augue. Ut dui, amet mattis consequat. Facilisis odio senectus aliquet mattis velit purus, amet quis.
-Quisque dapibus accumsan, pharetra nunc. Feugiat in vulputate tincidunt tellus turpis faucibus at dui fermentum. Sed
-vestibulum, enim quis arcu mollis donec eget bibendum amet. Iaculis sed cras massa arcu, at consectetur eu.
-
-## Code Section
+## Basic Code Examples
 
 ```js
 // This is a comment
-const someFunctionName = () => {
-  console.log('Test')
+const logPotatoe = () => {
+  console.log('🥔')
 }
 ```
-
-<CodeText text={'d3.select'} /> into your text
 
 ```scss
 body {
@@ -41,13 +29,23 @@ body {
 }
 ```
 
+## Code with filename
+
 ```python:index.py
-a=["Tom", "Jerry", "Apple", "🚀"]
-for emojis in a:
-  emojis.replace("", "hello")
+foods=["🍎", "🍉", "🍌", "🍑"]
+for food in foods:
+  f"I like {food}."
 ```
 
+## Inline Code Example
+
+Putting <CodeText text={'Some Code'} /> into my text
+
+## Katex Block
+
 <TeXBlock nr='1' expression={String.raw`\int_0^\infty x^2 dx`} />
+
+## Centered Next Image Component
 
 <Centre>
   <Image
@@ -58,13 +56,17 @@ for emojis in a:
   />
 </Centre>
 
-> Blockquotes are very handy in email to emulate reply text.
-> This line is part of the same quote.
+## Blockquote
 
-Still trying to **change** some stuff for example:
+> Quotes sound pretty smart
 
-- This is a rocket 🚀
-- This is pooptatoe 🥔
+## Rest
+
+This is **bold** and this a ordered list:
+
+- 🚀
+- 🥔
+- 🔥
 
 <a href='http://google.com/' target='_blank'>
   This is a link

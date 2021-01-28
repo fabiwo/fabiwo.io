@@ -25,7 +25,7 @@ const ActiveLink = ({ activeClassName, text, href, as }) => {
   return (
     <Link href={href}>
       <a
-        className={`text-lg py-2 rounded-md font-medium px-5 md:text-base transition-colors ease-in-out duration-300 hover:bg-blue-50 hover:text-blue-800 ${
+        className={`text-xl py-2 rounded-md font-medium px-5 md:text-base transition-colors ease-in-out duration-300 hover:bg-blue-50 hover:text-blue-800 ${
           className || ''
         }`}
       >

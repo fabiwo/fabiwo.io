@@ -42,7 +42,7 @@ const NewsletterForm = () => {
   }
 
   return (
-    <div className='relative w-full p-6 my-4 border border-blue-200 rounded-lg shadow-lg bg-blue-50'>
+    <div className='relative w-full p-6 my-4 border border-gray-300 rounded-lg shadow-lg bg-gray-50'>
       <h5 className='text-lg font-bold text-gray-900'>Join the newsletter</h5>
       <p className='my-1 text-gray-800'>
         Be part of my journey and get informed about interesting{' '}
@@ -58,7 +58,7 @@ const NewsletterForm = () => {
           type='email'
           autoComplete='email'
           required
-          className='block w-full px-4 py-2 mt-1 text-gray-900 rounded bg-gray-50 focus:ring-gray-500 focus:border-gray-500 '
+          className='block w-full px-4 py-2 mt-1 text-gray-900 rounded bg-blue-50 focus:bg-blue-100 focus:ring-gray-500 focus:border-gray-500 '
         />
         <button className='absolute top-0 right-0 btn--primary' type='submit'>
           Subscribe

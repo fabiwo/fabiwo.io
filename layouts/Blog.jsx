@@ -17,7 +17,7 @@ export default function MainLayout({ children }) {
       <Navbar />
       {/* Main Page or Post Content */}
       <main>
-        <div className='flex flex-col items-start justify-center max-w-2xl mx-auto px-7'>
+        <div className='flex flex-col items-start justify-center max-w-2xl px-10 mx-auto'>
           {children}
           <NewsletterForm />
         </div>
