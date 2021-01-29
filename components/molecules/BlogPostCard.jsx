@@ -16,7 +16,7 @@ export default function BlogPostCard({
     <Link href={`/blog/${id}`}>
       <article className='flex flex-col w-full bg-white border rounded-md shadow cursor-pointer md:flex-row'>
         <img
-          className='object-cover rounded-t-md max-h-60 md:rounded-l-md md:rounded-t-none md:w-52 md:max-h-full'
+          className='object-cover rounded-t-md max-h-52 md:rounded-l-md md:rounded-t-none md:w-52 md:max-h-full'
           src={image ? image : '/static/images/placeholder.svg'}
           alt={alt ? alt : 'Placeholder'}
           loading='lazy'

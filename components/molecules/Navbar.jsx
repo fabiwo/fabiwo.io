@@ -45,11 +45,7 @@ export default function Navbar() {
               href='/projects'
               activeClassName='active'
             />
-            <ActiveLink
-              text='About 🚧'
-              href='/about'
-              activeClassName='active'
-            />
+            <ActiveLink text='About' href='/about' activeClassName='active' />
           </Menu>
         </div>
       </nav>
