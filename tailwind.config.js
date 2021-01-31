@@ -6,8 +6,15 @@ module.exports = {
     './layouts/**/*.js',
     './layouts/**/*.jsx',
   ],
+  darkMode: 'class',
   theme: {
     extend: {
+      colors: {
+        'dark-0': '#282828',
+        'dark-1': '#2c2c2c',
+        'dark-2': '#353535',
+        'dark-3': '#323232',
+      },
       typography: {
         DEFAULT: {
           css: {
@@ -29,6 +36,7 @@ module.exports = {
             },
           },
         },
+        dark: {},
       },
     },
   },

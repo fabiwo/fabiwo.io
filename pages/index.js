@@ -26,7 +26,7 @@ export default function Home({ newesPosts, allProjectData }) {
             👋
           </h1>{' '}
           <h1 className='text-5xl font-bold mb-7'>Hey, I 'm Fabian Wolff</h1>{' '}
-          <h2 className='text-lg text-gray-600 '>
+          <h2 className='text-lg text-gray-600 dark:text-gray-200'>
             I'm a chemical engineer and aspiring developer. I created this blog
             to document my journey, share information and showcase my work!
           </h2>

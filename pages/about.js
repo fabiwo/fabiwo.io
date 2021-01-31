@@ -25,11 +25,12 @@ export default function About() {
           <section className='prose'>
             <p>
               Hey, I’m Fabian. I am located in Mannheim 📍 and currently pursue
-              a master's degree in Chemical Engineering. I am really passionate
-              about
-              <strong> web technologies</strong>,<strong> creating</strong>{' '}
-              things with code, and <strong> solving</strong> problems. When I
-              am not coding I like to spend my free time with:
+              a master's degree in Chemical Engineering 🧪. I am really
+              passionate about
+              <strong> web technologies</strong>,
+              <strong> creating things with code</strong> , and{' '}
+              <strong> solving problems</strong>. When I am not coding I like to
+              spend my free time with:
             </p>
             <ul>
               <li>Weighted Calisthenics 🏋️‍♂️</li>
@@ -45,8 +46,9 @@ export default function About() {
             <p>
               I would love to share my journey with you and provide information
               I wish somebody wrote down when I was learning. You can expect
-              posts about chemical engineering, development, and personal
-              projects I am working on.
+              posts about <strong>chemical engineering</strong>,{' '}
+              <strong>development</strong>, and{' '}
+              <strong>personal projects</strong> I am working on.
             </p>
             <p>
               If you want to know more about me and my journey you can subscribe

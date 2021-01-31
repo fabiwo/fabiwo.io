@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
-import Navlink, { ActiveLink } from '../atoms/Navlink'
+import ActiveLink from '../atoms/ActiveLink'
 import Hamburger from '../atoms/Hamburger'
+import DarkModeToggle from '../atoms/DarkModeToggle'
 import Menu from '../atoms/Menu'
 
-export default function Navbar() {
+export default function Navbar({ mounted }) {
   const [isScrolling, setScrolling] = useState(false)
   const [isOpen, setOpen] = useState(false)
 
@@ -25,7 +26,7 @@ export default function Navbar() {
     <>
       <nav
         className={
-          `sticky md:bg-white md:shadow top-0 mb-20 px-2 z-50` +
+          `sticky md:bg-white dark:bg-dark-3 md:shadow top-0 mb-20 px-2 z-50` +
           (isScrolling ? ' scrolled' : '')
         }
       >
@@ -38,6 +39,7 @@ export default function Navbar() {
         <div className='flex max-w-3xl p-2 mx-auto md:justify-center'>
           <Hamburger isOpen={isOpen} setOpen={setOpen} />
           <Menu isOpen={isOpen} setOpen={setOpen}>
+            <DarkModeToggle mounted={mounted} />
             <ActiveLink text='Home' href='/' activeClassName='active' />
             <ActiveLink text='Blog' href='/blog' activeClassName='active' />
             <ActiveLink
