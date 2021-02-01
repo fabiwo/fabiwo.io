@@ -36,7 +36,7 @@ export default function Blog({ allPostsData }) {
         <NewestBlogPostCard {...allPostsData[0]} />
       </PageSection> */}
         <ResponsiveSectionHeading text={'ALL POSTS'} />
-        <p className='mb-10 text-lg text-gray-800'>
+        <p className='mb-10 text-lg text-gray-800 dark:text-gray-100'>
           Search through all my posts 🔍
         </p>
         <div className='relative w-full mb-3'>

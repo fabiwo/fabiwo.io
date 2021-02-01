@@ -1,3 +1,5 @@
+const { spacing } = require('tailwindcss/defaultTheme')
+
 module.exports = {
   purge: [
     './components/**/*.jsx',
@@ -10,19 +12,32 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        'dark-0': '#282828',
-        'dark-1': '#2c2c2c',
-        'dark-2': '#353535',
-        'dark-3': '#323232',
+        'outer-space': {
+          50: '#f4f4f5',
+          100: '#e9eaea',
+          200: '#c9cacb',
+          300: '#a9aaac',
+          400: '#686b6e',
+          500: '#272b30',
+          600: '#23272b',
+          700: '#1d2024',
+          800: '#171a1d',
+          900: '#131518',
+        },
       },
-      typography: {
+      typography: (theme) => ({
         DEFAULT: {
           css: {
+            color: theme('colors.gray.700'),
             a: {
-              color: '#3182ce',
+              color: theme('colors.blue.500'),
               '&:hover': {
-                color: '#2c5282',
+                color: theme('colors.blue.700'),
               },
+              code: { color: theme('colors.blue.400') },
+            },
+            'h2,h3,h4': {
+              'scroll-margin-top': spacing[32],
             },
             blockquote: {
               textAlign: 'center',
@@ -36,9 +51,50 @@ module.exports = {
             },
           },
         },
-        dark: {},
-      },
+        dark: {
+          css: {
+            color: theme('colors.gray.300'),
+            a: {
+              color: theme('colors.blue.100'),
+              '&:hover': {
+                color: theme('colors.blue.600'),
+              },
+              code: { color: theme('colors.blue.400') },
+            },
+            blockquote: {
+              color: theme('colors.gray.300'),
+            },
+            'h2,h3,h4': {
+              color: theme('colors.gray.100'),
+              'scroll-margin-top': spacing[32],
+            },
+            hr: { borderColor: theme('colors.gray.700') },
+            ol: {
+              li: {
+                '&:before': { color: theme('colors.gray.500') },
+              },
+            },
+            ul: {
+              li: {
+                '&:before': { backgroundColor: theme('colors.gray.500') },
+              },
+            },
+            strong: { color: theme('colors.gray.300') },
+            thead: {
+              color: theme('colors.gray.100'),
+            },
+            tbody: {
+              tr: {
+                borderBottomColor: theme('colors.gray.700'),
+              },
+            },
+          },
+        },
+      }),
     },
+  },
+  variants: {
+    typography: ['dark'],
   },
   plugins: [require('@tailwindcss/typography')],
 }

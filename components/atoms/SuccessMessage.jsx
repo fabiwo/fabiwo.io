@@ -1,6 +1,6 @@
 export default function SuccessMessage({ children }) {
   return (
-    <p className='flex items-center p-5 text-sm font-bold text-green-700 bg-green-100 dark:text-green-400'>
+    <p className='flex items-center p-5 text-sm font-bold text-green-700 bg-green-100 dark:text-white dark:bg-green-500'>
       <svg
         xmlns='http://www.w3.org/2000/svg'
         viewBox='0 0 20 20'

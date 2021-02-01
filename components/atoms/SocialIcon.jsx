@@ -20,14 +20,14 @@ export default function SocialIcon({ type }) {
             strokeWidth='2'
             strokeLinecap='round'
             strokeLinejoin='round'
-            fill='white'
+            fill='transparent'
           />
           <path
             d='M38 18L25.5 26L13 18'
             strokeWidth='2'
             strokeLinecap='round'
             strokeLinejoin='round'
-            fill='white'
+            fill='transparent'
           />
         </>
       ) : (

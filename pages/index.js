@@ -25,13 +25,17 @@ export default function Home({ newesPosts, allProjectData }) {
           <h1 className='absolute left-0 text-5xl md:-left-20 -top-20 md:top-0'>
             👋
           </h1>{' '}
-          <h1 className='text-5xl font-bold mb-7'>Hey, I 'm Fabian Wolff</h1>{' '}
+          <h1 className='text-5xl font-bold mb-7 font-gray-900 dark:text-transparent bg-clip-text bg-gradient-to-r dark:from-blue-500 dark:to-green-500'>
+            Hey, I 'm Fabian Wolff
+          </h1>{' '}
           <h2 className='text-lg text-gray-600 dark:text-gray-200'>
             I'm a chemical engineer and aspiring developer. I created this blog
             to document my journey, share information and showcase my work!
           </h2>
           <Link href='/about'>
-            <button className='mt-5 btn--secondary'>More about me</button>
+            <button className='px-4 py-2 mt-5 font-semibold text-white transition duration-300 ease-in-out bg-blue-500 rounded-md shadow hover:bg-blue-600 active:shadow-lg active:bg-blue-700 focus:outline-none '>
+              More about me
+            </button>
           </Link>
         </section>
         <ResponsiveSectionHeading text={'BLOG'} />

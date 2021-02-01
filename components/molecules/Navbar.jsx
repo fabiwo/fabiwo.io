@@ -26,7 +26,7 @@ export default function Navbar({ mounted }) {
     <>
       <nav
         className={
-          `sticky md:bg-white dark:bg-dark-3 md:shadow top-0 mb-20 px-2 z-50` +
+          `md:sticky md:bg-white md:dark:bg-outer-space-600 md:shadow top-0 mb-20 px-2 z-50` +
           (isScrolling ? ' scrolled' : '')
         }
       >
@@ -36,10 +36,9 @@ export default function Navbar({ mounted }) {
             className='fixed w-screen h-screen bg-black bg-opacity-30'
           ></div>
         )}
-        <div className='flex max-w-3xl p-2 mx-auto md:justify-center'>
+        <div className='flex items-center justify-between max-w-3xl p-2 mx-auto md:justify-between'>
           <Hamburger isOpen={isOpen} setOpen={setOpen} />
           <Menu isOpen={isOpen} setOpen={setOpen}>
-            <DarkModeToggle mounted={mounted} />
             <ActiveLink text='Home' href='/' activeClassName='active' />
             <ActiveLink text='Blog' href='/blog' activeClassName='active' />
             <ActiveLink
@@ -49,6 +48,7 @@ export default function Navbar({ mounted }) {
             />
             <ActiveLink text='About' href='/about' activeClassName='active' />
           </Menu>
+          <DarkModeToggle mounted={mounted} />
         </div>
       </nav>
     </>

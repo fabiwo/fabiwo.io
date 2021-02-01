@@ -39,7 +39,7 @@ export default function Post({ source, frontMatter }) {
                 <Date dateString={frontMatter.date} />
               </div>
             </div>
-            <div className='flex items-end flex-grow text-gray-800 md:justify-end'>
+            <div className='flex items-end flex-grow text-gray-800 dark:text-gray-300 md:justify-end'>
               <PostStats readTime={frontMatter.readTimeString} />
             </div>
           </div>
@@ -57,7 +57,9 @@ export default function Post({ source, frontMatter }) {
               alt={frontMatter.alt}
             />
           </div>
-          <section className='w-full mt-5 prose'>{content}</section>
+          <section className='w-full mt-5 prose dark:prose-dark'>
+            {content}
+          </section>
         </article>
       </MainLayout>
     </SeoProvider>

@@ -12,7 +12,7 @@ export default function ProjectItem({
   tools,
 }) {
   return (
-    <div className='transition duration-300 ease-out transform bg-white rounded-md shadow cursor-pointer hover:-translate-y-1 hover:shadow-lg'>
+    <div className='transition duration-300 ease-out transform bg-white rounded-md shadow cursor-pointer dark:bg-outer-space-600 dark:border-outer-space-500 hover:-translate-y-1 hover:shadow-lg'>
       <a href={href} target='_blank' rel='noopener noreferrer'>
         <div className='relative'>
           <div className='absolute top-0 flex flex-col p-2 space-y-1 right-5'>
@@ -34,10 +34,9 @@ export default function ProjectItem({
           />
         </div>
         <div className='flex flex-col p-10'>
-          <div></div>
           <div className='flex flex-col'>
             <h1 className='text-2xl font-bold'>{title}</h1>
-            <h6 className='pb-4 font-light text-gray-500 md:text-lg '>
+            <h6 className='pb-4 font-light text-gray-500 md:text-lg dark:text-gray-300'>
               {category}
             </h6>
             <p>{description}</p>

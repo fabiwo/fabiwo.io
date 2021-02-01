@@ -10,7 +10,12 @@ export default function SeoProvider({ children }) {
   const [mounted, setMounted] = useState(false)
 
   // After mounting, we have access to the theme
-  useEffect(() => setMounted(true), [])
+  useEffect(() => {
+    setMounted(true)
+    return function cleanup() {
+      setMounted(false)
+    }
+  }, [])
 
   return (
     <>
