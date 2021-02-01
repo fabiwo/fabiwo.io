@@ -1,5 +1,5 @@
 export default async (req, res) => {
-  const { email } = req.body
+  const { email, metadata } = req.body
 
   if (!email) {
     return res.status(400).json({ error: 'Email is required' })
@@ -12,7 +12,8 @@ export default async (req, res) => {
       {
         body: JSON.stringify({
           email,
-          //tags: ['leerob.io'],
+          metadata,
+          tags: ['fabiwo.io'],
         }),
         headers: {
           Authorization: `Token ${API_KEY}`,
@@ -36,7 +37,7 @@ export default async (req, res) => {
       })
     }
 
-    return res.status(201).json({ error: '' })
+    return res.status(201).json({ error: '', metadata })
   } catch (error) {
     return res.status(500).json({ error: error.message || error.toString() })
   }

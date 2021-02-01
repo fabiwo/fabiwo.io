@@ -45,7 +45,7 @@ export default function Blog({ allPostsData }) {
             type='text'
             onChange={(e) => setSearchValue(e.target.value)}
             placeholder='Search articles'
-            className='block w-full px-4 py-3 text-gray-900 bg-white border border-blue-100 rounded-md shadow focus:outline-none focus:ring-2 focus:border-blue-300'
+            className='w-full px-4 py-3 rounded-md shadow-lg dark:text-outer-space-300 dark:border-transparent dark:bg-outer-space-700 dark:placeholder-outer-space-400 dark:focus:bg-outer-space-800 active:ring-red-500 focus:outline-none focus:ring-2 focus:ring-blue-400'
           ></input>
           <svg
             className='absolute w-5 h-5 text-gray-400 right-4 top-4 dark:text-gray-300'
