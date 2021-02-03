@@ -68,6 +68,16 @@ module.exports = {
               color: theme('colors.gray.100'),
               'scroll-margin-top': spacing[32],
             },
+            blockquote: {
+              textAlign: 'center',
+              borderLeftColor: theme('colors.blue.500'),
+              borderLeftWidth: '0.35rem',
+              background: theme('colors.outer-space.600'),
+              padding: '1rem',
+              p: {
+                color: theme('colors.white'),
+              },
+            },
             hr: { borderColor: theme('colors.gray.700') },
             ol: {
               li: {
