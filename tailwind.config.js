@@ -5,6 +5,7 @@ module.exports = {
     './components/**/*.jsx',
     './components/**/*.js',
     './pages/**/*.js',
+    './pages/**/*.jsx',
     './layouts/**/*.js',
     './layouts/**/*.jsx',
   ],
@@ -29,13 +30,6 @@ module.exports = {
         DEFAULT: {
           css: {
             color: theme('colors.gray.700'),
-            a: {
-              color: theme('colors.blue.500'),
-              '&:hover': {
-                color: theme('colors.blue.700'),
-              },
-              code: { color: theme('colors.blue.400') },
-            },
             'h2,h3,h4': {
               'scroll-margin-top': spacing[32],
             },
@@ -54,13 +48,6 @@ module.exports = {
         dark: {
           css: {
             color: theme('colors.gray.300'),
-            a: {
-              color: theme('colors.blue.100'),
-              '&:hover': {
-                color: theme('colors.blue.600'),
-              },
-              code: { color: theme('colors.blue.400') },
-            },
             blockquote: {
               color: theme('colors.gray.300'),
             },

@@ -1,7 +1,7 @@
 import Head from 'next/head'
-import Navbar from '../components/molecules/Navbar'
-import Footer from '../components/organisms/Footer'
-import ScrollToTop from '../components/atoms/ScrollToTop'
+import Navbar from '@/molecules/Navbar'
+import Footer from '@/organisms/Footer'
+import ScrollToTop from '@/components/atoms/ScrollToTop'
 import { useState, useEffect } from 'react'
 
 // Component renders main page layout with the same styling and fills with content

@@ -1,19 +1,17 @@
 import { useState } from 'react'
 import Head from 'next/head'
 import Image from 'next/image'
-import MainLayout from '../layouts/MainLayout'
-import PageSection from '../layouts/PageSection'
-import ResponsiveSectionHeading from '../components/atoms/ResponsiveSectionHeading'
-import BlogPostCard, {
-  NewestBlogPostCard,
-} from '../components/molecules/BlogPostCard'
-import PostContainer from '../components/atoms/PostContainer'
-import Centre from '../components/atoms/Centre'
-//import SearchBar from '../components/atoms/SearchBar'
-import FoundTag from '../components/atoms/FoundTag'
-import SeoProvider from '../layouts/SeoProvider'
+import MainLayout from '@/layouts/MainLayout'
+import PageSection from '@/layouts/PageSection'
+import ResponsiveSectionHeading from '@/components/atoms/ResponsiveSectionHeading'
+import BlogPostCard, { NewestBlogPostCard } from '@/molecules/BlogPostCard'
+import PostContainer from '@/components/atoms/PostContainer'
+import Centre from '@/components/atoms/Centre'
+//import SearchBar from '@/components/atoms/SearchBar'
+import FoundTag from '@/components/atoms/FoundTag'
+import SeoProvider from '@/layouts/SeoProvider'
 
-import { getSortedSlugs } from '../lib/mdx'
+import { getSortedSlugs } from '@/lib/mdx'
 
 const title = 'Fabian Wolff - Blog'
 

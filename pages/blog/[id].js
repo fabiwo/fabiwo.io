@@ -1,11 +1,11 @@
-import SeoProvider from '../../layouts/SeoProvider'
-import MainLayout from '../../layouts/MainLayout'
-import Date from '../../components/atoms/Date'
+import SeoProvider from '@/layouts/SeoProvider'
+import MainLayout from '@/layouts/MainLayout'
+import Date from '@/components/atoms/Date'
 import Head from 'next/head'
-import { getAllSlugIds, getSlugData } from '../../lib/mdx'
+import { getAllSlugIds, getSlugData } from '@/lib/mdx'
 import hydrate from 'next-mdx-remote/hydrate'
-import MDXComponents from '../../components/MDXComponents'
-import PostStats from '../../components/molecules/PostStats'
+import MDXComponents from '@/components/MDXComponents'
+import PostStats from '@/molecules/PostStats'
 import Image from 'next/image'
 
 export default function Post({ source, frontMatter }) {
@@ -57,7 +57,7 @@ export default function Post({ source, frontMatter }) {
               alt={frontMatter.alt}
             />
           </div>
-          <section className='w-full mt-5 prose dark:prose-dark'>
+          <section className='w-full mt-5 prose prose-blue dark:prose-dark'>
             {content}
           </section>
         </article>

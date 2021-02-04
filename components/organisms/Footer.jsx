@@ -1,5 +1,5 @@
-import SocialLink from '../atoms/SocialLink'
-import SocialIcon from '../atoms/SocialIcon'
+import SocialLink from '@/atoms/SocialLink'
+import SocialIcon from '@/atoms/SocialIcon'
 
 export default function Footer() {
   const socials = [

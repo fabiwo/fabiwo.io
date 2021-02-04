@@ -1,4 +1,4 @@
-import NewsletterForm from '../components/molecules/NewsletterForm'
+import NewsletterForm from '@/molecules/NewsletterForm'
 
 // Component renders main page layout with the same styling and fills with content
 

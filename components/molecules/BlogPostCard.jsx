@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import Date from '../atoms/Date'
+import Date from '@/atoms/Date'
 import Image from 'next/image'
 
 export default function BlogPostCard({

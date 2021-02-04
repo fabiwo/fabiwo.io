@@ -1,7 +1,7 @@
 import Head from 'next/head'
-import MainLayout from '../layouts/MainLayout'
-import ResponsiveSectionHeading from '../components/atoms/ResponsiveSectionHeading'
-import SeoProvider from '../layouts/SeoProvider'
+import MainLayout from '@/layouts/MainLayout'
+import ResponsiveSectionHeading from '@/components/atoms/ResponsiveSectionHeading'
+import SeoProvider from '@/layouts/SeoProvider'
 
 import Image from 'next/image'
 

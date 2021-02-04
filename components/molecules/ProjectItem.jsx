@@ -1,5 +1,5 @@
-import ToolImage from '../atoms/ToolImage'
-import Centre from '../atoms/Centre'
+import ToolImage from '@/atoms/ToolImage'
+import Centre from '@/atoms/Centre'
 import Image from 'next/image'
 
 export default function ProjectItem({

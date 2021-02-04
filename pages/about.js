@@ -1,8 +1,8 @@
 import Head from 'next/head'
-import AboutLayout from '../layouts/AboutLayout'
-import ResponsiveSectionHeading from '../components/atoms/ResponsiveSectionHeading'
-import SeoProvider from '../layouts/SeoProvider'
-import NewsletterForm from '../components/molecules/NewsletterForm'
+import AboutLayout from '@/layouts/AboutLayout'
+import ResponsiveSectionHeading from '@/components/atoms/ResponsiveSectionHeading'
+import SeoProvider from '@/layouts/SeoProvider'
+import NewsletterForm from '@/molecules/NewsletterForm'
 
 import Image from 'next/image'
 
