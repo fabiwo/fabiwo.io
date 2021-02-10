@@ -22,6 +22,13 @@ export default function SeoProvider({ children }) {
       {/* Html head information */}
       <Head>
         <meta name='robots' content='follow, index' />
+        <meta
+          name='Description'
+          content="Author: Fabian Wolff,
+        This is Fabian's Blog where I solve problems, write about interesting topics and create things with code
+        "
+        />
+        <meta property='og:site_name' content='Fabian Wolff'></meta>
       </Head>
       {/* Head of the page  */}
       <Navbar mounted={mounted} />

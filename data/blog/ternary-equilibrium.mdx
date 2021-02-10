@@ -1,0 +1,55 @@
+---
+title: Guide to Ternary Equilibrium
+date: '2021-02-06'
+description: How to use Ternary Equilibrium to visualize your data
+author: Fabian Wolff
+image: '/static/images/blog/ternary-equilibrium/thumbnail.png'
+alt: 'Ternary Equilibrium'
+tags:
+  - d3.js
+  - Sass
+  - Javascript
+  - Chemical Engineering
+---
+
+This is the official Guide on how to use Ternary Equilibrium. For better readability the article is going to cover:
+
+1. What is a ternary graph ? ▲
+2. Who uses ternary graphs ? 📈
+3. Ternary graphs in Chemical Engineering 👨‍🔬
+4. Why I created the Ternary Equilibrium 🔥
+5. Overview of the Application 🧐
+
+After a quick introduction i would like to guide you step for step into how to use the application:
+
+- Importing
+- Customize
+- Export
+- Explore
+
+## What is a Ternary Graph? ▲
+
+In general a ternary graph is a triangular diagram used to display the proportion of **three variables** (a,b,c) that
+together compound to a constant. Usually the constant is either 1.0 or 100%.
+
+<TeXBlock expression={String.raw`left+bottom+right=1`} />
+
+The graph therefore consists of three axes:
+
+- The <span className="font-bold text-red-500">left</span>
+  axis
+- The <span className="font-bold text-blue-500">bottom</span> axis
+- The <span className="font-bold text-green-500">right</span> axis
+
+<Centre>
+  <Image
+    alt={`how to read ternary axis`}
+    src={`/static/images/blog/ternary-equilibrium/read-axis.png`}
+    width={800}
+    height={300}
+    className='object-cover '
+    quality={100}
+  />
+</Centre>
+
+## Who uses Ternary Graphs? 📈

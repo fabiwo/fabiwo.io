@@ -16,9 +16,9 @@ export default function ProjectItem({
       <a href={href} target='_blank' rel='noopener noreferrer'>
         <div className='relative'>
           <div className='absolute top-0 flex flex-col p-2 space-y-1 right-5'>
-            <h6 className='z-50 text-xs font-light text-right text-white md:text-lg'>
+            <h1 className='z-50 text-xs font-light text-right text-white md:text-lg'>
               TECH STACK
-            </h6>
+            </h1>
             <div className='z-50 flex space-x-3'>
               {tools.map((tool, i) => (
                 <ToolImage key={i} {...tool} />
@@ -31,14 +31,15 @@ export default function ProjectItem({
             width={900}
             height={500}
             className='object-cover rounded-t-md'
+            priority={true}
           />
         </div>
         <div className='flex flex-col p-10'>
           <div className='flex flex-col'>
             <h1 className='text-2xl font-bold'>{title}</h1>
-            <h6 className='pb-4 font-light text-gray-500 md:text-lg dark:text-gray-300'>
+            <h2 className='pb-4 font-light text-gray-500 md:text-lg dark:text-gray-300'>
               {category}
-            </h6>
+            </h2>
             <p>{description}</p>
           </div>
         </div>

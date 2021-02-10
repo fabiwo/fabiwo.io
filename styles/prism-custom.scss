@@ -30,25 +30,25 @@ pre:before {
     padding: 0;
 }
 
-pre[class*="js"]:before {
-    content: "JS";
-    color: #ff7a18 !important;
-}
+// pre[class*="js"]:before {
+    //     content: "JS";
+    //     color: #ff7a18 !important;
+    // }
 
-pre[class*="css"]:before {
-    content: "CSS";
-    color: #ff7a18 !important;
-}
+    // pre[class*="css"]:before {
+    //     content: "CSS";
+    //     color: #ff7a18 !important;
+    // }
 
-pre[class*="scss"]:before {
-    content: "SCSS";
-    color: #ff7a18 !important;
-}
+    // pre[class*="scss"]:before {
+    //     content: "SCSS";
+    //     color: #ff7a18 !important;
+    // }
 
-pre[class*="python"]:before {
-    content: "Python";
-    color: #ff7a18 !important;
-}
+    // pre[class*="python"]:before {
+    //     content: "Python";
+    //     color: #ff7a18 !important;
+    // }
 
 /* Code blocks */
 pre[class*="language-"] {
