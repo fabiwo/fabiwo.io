@@ -15,11 +15,8 @@ export default function ProjectItem({
     <div className='transition duration-300 ease-out transform bg-white rounded-md shadow cursor-pointer dark:bg-outer-space-600 dark:border-outer-space-500 hover:-translate-y-1 hover:shadow-lg'>
       <a href={href} target='_blank' rel='noopener noreferrer'>
         <div className='relative'>
-          <div className='absolute top-0 flex flex-col p-2 space-y-1 right-5'>
-            <h1 className='z-50 text-xs font-light text-right text-white md:text-lg'>
-              TECH STACK
-            </h1>
-            <div className='z-50 flex space-x-3'>
+          <div className='absolute top-0 flex flex-col pt-5 right-5'>
+            <div className='z-50 flex space-x-1'>
               {tools.map((tool, i) => (
                 <ToolImage key={i} {...tool} />
               ))}

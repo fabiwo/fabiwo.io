@@ -14,15 +14,16 @@ export default function BlogPostCard({
 }) {
   return (
     <Link href={`/blog/${id}`}>
-      <li className='flex flex-col w-full bg-white border rounded-md shadow cursor-pointer dark:bg-outer-space-600 dark:border-outer-space-500 md:flex-row'>
-        <img
-          className='object-cover rounded-t-md max-h-52 md:rounded-l-md md:rounded-t-none md:w-52 md:max-h-full'
-          src={image ? image : '/static/images/placeholder.svg'}
-          alt={alt ? alt : 'Placeholder'}
-          width={1000}
-          height={1000}
-        />
-        <div className='flex flex-col max-w-sm py-5 px-7'>
+      <li className='flex flex-col w-full bg-white border rounded-md shadow cursor-pointer dark:bg-outer-space-600 dark:border-outer-space-500 md:flex-row hover:shadow-md'>
+        <div className='relative h-56 md:w-56 md:h-auto'>
+          <Image
+            src={image ? image : '/static/images/placeholder.svg'}
+            alt={alt ? alt : 'Placeholder'}
+            className='object-cover rounded-t-md md:rounded-tl-md md:rounded-bl-md md:rounded-tr-none'
+            layout='fill'
+          />
+        </div>
+        <div className='flex flex-col max-w-sm py-6 px-7'>
           <h2 className='text-lg font-bold '>{title}</h2>
           <p className='my-2 text-sm text-gray-500 dark:text-gray-300'>
             {description}

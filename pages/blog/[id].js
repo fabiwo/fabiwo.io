@@ -1,6 +1,7 @@
 import SeoProvider from '@/layouts/SeoProvider'
 import MainLayout from '@/layouts/MainLayout'
 import Date from '@/components/atoms/Date'
+import TableOfContent from '@/components/molecules/TableOfContent'
 import Head from 'next/head'
 import { getAllSlugIds, getSlugData } from '@/lib/mdx'
 import hydrate from 'next-mdx-remote/hydrate'
@@ -8,7 +9,7 @@ import MDXComponents from '@/components/MDXComponents'
 import PostStats from '@/molecules/PostStats'
 import Image from 'next/image'
 
-export default function Post({ source, frontMatter }) {
+export default function Post({ source, headings, frontMatter }) {
   const content = hydrate(source, {
     components: MDXComponents,
   })
@@ -19,7 +20,7 @@ export default function Post({ source, frontMatter }) {
         <title>{frontMatter.title}</title>
       </Head>
       <MainLayout>
-        <article className='w-full max-w-full mb-10'>
+        <article className='w-full max-w-2xl mx-auto mb-10'>
           <h1 className='mb-1 text-4xl font-bold md:text-5xl'>
             {frontMatter.title}
           </h1>
@@ -55,8 +56,10 @@ export default function Post({ source, frontMatter }) {
                   : '/static/images/placeholder.svg'
               }
               alt={frontMatter.alt}
+              priority='true'
             />
           </div>
+          <TableOfContent headings={headings} />
           <section className='w-full mt-5 prose prose-blue dark:prose-dark'>
             {content}
           </section>
@@ -70,6 +73,7 @@ export async function getStaticProps({ params }) {
   const postData = await getSlugData(params.id, 'blog')
   return {
     props: {
+      headings: postData.headings,
       source: postData.mdxSource,
       frontMatter: postData.frontMatter,
     },
