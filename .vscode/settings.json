@@ -1,2 +1,22 @@
 {
+    "editor.wordWrap": "on",
+    "editor.wordWrapColumn": 80,
+    "[mdx]": {
+        "editor.wordWrap": "on",
+    },
+    "emmet.includeLanguages": {
+        "mdx": "html",
+        "markdown": "html"
+    },
+    "[mdx]": {
+        "editor.quickSuggestions": {
+            "strings": true
+        }
+    },
+    "[markdown]": {
+        "editor.quickSuggestions": {
+            "strings": true
+        }
+    },
+
 }

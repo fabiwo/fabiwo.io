@@ -2,6 +2,7 @@ import CodeBlock from '@/atoms/CodeBlock'
 import { TeXBlock } from '@/atoms/TeXBlock'
 import CodeText from '@/atoms/CodeText'
 import Centre from '@/atoms/Centre'
+import InlineLink, { InlineNavLink } from '@/atoms/InlineLink'
 import Image from 'next/image'
 
 const MDXComponents = {
@@ -10,6 +11,8 @@ const MDXComponents = {
   Image,
   Centre,
   CodeText,
+  InlineLink,
+  InlineNavLink,
 }
 
 export default MDXComponents

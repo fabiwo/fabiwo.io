@@ -20,7 +20,7 @@ export default function Post({ source, headings, frontMatter }) {
         <title>{frontMatter.title}</title>
       </Head>
       <MainLayout>
-        <article className='w-full max-w-2xl mx-auto mb-10'>
+        <article className='w-full max-w-3xl mx-auto mb-10'>
           <h1 className='mb-1 text-4xl font-bold md:text-5xl'>
             {frontMatter.title}
           </h1>
@@ -60,7 +60,7 @@ export default function Post({ source, headings, frontMatter }) {
             />
           </div>
           <TableOfContent headings={headings} />
-          <section className='w-full mt-5 prose prose-blue dark:prose-dark'>
+          <section className='w-full mt-5 prose prose-blue max-w-none dark:prose-dark'>
             {content}
           </section>
         </article>

@@ -4,7 +4,10 @@ import Image from 'next/image'
 import MainLayout from '@/layouts/MainLayout'
 import PageSection from '@/layouts/PageSection'
 import ResponsiveSectionHeading from '@/components/atoms/ResponsiveSectionHeading'
-import BlogPostCard, { NewestBlogPostCard } from '@/molecules/BlogPostCard'
+import BlogPostCard, {
+  NewestBlogPostCard,
+  SimpleBlogPost,
+} from '@/molecules/BlogPostCard'
 import PostContainer from '@/components/atoms/PostContainer'
 import Centre from '@/components/atoms/Centre'
 //import SearchBar from '@/components/atoms/SearchBar'
@@ -74,7 +77,7 @@ export default function Blog({ allPostsData }) {
           )}
           <PostContainer>
             {filteredBlogPosts.map((post, i) => (
-              <BlogPostCard key={i} {...post} />
+              <SimpleBlogPost key={i} {...post} />
             ))}
           </PostContainer>
         </section>

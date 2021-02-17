@@ -3,8 +3,8 @@ pre[class*="language-"] {
     position: relative;
     color: #ccc;
     background: none;
-    font-family: Operator Mono SSm A, Operator Mono SSm B, Source Code Pro, Menlo, Consolas, Monaco, monospace;
-    font-size: 1.05rem;
+    font-family: Menlo, Consolas, Monaco, Liberation Mono, Lucida Console, monospace;
+    font-size: 1rem;
     text-align: left;
     white-space: pre;
     word-spacing: normal;
@@ -26,36 +26,37 @@ pre:before {
     font-size: 0.9rem;
     position: absolute;
     top: .25rem;
-    right: .5rem;
+    right: 0.5rem;
     padding: 0;
 }
 
-// pre[class*="js"]:before {
-    //     content: "JS";
-    //     color: #ff7a18 !important;
-    // }
+pre[class*="js"]:before {
+    content: "JS";
+    color: #ff7a18 !important;
+}
 
-    // pre[class*="css"]:before {
-    //     content: "CSS";
-    //     color: #ff7a18 !important;
-    // }
+pre[class*="css"]:before {
+    content: "CSS";
+    color: #ff7a18 !important;
+}
 
-    // pre[class*="scss"]:before {
-    //     content: "SCSS";
-    //     color: #ff7a18 !important;
-    // }
+pre[class*="scss"]:before {
+    content: "SCSS";
+    color: #ff7a18 !important;
+}
 
-    // pre[class*="python"]:before {
-    //     content: "Python";
-    //     color: #ff7a18 !important;
-    // }
+pre[class*="python"]:before {
+    content: "Python";
+    color: #ff7a18 !important;
+}
 
 /* Code blocks */
 pre[class*="language-"] {
-    padding: 2rem;
+    padding: 1.25rem;
     margin: .5em 0;
     border-radius: 5px;
     overflow: auto;
+
 }
 
 :not(pre)>code[class*="language-"],

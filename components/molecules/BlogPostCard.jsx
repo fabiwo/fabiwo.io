@@ -36,6 +36,28 @@ export default function BlogPostCard({
   )
 }
 
+export function SimpleBlogPost({
+  id,
+  title,
+  description,
+  image,
+  tags,
+  date,
+  alt,
+  views,
+}) {
+  return (
+    <Link href={`/blog/${id}`}>
+      <li className='cursor-pointer'>
+        <h2 className='mb-1 text-xl font-medium'>{title}</h2>
+        <p className='text-gray-500 dark:text-outer-space-300'>{description}</p>
+        <Date dateString={date} />
+        {/* &#8226;{views} */}
+      </li>
+    </Link>
+  )
+}
+
 export function NewestBlogPostCard({
   id,
   title,
