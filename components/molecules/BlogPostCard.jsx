@@ -48,7 +48,7 @@ export function SimpleBlogPost({
 }) {
   return (
     <Link href={`/blog/${id}`}>
-      <li className='cursor-pointer'>
+      <li className='transition duration-100 cursor-pointer hover:text-blue-500'>
         <h2 className='mb-1 text-xl font-medium'>{title}</h2>
         <p className='text-gray-500 dark:text-outer-space-300'>{description}</p>
         <Date dateString={date} />

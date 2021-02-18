@@ -1,5 +1,5 @@
 ---
-title: Ternary Equilibrium - Building Ternary Graphs for Chemical Engineers
+title: Ternary Equilibrium - Ternary Graphs Made Easy
 date: '2021-02-06'
 description: This is the How to Guide for building Ternary Graphs with my Webapp Ternary Equilibrium
 author: Fabian Wolff
@@ -14,24 +14,30 @@ tags:
 
 This article is not only the first blog entry of mine but also the official launch of my first application.🥳
 
-I am launching the application and my blog at the same time.
+I am launching my application <InlineLink href='https://ternary-alpha.herokuapp.com/' text='Ternary Equilibrium'/> and blog at the same time.
 It was quite a bumpy road learning web development from scratch whilst building an application.
 I learned a lot and am really happy to finally release my work and share it with others! 🎉
 
-For people new to ternary graphs I am going to cover the basics to read and understand them. If you just want to try the application you can jump straight ahead to <InlineNavLink href='#overview-' text='Overview🌍'/>.
+For people new to ternary graphs I am going to cover the basics to read and understand them. If you just want to try the application you can jump straight ahead to <InlineNavLink href='#4-how-to-use-' text='How to Use 🌍'/> or <InlineLink href='https://ternary-alpha.herokuapp.com/' text='launch the application 🚀'/>.
 
 ## Why did I develop a Ternary Equilibrium?
 
-As a chemical engineer myself, I didn't know any good resources to build ternary graphs as we need them for liquid-liquid extractions. I took that as a motivation to create one myself and learn web development along the way. The bigger concept behind Ternary Equilibrium is an easy-to-use and easy-to-access resource to create ternary graphs for chemical engineers. It is made for future students that are learning about ternary graphs and people that just want a convenient way to create their graphs.
+As a chemical engineer myself, I didn't know any good resources to build ternary graphs as we need them for liquid-liquid extractions.
 
-## What is a Ternary Graph ▲
+I took that as a motivation to create one myself and learn web development along the way.
 
-In general, a ternary graph is a triangular diagram used to display the proportion of three variables (<span className="text-red-500 font-bold">a</span>,<span className="text-blue-500 font-bold">b</span>,<span className="text-green-500 font-bold">c</span>) that together compound to a constant.
+The bigger concept behind Ternary Equilibrium is an **easy-to-use** and **easy-to-access** resource to create ternary graphs for chemical engineers.
+
+It is made for **future students** that are learning about ternary graphs and **people that just want a convenient way to create their graphs**.
+
+## 1. What is a Ternary Graph 👨‍🏫
+
+In general, a ternary graph is a **triangular diagram** used to display the proportion of **three variables** (<span className="text-red-500 font-bold">a</span>,<span className="text-blue-500 font-bold">b</span>,<span className="text-green-500 font-bold">c</span>) that together compound to a constant.
 Usually the constant is either 1.0 or 100%. Because (<span className="text-red-500 font-bold">a</span>+<span className="text-blue-500 font-bold">b</span>+<span className="text-green-500 font-bold">c</span>)=100% adding a point to the graph only requires two coordinates.  The graph, therefore, has two degrees of freedom.
 
-## Reading 🦉
+## 2. Reading a Ternary Graph🤓
 
-Since we have three variables, we need three axes to display them. For convenience I am going to name the axes (see a left triangle in the picture):
+Since you have three variables, you need three axes to display them. For convenience I am going to name the axes (see a left triangle in the picture):
 
 1. <span className='text-red-500 font-bold'>left</span>
 2. <span className='text-blue-500 font-bold'>bottom</span>
@@ -48,14 +54,19 @@ The values on each axis increase counterclockwise from 0 to 100 (right triangle)
   />
 </Centre>
 
-Each vertice of the triangle represents a composition of 100% for one component and
+**Each vertice of the triangle represents a composition of 100% for one component** and
 therefore 0% for the other two components (see the triangle in the next picture).
-To describe the composition more conveniently [<span className="text-red-500 font-bold">10</span>,<span className="text-blue-500 font-bold">20</span>,<span className="text-green-500 font-bold">70</span>] equals a composition of <span className="text-red-500 font-bold">10% left</span>,<span className="text-blue-500 font-bold">20% bottom</span>,<span className="text-green-500 font-bold">70% right</span> (starting from the left axis and rotating counterclockwise). The **bottom** left vertice (red circle) therefore has the composition[<span className="text-red-500 font-bold">100</span>,<span className="text-blue-500 font-bold">0</span>,<span className="text-green-500 font-bold">0</span>], the
-bottom right vertice (blue circle) [<span className="text-red-500 font-bold">0</span>,<span className="text-blue-500 font-bold">100</span>,<span className="text-green-500 font-bold">0</span>] and the top vertice (green circle)
-[<span className="text-red-500 font-bold">0</span>,<span className="text-blue-500 font-bold">0</span>,<span className="text-green-500 font-bold">100</span>]. Next, we focus on how to read an actual point inside the triangle. If
-you look at the graph below, the black point has a composition of [<span className="text-red-500 font-bold">30</span>,<span className="text-blue-500 font-bold">20</span>,<span className="text-green-500 font-bold">50</span>]. To
-understand this you have to follow each of the lines ([<span className="text-red-500 font-bold">red</span>,<span className="text-blue-500 font-bold">blue</span>,<span className="text-green-500 font-bold">green</span>]) from the
-point, back to the corresponding axis. You then just read the value from the axis.
+
+To describe the composition more conveniently [<span className="text-red-500 font-bold">30</span>, <span className="text-blue-500 font-bold">20</span>, <span className="text-green-500 font-bold">50</span>] equals a composition of <span className="text-red-500 font-bold">30% left</span>, <span className="text-blue-500 font-bold">20% bottom</span>, <span className="text-green-500 font-bold">50% right</span> (starting from the left axis and rotating counterclockwise).
+
+The **bottom left vertice (red circle)** therefore has the composition[<span className="text-red-500 font-bold">100</span>,<span className="text-blue-500 font-bold">0</span>,<span className="text-green-500 font-bold">0</span>], the
+**bottom right vertice (blue circle)** [<span className="text-red-500 font-bold">0</span>,<span className="text-blue-500 font-bold">100</span>,<span className="text-green-500 font-bold">0</span>] and the **top vertice (green circle)**
+[<span className="text-red-500 font-bold">0</span>,<span className="text-blue-500 font-bold">0</span>,<span className="text-green-500 font-bold">100</span>].
+
+Next, we focus on **how to read an actual point inside the triangle**.
+
+If you look at the graph below, the black point has a composition of [<span className="text-red-500 font-bold">30</span>,<span className="text-blue-500 font-bold">20</span>,<span className="text-green-500 font-bold">50</span>]. To
+understand this you have to **follow each of the lines** [<span className="text-red-500 font-bold">red</span>,<span className="text-blue-500 font-bold">blue</span>,<span className="text-green-500 font-bold">green</span>] **from the point, back to the corresponding axis**. You then just read the value from the axis.
 
 <Centre>
   <Image
@@ -78,9 +89,11 @@ Below is a visualization of the orientation of each axis line for every 10th per
   />
 </Centre>
 
-## Usage in Chemical Engineering 👨‍🔬
+## 3. Usage in Chemical Engineering 👨‍🔬
 
-Ternary graphs in chemical engineering are mainly used in the field of **Liquid-Liquid Extraction**. They visualize the equilibrium behavior of three-component systems. What we want to visualize is the area where two components of the three are immiscible (**Two-Phase-Region**) and how a mixture within that area splits along the tie lines.
+Ternary graphs in chemical engineering are mainly used in the field of **Liquid-Liquid Extraction**. They visualize the equilibrium behavior of three-component systems.
+
+What we want to visualize is the area where two components of the three are immiscible (**Two-Phase-Region**) and how a mixture within that area splits along the tie lines.
 
 - **Two-Phase-Region** (blue area):  Two of the three are immiscible. A mixture with a composition inside splits along a **Tie-Line** into two residue streams (**Extract** and **Raffinate**).
 - **Single-Phase-Region** (white area): All three components are miscible and exist as one phase.
@@ -97,18 +110,17 @@ Ternary graphs in chemical engineering are mainly used in the field of **Liquid-
   />
 </Centre>
 
-## Overview 🌍
+## 4. How to Use 🌍
 
-<Centre>
-  <Image
-    alt={`placeholder`}
-    src={`/static/images/blog/ternary-equilibrium/overview-min.png`}
-    width={1920}
-    height={1080}
-  />
-</Centre>
+Now that you know how to read and when you should use ternary graphs, we are going to make one ourselves 😎.
 
-Now that you know how to read and why we use ternary graphs, we are going to make one ourselves 😎.
+<Video
+  sources={{
+    mp4: '/static/images/blog/ternary-equilibrium/how-to-video.mp4',
+    webm: '/static/images/blog/ternary-equilibrium/how-to-video.webm',
+  }}
+/>
+
 The application is made up of 4 tabs (left bar):
 
 - **Data Tab**: Import and add data.
@@ -116,7 +128,7 @@ The application is made up of 4 tabs (left bar):
 - **Styling Tab**: Apply pre-made styles or create your own by styling the graph with the options described in [Styling Link].
 - **Trace Tab**: Shows all added datasets, style equilibrium points, two-phase-region, tie-lines.
 
-First, we need to import data into the table in the data tab. Each point we add should fill every column to a sum of 100 or 1 e.g [<span className="text-red-500 font-bold">20</span>,<span className="text-blue-500 font-bold">30</span>,<span className="text-green-500 font-bold">50</span>].
+First, you need to import data into the table in the data tab. Each point you add should fill every column to a sum of 100 or 1 e.g [<span className="text-red-500 font-bold">20</span>,<span className="text-blue-500 font-bold">30</span>,<span className="text-green-500 font-bold">50</span>].
 The table is split into three columns:
 
 1. First column for the composition of the left axis
@@ -124,24 +136,34 @@ The table is split into three columns:
 3. Third column for the composition of the right axis
    Each data point in the table is going to represent one equilibrium point on the binodal. Don't worry about the order you put them in. The application does the connecting for you. 🧙‍♂️
 
-## Importing ✨
+## 5. Importing ✨
 
-The most convenient way to add data is to use an Excel or CSV file. Here are two examples to copy the format:
+<Video
+  sources={{
+    mp4: '/static/images/blog/ternary-equilibrium/import-video.mp4',
+    webm: '/static/images/blog/ternary-equilibrium/import-video.webm',
+  }}
+/>
 
-- <a href='/static/images/blog/ternary-equilibrium/Water_AceticAcid_ButylAcetate_313K.csv'>
-    .csv Example
+The most convenient way to add data is to use an Excel or CSV file. Here are two examples to copy the format
+
+<div className='w-full flex space-x-5 justify-center'>
+  <a href='/static/images/blog/ternary-equilibrium/Water_AceticAcid_ButylAcetate_313K.csv'>
+    Download .csv Example
   </a>
-- <a href='/static/images/blog/ternary-equilibrium/Water_AceticAcid_ButylAcetate_313K.xlsx'>
-    .xlsx Example
+  <a href='/static/images/blog/ternary-equilibrium/Water_AceticAcid_ButylAcetate_313K.xlsx'>
+    Download .xlsx Example
   </a>
+</div>
 
-PS.: Don't worry about your data. Nothing gets stored or processed on the server. Everything stays on your computer!
-Step-through
+**PS.: Don't worry about your data. Nothing gets stored or processed on the server. Everything stays on your computer!**
 
-1. Activate the Data tab.
-2. Upload a .csv or .xlsx file (drag&drop or file menu) / Use a example dataset / Type in your values.
-3. Add the data to the plot by clicking on the green "Add" button.
-4. Continue to [Exploring insert link]/ Repeat with another dataset.
+### Step-through
+
+1. Activate the **Data Tab**.
+2. Upload a **.csv** or **.xlsx** file (drag&drop or file menu) / Use a **example dataset** / Type in your values.
+3. Add the data to the plot by clicking on the **green "Add" button**.
+4. Continue to <InlineNavLink href='#6-explore-' text='Explore 🍩'/> / Repeat with another dataset.
 
 ### Where do I find the data tab?
 
@@ -149,36 +171,41 @@ The data tab is the first tab (left bar) with the table icon.
 
 ### What data formats can I Import?
 
-You have 3 options to choose from for your data:
+You have • 3 options to choose from for your data:
 
-1. Upload a .csv file.
-2. Upload a .xlsx file.
+1. Upload a **.csv** file.
+2. Upload a **.xlsx** file.
 3. Type in the values yourself.
 
 ### How should I upload the data?
 
-Either use the file menu or drag&drop your files into the area.
-[Drag and Drop video]
+Either use the **file menu** or **drag&drop** your files into the area.
 
 ### I don't have data yet but I want to try your application...
 
-Don't be afraid. I got you covered! Just use one of the three example datasets by using the dropdown on the top of the data tab.
+Don't be afraid. I got you covered! Just use one of the **three example datasets** by using the dropdown on the top of the data tab.
 [Dropdown video]
 
 ### Can I add more than one dataset?
 
 Just add another dataset in the table you can add as many as you want. When it gets a bit crowdy in the graph just click the legend entries to hide individual datasets. Go try it out!
 
-## Explore 🍩
+## 6. Explore 🍩
+
+<Video
+  sources={{
+    mp4: '/static/images/blog/ternary-equilibrium/explore-video.mp4',
+    webm: '/static/images/blog/ternary-equilibrium/explore-video.webm',
+  }}
+/>
 
 Probably the best feature 😎
-[Two datasets video]
 
 ### Step-through
 
-1. Activate the explore tab.
-2. Activate the crosshair.
-3. Hover over the diagram and look at the. 🍩
+1. Activate the **Explore Tab**.
+2. Activate the **Orientation Crosshair**.
+3. **Hover over the diagram** and look at the. 🍩
 4. Watch the magic. 🧙‍♂️
 
 ### Where do I find the explore tab?
@@ -189,25 +216,32 @@ The explore tab is the second tab (left bar) with the donut icon.
 
 The crosshair button is the second round blue button on the right top corner.
 
-## Style 💅
+## 7. Style 💅
 
-The approach for styling was to provide good-looking defaults and also give you the freedom to customize everything to your needs.
+<Video
+  sources={{
+    mp4: '/static/images/blog/ternary-equilibrium/style-video.mp4',
+    webm: '/static/images/blog/ternary-equilibrium/style-video.webm',
+  }}
+/>
+
+The approach for styling was to provide **good-looking defaults** and also give you the **freedom to customize everything to your needs**.
 
 ### Step-through
 
-1. Activate the styling tab.
-2. Select a theme or use the default one.
+1. Activate the **Styling Tab**.
+2. **Select a theme** or use the default one.
 3. Let your imagination out. 🎨
-4. Switch to the Trace Tab and open your dataset.
+4. **Switch to the Trace Tab** and customize your dataset.
 5. Let your imagination out. 🎨
 
 ### You keep redoing the same styles over and over?
 
-Got you covered! You can export your beautiful custom styles ("Style" option in the export section) as JSON files and reimport them for all your future plots in the drag&drop area in the data tab.
+Got you covered! You can **export your beautiful custom styles** ("Style" option in the export section) as JSON files and reimport them for all your future plots in the drag&drop area in the data tab.
 
 ### Is there an option to export my datasets so I can reuse them again?
 
-Got you covered! You can export the datasets you added and your style ("Traces" option in the export section) into JSON files.
+You can export the datasets you added and your style ("Traces" option in the export section) into JSON files.
 
 ### Can I change the font to LaTeX?
 
@@ -215,40 +249,47 @@ I also included LaTeX as a font so it looks professional!
 
 ### What is customizable?
 
-Graph:
+**Graph**:
 
-- Global: Theme, Fonts, Triangle Fill, Background Fill
-- Grid: Color, Line Opacity, Line Width
-- Ticks: Enable/Disable, Color, Size
-- Axes: Color, Width
-- Labels: Text, Text Color, Font Size
-- Title: Text, Color, Font Size
-- Legend: Enable/Disable
+- **Global**: Theme, Fonts, Triangle Fill, Background Fill
+- **Grid**: Color, Line Opacity, Line Width
+- **Ticks**: Enable/Disable, Color, Size
+- **Axes**: Color, Width
+- **Labels**: Text, Text Color, Font Size
+- **Title**: Text, Color, Font Size
+- **Legend**: Enable/Disable
 
-Traces:
+**Traces**:
 
-- Equilibrium Points: Enable/Disable, Symbols, Symbol Size, Symbol Opacity, Symbol Fill, Border Color, Border Width
-- Konoden: Enable/Disable, Line Style, Line Color, Opacity, Line Width
-- Binodal: Enable/Disable, Fill Color, Line Color, Line Style, Line Width, Area Opacity
+- **Equilibrium Points**: Enable/Disable, Symbols, Symbol Size, Symbol Opacity, Symbol Fill, Border Color, Border Width
+- **Konoden**: Enable/Disable, Line Style, Line Color, Opacity, Line Width
+- **Binodal**: Enable/Disable, Fill Color, Line Color, Line Style, Line Width, Area Opacity
 
-## Export 🎉
+## 8. Export 🎉
 
-You are close to the finish line 🏁. Now we only have to export what we created.
+<Video
+  sources={{
+    mp4: '/static/images/blog/ternary-equilibrium/export-video.mp4',
+    webm: '/static/images/blog/ternary-equilibrium/export-video.webm',
+  }}
+/>
+
+You are close to the finish line 🏁. Now you only have to **export what you created**.
 
 ### Step-through
 
-1. Click the export circle button on the right top corner
-2. Select the options you want to export
+1. **Click the export circle button** on the right top corner
+2. **Select the options** you want to export
    - Graph as image
    - Configurations for reusing dataset and style
-3. Click the download button
+3. **Click the download button**
 4. You did it! Enjoy your Ternary Graph! ✌
 
 ### Which formats are available
 
-- .pdf
-- .svg
-- .png
+- **.pdf**
+- **.svg**
+- **.png**
 
 ## Final Words
 
@@ -258,4 +299,5 @@ out😅
 I would love to get your thoughts and feedback. Write me <InlineLink href='https://twitter.com/ffabiwo' text='@ffabiwo'/>
 
 If you would like to get informed when I post about new articles, ideas and projects join my newsletter.
+
 👇👇👇

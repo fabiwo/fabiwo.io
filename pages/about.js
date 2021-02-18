@@ -3,6 +3,7 @@ import AboutLayout from '@/layouts/AboutLayout'
 import ResponsiveSectionHeading from '@/components/atoms/ResponsiveSectionHeading'
 import SeoProvider from '@/layouts/SeoProvider'
 import NewsletterForm from '@/molecules/NewsletterForm'
+import InlineLink from '@/atoms/InlineLink'
 
 import Image from 'next/image'
 
@@ -45,14 +46,16 @@ export default function About() {
             </p>
             <p>
               I would love to share my journey with you and provide information
-              I wish somebody wrote down when I was learning. You can expect
-              posts about <strong>chemical engineering</strong>,{' '}
+              I wish somebody wrote down when I was learning.
+            </p>
+            <p>
+              You can expect posts about <strong>chemical engineering</strong>,{' '}
               <strong>development</strong>, and{' '}
               <strong>personal projects</strong> I am working on.
             </p>
             <p>
-              If you want to know more about me and my journey you can subscribe
-              to my newsletter or hit me up on social media!
+              I would love to connect with you! Write me
+              <InlineLink href='https://twitter.com/ffabiwo' text='@ffabiwo' />
             </p>
           </section>
           <div className='flex flex-col mb-10 md:ml-5'>
