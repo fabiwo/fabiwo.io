@@ -1,7 +1,7 @@
 ---
 title: Ternary Equilibrium - Ternary Graphs Made Easy
 date: '2021-02-06'
-description: This is the How to Guide for building Ternary Graphs with my Webapp Ternary Equilibrium
+description: An easy-to-use and easy-to-access resource to create ternary graphs for chemical engineers
 author: Fabian Wolff
 image: '/static/images/blog/ternary-equilibrium/thumbnail.png'
 alt: 'Ternary Equilibrium'
@@ -12,13 +12,14 @@ tags:
   - Chemical Engineering
 ---
 
-This article is not only the first blog entry of mine but also the official launch of my first application.🥳
+With this article I am officially launching my own space on the internet as well as my first application <InlineLink href='https://ternary-alpha.herokuapp.com/' text='Ternary Equilibrium'/>.🥳
 
-I am launching my application <InlineLink href='https://ternary-alpha.herokuapp.com/' text='Ternary Equilibrium'/> and blog at the same time.
-It was quite a bumpy road learning web development from scratch whilst building an application.
+It was quite a bumpy road learning web development whilst also building an application.
 I learned a lot and am really happy to finally release my work and share it with others! 🎉
 
-For people new to ternary graphs I am going to cover the basics to read and understand them. If you just want to try the application you can jump straight ahead to <InlineNavLink href='#4-how-to-use-' text='How to Use 🌍'/> or <InlineLink href='https://ternary-alpha.herokuapp.com/' text='launch the application 🚀'/>.
+You will first get a brief introduction to why we use ternary graphs and how to read them. After that we will dive straight into building our own!
+
+If you already know about ternary graphs and want to start building, you can go to <InlineNavLink href='#4-how-to-use-' text='How to Use 🌍'/> or just <InlineLink href='https://ternary-alpha.herokuapp.com/' text='launch the application 🚀'/>.
 
 ## Why did I develop a Ternary Equilibrium?
 
@@ -32,18 +33,18 @@ It is made for **future students** that are learning about ternary graphs and **
 
 ## 1. What is a Ternary Graph 👨‍🏫
 
-In general, a ternary graph is a **triangular diagram** used to display the proportion of **three variables** (<span className="text-red-500 font-bold">a</span>,<span className="text-blue-500 font-bold">b</span>,<span className="text-green-500 font-bold">c</span>) that together compound to a constant.
+In general a ternary graph is a **triangular diagram** used to display the proportion of **three variables** (<span className="text-red-500 font-bold">a</span>,<span className="text-blue-500 font-bold">b</span>,<span className="text-green-500 font-bold">c</span>) that together compound to a constant.
 Usually the constant is either 1.0 or 100%. Because (<span className="text-red-500 font-bold">a</span>+<span className="text-blue-500 font-bold">b</span>+<span className="text-green-500 font-bold">c</span>)=100% adding a point to the graph only requires two coordinates.  The graph, therefore, has two degrees of freedom.
 
 ## 2. Reading a Ternary Graph🤓
 
-Since you have three variables, you need three axes to display them. For convenience I am going to name the axes (see a left triangle in the picture):
+The three variables get displayed on three axes. For convenience I am going to name the axes:
 
 1. <span className='text-red-500 font-bold'>left</span>
 2. <span className='text-blue-500 font-bold'>bottom</span>
 3. <span className='text-green-500 font-bold'>right</span>
 
-The values on each axis increase counterclockwise from 0 to 100 (right triangle).
+The values on each axis increase counterclockwise from 0 to 100.
 
 <Centre>
   <Image
