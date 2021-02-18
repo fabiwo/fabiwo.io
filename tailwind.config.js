@@ -8,6 +8,7 @@ module.exports = {
     './pages/**/*.jsx',
     './layouts/**/*.js',
     './layouts/**/*.jsx',
+    './data/blog**/*.mdx',
   ],
   darkMode: 'class',
   theme: {
