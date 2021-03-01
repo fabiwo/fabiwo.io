@@ -5,10 +5,26 @@ import '../styles/utilities.scss'
 import '../styles/prism-custom.scss'
 import 'katex/dist/katex.min.css'
 
+// For ganalytics
+import { useEffect } from 'react'
+import { useRouter } from 'next/router'
+import * as gtag from '../lib/gtag'
+
 import { ThemeProvider } from 'next-themes'
 import { DefaultSeo } from 'next-seo'
 
 export default function App({ Component, pageProps }) {
+  const router = useRouter()
+  useEffect(() => {
+    const handleRouteChange = (url) => {
+      gtag.pageview(url)
+    }
+    router.events.on('routeChangeComplete', handleRouteChange)
+    return () => {
+      router.events.off('routeChangeComplete', handleRouteChange)
+    }
+  }, [router.events])
+
   return (
     <ThemeProvider attribute='class'>
       <DefaultSeo
