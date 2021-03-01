@@ -4,10 +4,8 @@ import ResponsiveSectionHeading from '@/components/atoms/ResponsiveSectionHeadin
 import SeoProvider from '@/layouts/SeoProvider'
 import NewsletterForm from '@/molecules/NewsletterForm'
 import InlineLink from '@/atoms/InlineLink'
-
+import { NextSeo } from 'next-seo'
 import Image from 'next/image'
-
-const title = 'Fabian Wolff - About Me'
 
 const myLoader = ({ src, width, quality }) => {
   return `https://example.com/${src}?w=${width}&q=${quality || 75}`
@@ -17,10 +15,7 @@ export default function About() {
   return (
     <SeoProvider>
       <AboutLayout>
-        {/* Initialize head of page with title etc. */}{' '}
-        <Head>
-          <title> {title} </title>
-        </Head>
+        <NextSeo title='About' canonical='https://fabiwo.io/about' />
         <ResponsiveSectionHeading text={'ABOUT ME'} />
         <article className='flex flex-wrap-reverse w-full mb-10'>
           <section className='prose dark:prose-dark'>

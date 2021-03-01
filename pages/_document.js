@@ -1,4 +1,5 @@
 import Document, { Html, Head, Main, NextScript } from 'next/document'
+import { GA_TRACKING_ID } from '../lib/gtag'
 
 class MyDocument extends Document {
   render() {
@@ -38,8 +39,25 @@ class MyDocument extends Document {
           />
           <meta name='msapplication-TileColor' content='#da532c' />
           <meta name='theme-color' content='#df4f4f' />
+          {/* Global Site Tag (gtag.js) - Google Analytics */}
+          <script
+            async
+            src={`https://www.googletagmanager.com/gtag/js?id=${GA_TRACKING_ID}`}
+          />
+          <script
+            dangerouslySetInnerHTML={{
+              __html: `
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', '${GA_TRACKING_ID}', {
+                page_path: window.location.pathname,
+              });
+              `,
+            }}
+          />
         </Head>
-        <body className='transition-colors duration-300 ease-out bg-gray-50 dark:bg-outer-space-900 dark:text-white'>
+        <body className='transition-colors duration-150 ease-out bg-gray-50 dark:bg-outer-space-900 dark:text-white'>
           <Main />
           <NextScript />
         </body>

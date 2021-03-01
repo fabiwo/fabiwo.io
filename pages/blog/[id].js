@@ -8,17 +8,45 @@ import hydrate from 'next-mdx-remote/hydrate'
 import MDXComponents from '@/components/MDXComponents'
 import PostStats from '@/molecules/PostStats'
 import Image from 'next/image'
+import { NextSeo } from 'next-seo'
 
-export default function Post({ source, headings, frontMatter }) {
+export default function Post({ source, headings, frontMatter, postId }) {
   const content = hydrate(source, {
     components: MDXComponents,
   })
 
   return (
     <SeoProvider>
-      <Head>
-        <title>{frontMatter.title}</title>
-      </Head>
+      <NextSeo
+        titleTemplate='%s'
+        title={frontMatter.title}
+        description={frontMatter.description}
+        canonical={`https://fabiwo.io/blog/${postId}`}
+        openGraph={{
+          type: 'article',
+          article: {
+            publishedTime: frontMatter.date,
+          },
+          locale: 'en_IE',
+          url: `https://fabiwo.io/blog/${postId}`,
+          site_name: 'Fabian Wolff',
+          title: frontMatter.title,
+          images: [
+            {
+              url: frontMatter.image,
+              width: 800,
+              height: 600,
+              alt: frontMatter.alt,
+            },
+          ],
+        }}
+        twitter={{
+          handle: '@ffabiwo',
+          site: '@ffabiwo',
+          cardType: 'summary_large_image',
+        }}
+      />
+
       <MainLayout>
         <article className='w-full max-w-3xl mx-auto mb-10'>
           <h1 className='mb-1 text-4xl font-bold md:text-5xl'>
@@ -76,6 +104,7 @@ export async function getStaticProps({ params }) {
       headings: postData.headings,
       source: postData.mdxSource,
       frontMatter: postData.frontMatter,
+      postId: params.id,
     },
   }
 }

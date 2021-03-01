@@ -13,10 +13,9 @@ import Centre from '@/components/atoms/Centre'
 //import SearchBar from '@/components/atoms/SearchBar'
 import FoundTag from '@/components/atoms/FoundTag'
 import SeoProvider from '@/layouts/SeoProvider'
+import { NextSeo } from 'next-seo'
 
 import { getSortedSlugs } from '@/lib/mdx'
-
-const title = 'Fabian Wolff - Blog'
 
 export default function Blog({ allPostsData }) {
   const [searchValue, setSearchValue] = useState('')
@@ -28,10 +27,8 @@ export default function Blog({ allPostsData }) {
   return (
     <SeoProvider>
       <MainLayout>
-        {/* Initialize head of page with title etc. */}{' '}
-        <Head>
-          <title> {title} </title>
-        </Head>
+        <NextSeo title='Blog' canonical='https://fabiwo.io/blog' />
+
         {/* <ResponsiveSectionHeading text={'🔥 MOST RECENT 🔥'} />
       <PageSection>
         <NewestBlogPostCard {...allPostsData[0]} />

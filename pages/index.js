@@ -1,4 +1,3 @@
-import Head from 'next/head'
 import MainLayout from '@/layouts/MainLayout'
 import Image from 'next/image'
 import Link from 'next/link'
@@ -10,18 +9,13 @@ import PostContainer from '@/components/atoms/PostContainer'
 import PageSection from '@/layouts/PageSection'
 import { getSortedSlugs } from '@/lib/mdx'
 import SeoProvider from '@/layouts/SeoProvider'
-
-const title = 'Fabian Wolff'
+import { NextSeo } from 'next-seo'
 
 export default function Home({ newesPosts, allProjectData }) {
   return (
     <SeoProvider>
+      <NextSeo title='Home' canonical='https://fabiwo.io/' />
       <MainLayout home={true}>
-        {/* Initialize head of page with title etc. */}{' '}
-        <Head>
-          <title> {title} </title>
-        </Head>
-        {/* Was steht im Main Block */} {/* Blog Post Section */}{' '}
         <section className='flex flex-col justify-center w-full mb-20 text-center'>
           <div className='flex justify-center w-full mb-5'>
             <Image
