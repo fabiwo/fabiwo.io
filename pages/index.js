@@ -31,7 +31,7 @@ export default function Home({ newesPosts, allProjectData }) {
             Hi. I 'm Fabian. <br />
           </h1>
           <h2 className='text-lg text-gray-800 dark:text-gray-200'>
-            A chemical engineer and passionate front-end developer.
+            A chemical engineer and self taught front-end developer.
           </h2>
           <h2 className='text-lg text-gray-800 dark:text-gray-200'>
             I write about solving things with code!😎
