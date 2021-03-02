@@ -28,7 +28,7 @@ export default function Navbar({ mounted }) {
     <>
       <nav
         className={
-          `md:sticky md:bg-white md:dark:bg-outer-space-600 md:shadow top-0 mb-20 px-2 z-50` +
+          `md:sticky md:bg-white md:dark:bg-outer-space-600 md:shadow top-0 mb-14 px-2 z-50` +
           (isScrolling ? ' scrolled' : '')
         }
       >
@@ -38,7 +38,7 @@ export default function Navbar({ mounted }) {
             className='fixed w-screen h-screen bg-black bg-opacity-30'
           ></div>
         )}
-        <div className='flex items-center justify-between max-w-3xl p-2 mx-auto md:justify-between'>
+        <div className='flex items-center justify-between max-w-3xl py-2 mx-auto md:justify-between'>
           <Hamburger isOpen={isOpen} setOpen={setOpen} />
           <Menu isOpen={isOpen} setOpen={setOpen}>
             <ActiveLink text='Home' href='/' activeClassName='active' />

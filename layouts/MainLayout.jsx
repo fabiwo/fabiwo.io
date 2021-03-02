@@ -4,7 +4,7 @@ import NewsletterForm from '@/molecules/NewsletterForm'
 
 export default function MainLayout({ children }) {
   return (
-    <div className='relative flex flex-col items-start justify-center max-w-3xl px-10 mx-auto'>
+    <div className='relative flex flex-col items-start justify-center max-w-3xl px-5 mx-auto'>
       {children}
       <NewsletterForm />
     </div>

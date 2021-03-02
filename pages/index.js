@@ -17,24 +17,24 @@ export default function Home({ newesPosts, allProjectData }) {
       <NextSeo title='Home' canonical='https://fabiwo.io/' />
       <MainLayout home={true}>
         <section className='flex flex-col justify-center w-full mb-20 text-center'>
-          <div className='flex justify-center w-full mb-5'>
+          <div className='flex justify-center w-full mb-14'>
             <Image
               src='/static/images/fabiwo.jpg'
               alt='No entries found placeholder'
-              width={175}
-              height={175}
+              width={150}
+              height={150}
               className='object-cover rounded-full'
               quality={100}
             />
           </div>
-          <h1 className='text-5xl font-bold mb-7 dark:text-transparent bg-clip-text bg-gradient-to-r dark:from-blue-500 dark:to-green-500'>
-            Hi, I 'm Fabian Wolff
-          </h1>{' '}
-          <h2 className='text-lg text-gray-600 dark:text-gray-200'>
-            I'm a chemical engineer and self-taught developer.😎
+          <h1 className='mb-5 text-6xl font-black dark:text-transparent bg-clip-text bg-gradient-to-r dark:from-blue-500 dark:to-green-500'>
+            Hi. I 'm Fabian. <br />
+          </h1>
+          <h2 className='text-lg text-gray-800 dark:text-gray-200'>
+            A chemical engineer and passionate front-end developer.
           </h2>
-          <h2 className='text-lg text-gray-600 dark:text-gray-200'>
-            I write about solving things with code!
+          <h2 className='text-lg text-gray-800 dark:text-gray-200'>
+            I write about solving things with code!😎
           </h2>
           <Link href='/about'>
             <button className='px-4 py-2 mx-auto mt-5 font-semibold text-white transition duration-300 ease-in-out bg-blue-500 rounded-md shadow w-44 hover:bg-blue-600 active:shadow-lg active:bg-blue-700 focus:outline-none '>

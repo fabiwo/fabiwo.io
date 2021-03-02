@@ -5,7 +5,7 @@ export default function Date({ dateString }) {
   const date = parseISO(dateString)
   return (
     <time
-      className='text-sm text-gray-500 dark:text-gray-300'
+      className='text-sm text-gray-500 dark:text-outer-space-300'
       dateTime={dateString}
     >
       {format(date, 'LLLL dd, yyyy')}
