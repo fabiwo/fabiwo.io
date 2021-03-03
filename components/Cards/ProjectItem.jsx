@@ -1,5 +1,4 @@
 import ToolImage from '@/components/Cards/ToolImage'
-import Centre from '@/layouts/Centre'
 import Image from 'next/image'
 
 export default function ProjectItem({
@@ -17,18 +16,18 @@ export default function ProjectItem({
         <div className='relative'>
           <div className='absolute top-0 flex flex-col pt-5 right-5'>
             <div className='z-50 flex space-x-1'>
-              {tools.map((tool, i) => (
-                <ToolImage key={i} {...tool} />
+              {tools.map((tool) => (
+                <ToolImage key={tool.alt} src={tool.src} alt={tool.alt} />
               ))}
             </div>
           </div>
           <Image
             src={image}
-            alt=''
+            alt={alt}
             width={900}
             height={500}
             className='object-cover rounded-t-md'
-            priority={true}
+            priority
           />
         </div>
         <div className='flex flex-col p-10'>

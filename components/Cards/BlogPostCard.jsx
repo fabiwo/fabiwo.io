@@ -7,18 +7,16 @@ export default function BlogPostCard({
   title,
   description,
   image,
-  tags,
   date,
   alt,
-  views,
 }) {
   return (
     <Link href={`/blog/${id}`}>
       <li className='flex flex-col w-full bg-white border rounded-md shadow cursor-pointer dark:bg-outer-space-600 dark:border-outer-space-500 md:flex-row hover:shadow-md'>
         <div className='relative h-56 md:w-56 md:h-auto'>
           <Image
-            src={image ? image : '/static/images/placeholder.svg'}
-            alt={alt ? alt : 'Placeholder'}
+            src={image || '/static/images/placeholder.svg'}
+            alt={alt || 'Placeholder'}
             className='object-cover rounded-t-md md:rounded-tl-md md:rounded-bl-md md:rounded-tr-none'
             layout='fill'
           />
@@ -29,30 +27,19 @@ export default function BlogPostCard({
             {description}
           </p>
           <Date dateString={date} />
-          {/* &#8226;{views} */}
         </div>
       </li>
     </Link>
   )
 }
 
-export function SimpleBlogPost({
-  id,
-  title,
-  description,
-  image,
-  tags,
-  date,
-  alt,
-  views,
-}) {
+export function SimpleBlogPost({ id, title, description, date }) {
   return (
     <Link href={`/blog/${id}`}>
       <li className='text-blue-500 transition duration-100 cursor-pointer'>
         <h2 className='text-xl font-medium hover:underline'>{title}</h2>
         <Date dateString={date} />
         <p className='text-gray-800 dark:text-outer-space-50'>{description}</p>
-        {/* &#8226;{views} */}
       </li>
     </Link>
   )
@@ -65,8 +52,6 @@ export function NewestBlogPostCard({
   tags,
   image,
   alt,
-  date,
-  views,
 }) {
   return (
     <Link href={`/blog/${id}`}>
@@ -75,16 +60,16 @@ export function NewestBlogPostCard({
           width={700}
           height={400}
           className='object-cover w-full rounded-t-md '
-          src={image ? image : '/static/images/placeholder.svg'}
-          alt={alt ? alt : 'Placeholder'}
+          src={image || '/static/images/placeholder.svg'}
+          alt={alt || 'Placeholder'}
         />
         <p className='absolute left-0 px-5 py-1 text-white bg-red-600 rounded-r-md text-md text-bold top-5'>
           NEW! 🔥
         </p>
         <ul className='absolute left-0 flex flex-col space-y-1 top-16'>
-          {tags.map((tag, i) => (
+          {tags.map((tag) => (
             <li
-              key={i}
+              key={tag}
               className='px-4 py-1 text-white bg-black rounded-r-md text-md'
             >
               {tag}

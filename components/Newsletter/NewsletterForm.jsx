@@ -1,7 +1,7 @@
 import React, { useState, useRef } from 'react'
 import ErrorMessage from '@/components/Newsletter/ErrorMessage'
 import SuccessMessage from '@/components/Newsletter/SuccessMessage'
-import CubeSpinner from '@/components/Newsletter/CubeSpinner'
+import CubeLoadingSpinner from '@/components/CubeLoadingSpinner'
 
 const NewsletterForm = () => {
   const [form, setForm] = useState(false)
@@ -43,6 +43,18 @@ const NewsletterForm = () => {
     }, 5000)
   }
 
+  // Conditional Rendering for form state
+  let formMessage
+  if (form.state === 'error') {
+    formMessage = <ErrorMessage>{form.message}</ErrorMessage>
+  } else if (form.state === 'success') {
+    formMessage = <SuccessMessage>{form.message}</SuccessMessage>
+  } else if (form.state === 'loading') {
+    formMessage = <CubeLoadingSpinner />
+  } else {
+    formMessage = ''
+  }
+
   return (
     <div className='relative w-full p-6 my-4 border border-gray-300 rounded-md shadow-lg dark:border-outer-space-700 dark:bg-outer-space-600 bg-gray-50'>
       <svg
@@ -70,31 +82,33 @@ const NewsletterForm = () => {
         <div>
           <label className='font-semibold' htmlFor='name'>
             Name
+            <input
+              ref={nameEl}
+              aria-label='Name for newsletter'
+              placeholder='Pepe Frog'
+              type='text'
+              id='name'
+              name='name'
+              required
+              className='w-full px-4 py-2 mt-1 text-gray-900 bg-gray-100 border rounded-md dark:text-outer-space-300 dark:border-transparent focus:bg-gray-100 dark:bg-outer-space-700 dark:placeholder-outer-space-400 dark:focus:bg-outer-space-800 active:ring-red-500 focus:outline-none focus:ring-2 focus:ring-blue-400'
+            />
           </label>
-          <input
-            ref={nameEl}
-            aria-label='Name for newsletter'
-            placeholder='Pepe Frog'
-            type='text'
-            id='name'
-            required
-            className='w-full px-4 py-2 mt-1 text-gray-900 bg-gray-100 border rounded-md dark:text-outer-space-300 dark:border-transparent focus:bg-gray-100 dark:bg-outer-space-700 dark:placeholder-outer-space-400 dark:focus:bg-outer-space-800 active:ring-red-500 focus:outline-none focus:ring-2 focus:ring-blue-400'
-          />
         </div>
         <div>
           <label className='font-semibold' htmlFor='email'>
             Email
+            <input
+              ref={inputEl}
+              aria-label='Email for newsletter'
+              placeholder='pepethefrog@gmail.com'
+              type='email'
+              id='email'
+              name='email'
+              autoComplete='email'
+              required
+              className='w-full px-4 py-2 mt-1 text-gray-900 bg-gray-100 border rounded-md dark:text-outer-space-300 dark:border-transparent focus:bg-gray-100 dark:bg-outer-space-700 dark:placeholder-outer-space-400 dark:focus:bg-outer-space-800 active:ring-red-500 focus:outline-none focus:ring-2 focus:ring-blue-400'
+            />
           </label>
-          <input
-            ref={inputEl}
-            aria-label='Email for newsletter'
-            placeholder='pepethefrog@gmail.com'
-            id='email'
-            type='email'
-            autoComplete='email'
-            required
-            className='w-full px-4 py-2 mt-1 text-gray-900 bg-gray-100 border rounded-md dark:text-outer-space-300 dark:border-transparent focus:bg-gray-100 dark:bg-outer-space-700 dark:placeholder-outer-space-400 dark:focus:bg-outer-space-800 active:ring-red-500 focus:outline-none focus:ring-2 focus:ring-blue-400'
-          />
         </div>
         <button
           className='px-10 py-2 font-medium text-white transition duration-300 ease-in-out bg-blue-500 rounded-md shadow hover:bg-blue-600 active:shadow-lg active:bg-blue-700 focus:outline-none '
@@ -103,15 +117,7 @@ const NewsletterForm = () => {
           Subscribe
         </button>
       </form>
-      {form.state === 'error' ? (
-        <ErrorMessage>{form.message}</ErrorMessage>
-      ) : form.state === 'success' ? (
-        <SuccessMessage>{form.message}</SuccessMessage>
-      ) : form.state === 'loading' ? (
-        <CubeSpinner />
-      ) : (
-        ''
-      )}
+      {formMessage}
     </div>
   )
 }

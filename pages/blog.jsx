@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import React, { useState } from 'react'
 import Image from 'next/image'
 import MainLayout from '@/layouts/MainLayout'
 import SectionHeading from '@/layouts/SectionHeading'
@@ -6,7 +6,7 @@ import { SimpleBlogPost } from '@/components/Cards/BlogPostCard'
 import PostContainer from '@/layouts/PostContainer'
 import Centre from '@/layouts/Centre'
 import SearchBar from '@/components/SearchBar/SearchBar'
-import FoundTag from '@/components/Searchbar/FoundTag'
+import FoundTag from '@/components/SearchBar/FoundTag'
 import ThemeProvider from '@/layouts/ThemeProvider'
 import { NextSeo } from 'next-seo'
 
@@ -16,19 +16,14 @@ export default function Blog({ allPostsData }) {
   const [searchValue, setSearchValue] = useState('')
 
   const filteredBlogPosts = allPostsData.filter((post) =>
-    post.title.toLowerCase().includes(searchValue.toLowerCase())
+    post.title.toLowerCase().includes(searchValue.toLowerCase()),
   )
 
   return (
     <ThemeProvider>
       <MainLayout>
         <NextSeo title='Blog' canonical='https://fabiwo.io/blog' />
-
-        {/* <SectionHeading text={'🔥 MOST RECENT 🔥'} />
-      <PageSection>
-        <NewestBlogPostCard {...allPostsData[0]} />
-      </PageSection> */}
-        <SectionHeading text={'BLOG'} />
+        <SectionHeading>BLOG</SectionHeading>
         <p className='mb-10 text-lg text-gray-800 dark:text-gray-100'>
           Search through all my posts 🔍
         </p>
@@ -46,8 +41,15 @@ export default function Blog({ allPostsData }) {
             </Centre>
           )}
           <PostContainer>
-            {filteredBlogPosts.map((post, i) => (
-              <SimpleBlogPost key={i} {...post} />
+            {filteredBlogPosts.map((post) => (
+              <SimpleBlogPost
+                key={post.id}
+                id={post.id}
+                title={post.title}
+                description={post.description}
+                image={post.image}
+                date={post.date}
+              />
             ))}
           </PostContainer>
         </section>

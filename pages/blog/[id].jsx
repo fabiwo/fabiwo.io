@@ -2,7 +2,6 @@ import ThemeProvider from '@/layouts/ThemeProvider'
 import MainLayout from '@/layouts/MainLayout'
 import Date from '@/components/Date'
 import TableOfContent from '@/components/TableOfContents/TableOfContent'
-import Head from 'next/head'
 import { getAllSlugIds, getSlugData } from '@/lib/mdx'
 import hydrate from 'next-mdx-remote/hydrate'
 import MDXComponents from '@/components/MDXComponents'
@@ -77,7 +76,7 @@ export default function Post({ source, headings, frontMatter, postId }) {
             <Image
               width={500}
               height={500 / (16 / 10)}
-              layout={'responsive'}
+              layout='responsive'
               className='object-cover '
               src={
                 frontMatter.image

@@ -1,27 +1,21 @@
-import Head from 'next/head'
 import MainLayout from '@/layouts/MainLayout'
 import SectionHeading from '@/layouts/SectionHeading'
 import ThemeProvider from '@/layouts/ThemeProvider'
-import NewsletterForm from '@/components/Newsletter/NewsletterForm'
 import InlineLink from '@/components/MDX/InlineLink'
 import { NextSeo } from 'next-seo'
 import Image from 'next/image'
-
-const myLoader = ({ src, width, quality }) => {
-  return `https://example.com/${src}?w=${width}&q=${quality || 75}`
-}
 
 export default function About() {
   return (
     <ThemeProvider>
       <MainLayout>
         <NextSeo title='About' canonical='https://fabiwo.io/about' />
-        <SectionHeading text={'ABOUT ME'} />
+        <SectionHeading>ABOUT ME</SectionHeading>
         <article className='flex flex-wrap-reverse w-full mb-10'>
           <section className='prose dark:prose-dark'>
             <p>
               Hey, I’m Fabian. I am located in Mannheim 📍 and currently pursue
-              a master's degree in Chemical Engineering 🧪. I am really
+              a master&rsquo;s degree in Chemical Engineering 🧪. I am really
               passionate about
               <strong> web technologies</strong>,
               <strong> creating things with code</strong> , and{' '}

@@ -5,10 +5,6 @@ import '../styles/utilities.scss'
 import '../styles/prism-custom.scss'
 import 'katex/dist/katex.min.css'
 
-// For ganalytics
-import { useEffect } from 'react'
-import { useRouter } from 'next/router'
-
 import { ThemeProvider } from 'next-themes'
 import { DefaultSeo } from 'next-seo'
 

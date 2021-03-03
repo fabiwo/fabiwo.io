@@ -1,10 +1,9 @@
 import MainLayout from '@/layouts/MainLayout'
 import Image from 'next/image'
 import Link from 'next/link'
-import Centre from '@/layouts/Centre'
 import SectionHeading from '@/layouts/SectionHeading'
 import ProjectItem from '@/components/Cards/ProjectItem'
-import BlogPostCard, { SimpleBlogPost } from '@/components/Cards/BlogPostCard'
+import { SimpleBlogPost } from '@/components/Cards/BlogPostCard'
 import PostContainer from '@/layouts/PostContainer'
 import PageSection from '@/layouts/PageSection'
 import { getSortedSlugs } from '@/lib/mdx'
@@ -15,7 +14,7 @@ export default function Home({ newesPosts, allProjectData }) {
   return (
     <ThemeProvider>
       <NextSeo title='Home' canonical='https://fabiwo.io/' />
-      <MainLayout home={true}>
+      <MainLayout>
         <section className='flex flex-col justify-center w-full mb-20 text-center'>
           <div className='flex justify-center w-full mb-14'>
             <Image
@@ -27,9 +26,7 @@ export default function Home({ newesPosts, allProjectData }) {
               quality={100}
             />
           </div>
-          <h1 className='mb-5 text-6xl font-black'>
-            Hi. I 'm Fabian. <br />
-          </h1>
+          <h1 className='mb-5 text-6xl font-black'>Hi. I&rsquo;m Fabian.</h1>
           <h2 className='text-lg text-gray-800 dark:text-gray-200'>
             A chemical engineer and self taught front-end developer.
           </h2>
@@ -38,7 +35,10 @@ export default function Home({ newesPosts, allProjectData }) {
           </h2>
           <div className='flex items-center justify-center space-x-5'>
             <Link href='/about'>
-              <button className='px-4 py-2 mt-5 font-semibold text-white transition duration-300 ease-in-out bg-blue-500 rounded-md shadow hover:bg-blue-600 dark:bg-blue-600 w-44 dark:hover:bg-blue-700 active:shadow-lg active:bg-blue-700 focus:outline-none '>
+              <button
+                type='button'
+                className='flex items-center justify-center px-4 py-2 mt-5 font-semibold text-white transition duration-300 ease-in-out bg-blue-500 rounded-md shadow hover:bg-blue-600 dark:bg-blue-600 w-44 dark:hover:bg-blue-700 active:shadow-lg active:bg-blue-700 focus:outline-none '
+              >
                 More about me
               </button>
             </Link>
@@ -65,18 +65,34 @@ export default function Home({ newesPosts, allProjectData }) {
             </a>
           </div>
         </section>
-        <SectionHeading text={'BLOG'} />
+        <SectionHeading>BLOG</SectionHeading>
         <PageSection>
           <PostContainer>
-            {newesPosts.map((post, i) => (
-              <SimpleBlogPost key={i} {...post} />
+            {newesPosts.map((post) => (
+              <SimpleBlogPost
+                key={post.id}
+                id={post.id}
+                title={post.title}
+                description={post.description}
+                image={post.image}
+                date={post.date}
+              />
             ))}
           </PostContainer>
         </PageSection>
-        <SectionHeading text={'PROJECTS'} />
+        <SectionHeading>PROJECTS</SectionHeading>
         <PageSection>
-          {allProjectData.map((project, i) => (
-            <ProjectItem key={i} {...project} />
+          {allProjectData.map((project) => (
+            <ProjectItem
+              key={project.id}
+              title={project.title}
+              description={project.description}
+              category={project.category}
+              image={project.image}
+              alt={project.alt}
+              href={project.href}
+              tools={project.tools}
+            />
           ))}
         </PageSection>
       </MainLayout>

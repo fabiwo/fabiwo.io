@@ -16,9 +16,9 @@ export default function Footer() {
     <footer className='flex flex-col items-center w-full max-w-2xl py-10 mx-auto'>
       <hr className='w-4/5 mb-8 border-gray-300 border-1 dark:border-outer-space-600' />
       <div className='flex justify-center space-x-4 md:space-x-5'>
-        {socials.map((social, i) => (
-          <SocialLink key={i} href={social.href}>
-            <SocialIcon key={i} type={social.type} />
+        {socials.map((social) => (
+          <SocialLink key={social.type} href={social.href}>
+            <SocialIcon key={social.type} type={social.type} />
           </SocialLink>
         ))}
       </div>

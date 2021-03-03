@@ -1,5 +1,4 @@
-const SocialLink = ({ children, href }) => {
-  return (
+const SocialLink = ({ children, href }) => (
     <a
       target='_blank'
       rel='noopener noreferrer'
@@ -9,6 +8,5 @@ const SocialLink = ({ children, href }) => {
       {children}
     </a>
   )
-}
 
 export default SocialLink

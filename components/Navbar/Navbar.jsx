@@ -23,39 +23,38 @@ export default function Navbar({ mounted }) {
   }, [])
 
   return (
-    <>
-      <nav
-        className={
-          `md:sticky md:bg-white md:dark:bg-outer-space-600 md:shadow top-0 mb-14 px-2 z-50` +
-          (isScrolling ? ' scrolled' : '')
-        }
-      >
-        {isOpen && (
-          <div
-            onClick={() => setOpen(false)}
-            className='fixed w-screen h-screen bg-black bg-opacity-30'
-          ></div>
-        )}
-        <div className='flex items-center justify-between max-w-3xl py-2 mx-auto md:justify-between'>
-          <Hamburger isOpen={isOpen} setOpen={setOpen} />
-          <Menu isOpen={isOpen} setOpen={setOpen}>
-            <ActiveLink text='Home' href='/' activeClassName='active' />
-            <ActiveLink text='Blog' href='/blog' activeClassName='active' />
-            <ActiveLink
-              text='Projects 🚧'
-              href='/projects'
-              activeClassName='active'
-            />
-            <ActiveLink
-              text='Snippets 🚧'
-              href='/snippets'
-              activeClassName='active'
-            />
-            <ActiveLink text='About' href='/about' activeClassName='active' />
-          </Menu>
-          <DarkModeToggle mounted={mounted} />
-        </div>
-      </nav>
-    </>
+    <nav
+      className={`md:sticky md:bg-white md:dark:bg-outer-space-600 md:shadow top-0 mb-14 px-2 z-50${
+        isScrolling ? ' scrolled' : ''
+      }`}
+    >
+      {isOpen && (
+        <button
+          type='button'
+          aria-hidden='true'
+          onClick={() => setOpen(false)}
+          className='fixed w-screen h-screen bg-black bg-opacity-30'
+        />
+      )}
+      <div className='flex items-center justify-between max-w-3xl py-2 mx-auto md:justify-between'>
+        <Hamburger isOpen={isOpen} setOpen={setOpen} />
+        <Menu isOpen={isOpen} setOpen={setOpen}>
+          <ActiveLink text='Home' href='/' activeClassName='active' />
+          <ActiveLink text='Blog' href='/blog' activeClassName='active' />
+          <ActiveLink
+            text='Projects 🚧'
+            href='/projects'
+            activeClassName='active'
+          />
+          <ActiveLink
+            text='Snippets 🚧'
+            href='/snippets'
+            activeClassName='active'
+          />
+          <ActiveLink text='About' href='/about' activeClassName='active' />
+        </Menu>
+        <DarkModeToggle mounted={mounted} />
+      </div>
+    </nav>
   )
 }

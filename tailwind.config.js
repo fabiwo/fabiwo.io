@@ -54,9 +54,6 @@ module.exports = {
         dark: {
           css: {
             color: theme('colors.gray.300'),
-            blockquote: {
-              color: theme('colors.gray.300'),
-            },
             h2: {
               color: theme('colors.gray.100'),
               'scroll-margin-top': spacing[32],
@@ -76,6 +73,7 @@ module.exports = {
               p: {
                 color: theme('colors.white'),
               },
+              color: theme('colors.gray.300'),
             },
             hr: { borderColor: theme('colors.gray.700') },
             ol: {
