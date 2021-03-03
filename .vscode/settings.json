@@ -1,14 +1,13 @@
 {
-    "editor.wordWrap": "on",
-    "editor.wordWrapColumn": 80,
-    "[mdx]": {
-        "editor.wordWrap": "on",
-    },
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSave": true,
+    "editor.formatOnPaste": false,
     "emmet.includeLanguages": {
         "mdx": "html",
         "markdown": "html"
     },
     "[mdx]": {
+        "editor.wordWrap": "on",
         "editor.quickSuggestions": {
             "strings": true
         }

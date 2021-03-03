@@ -1,11 +1,11 @@
-import Navbar from '@/molecules/Navbar'
-import Footer from '@/organisms/Footer'
-import ScrollToTop from '@/components/atoms/ScrollToTop'
+import Navbar from '@/components/Navbar/Navbar'
+import Footer from '@/components/Footer/Footer'
+import ScrollToTop from '@/components/ScrollToTop'
 import { useState, useEffect } from 'react'
 
 // Component renders main page layout with the same styling and fills with content
 
-export default function SeoProvider({ children }) {
+export default function ThemeProvider({ children }) {
   const [mounted, setMounted] = useState(false)
 
   // After mounting, we have access to the theme

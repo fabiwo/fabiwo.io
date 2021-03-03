@@ -1,9 +1,9 @@
 import Head from 'next/head'
 import MainLayout from '@/layouts/MainLayout'
-import ResponsiveSectionHeading from '@/components/atoms/ResponsiveSectionHeading'
-import SeoProvider from '@/layouts/SeoProvider'
-import NewsletterForm from '@/molecules/NewsletterForm'
-import InlineLink from '@/atoms/InlineLink'
+import SectionHeading from '@/layouts/SectionHeading'
+import ThemeProvider from '@/layouts/ThemeProvider'
+import NewsletterForm from '@/components/Newsletter/NewsletterForm'
+import InlineLink from '@/components/MDX/InlineLink'
 import { NextSeo } from 'next-seo'
 import Image from 'next/image'
 
@@ -13,10 +13,10 @@ const myLoader = ({ src, width, quality }) => {
 
 export default function About() {
   return (
-    <SeoProvider>
+    <ThemeProvider>
       <MainLayout>
         <NextSeo title='About' canonical='https://fabiwo.io/about' />
-        <ResponsiveSectionHeading text={'ABOUT ME'} />
+        <SectionHeading text={'ABOUT ME'} />
         <article className='flex flex-wrap-reverse w-full mb-10'>
           <section className='prose dark:prose-dark'>
             <p>
@@ -65,6 +65,6 @@ export default function About() {
           </div>
         </article>
       </MainLayout>
-    </SeoProvider>
+    </ThemeProvider>
   )
 }

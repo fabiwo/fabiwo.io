@@ -12,5 +12,22 @@
             "@/styles/*": ["styles/*"],
         }
     },
-    "exclude": ["node_modules"]
+    "exclude": [
+        "node_modules/*",
+        "**/test/*",
+        "**/.vscode/*",
+        ".next",
+        "out",
+        ".git",
+        ".app-cache",
+        ".npm",
+        ".npm-tmp",
+        "dist",
+        "dist*",
+        "node_modules",
+        "subfolder/dist",
+        "subfolder/node_modules",
+        "**/dist/*",
+        "**/node_modules/*",
+    ],
 }

@@ -1,5 +1,5 @@
-import SocialLink from '@/atoms/SocialLink'
-import SocialIcon from '@/atoms/SocialIcon'
+import SocialLink from '@/components/Social/SocialLink'
+import SocialIcon from '@/components/Social/SocialIcon'
 
 export default function Footer() {
   const socials = [
@@ -10,7 +10,6 @@ export default function Footer() {
     },
     { href: 'https://twitter.com/ffabiwo', type: 'twitter' },
     { href: 'mailto:fabiandwolff@gmail.com', type: 'mail' },
-    // { href: 'https://www.instagram.com/fabiwo/', type: 'instagram' },
   ]
 
   return (

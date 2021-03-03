@@ -1,6 +1,4 @@
-import NewsletterForm from '@/molecules/NewsletterForm'
-
-// Component renders main page layout with the same styling and fills with content
+import NewsletterForm from '@/components/Newsletter/NewsletterForm'
 
 export default function MainLayout({ children }) {
   return (

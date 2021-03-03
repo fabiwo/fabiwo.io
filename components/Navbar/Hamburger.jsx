@@ -1,5 +1,3 @@
-import { useState } from 'react'
-
 const Hamburger = ({ isOpen, setOpen }) => {
   return (
     <button

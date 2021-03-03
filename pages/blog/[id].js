@@ -1,12 +1,12 @@
-import SeoProvider from '@/layouts/SeoProvider'
+import ThemeProvider from '@/layouts/ThemeProvider'
 import MainLayout from '@/layouts/MainLayout'
-import Date from '@/components/atoms/Date'
-import TableOfContent from '@/components/molecules/TableOfContent'
+import Date from '@/components/Date'
+import TableOfContent from '@/components/TableOfContents/TableOfContent'
 import Head from 'next/head'
 import { getAllSlugIds, getSlugData } from '@/lib/mdx'
 import hydrate from 'next-mdx-remote/hydrate'
 import MDXComponents from '@/components/MDXComponents'
-import PostStats from '@/molecules/PostStats'
+import PostStats from '@/components/Cards/PostStats'
 import Image from 'next/image'
 import { NextSeo } from 'next-seo'
 
@@ -16,7 +16,7 @@ export default function Post({ source, headings, frontMatter, postId }) {
   })
 
   return (
-    <SeoProvider>
+    <ThemeProvider>
       <NextSeo
         titleTemplate='%s'
         title={frontMatter.title}
@@ -26,6 +26,7 @@ export default function Post({ source, headings, frontMatter, postId }) {
           type: 'article',
           article: {
             publishedTime: frontMatter.date,
+            tags: frontMatter.tags,
           },
           locale: 'en_IE',
           url: `https://fabiwo.io/blog/${postId}`,
@@ -93,7 +94,7 @@ export default function Post({ source, headings, frontMatter, postId }) {
           </section>
         </article>
       </MainLayout>
-    </SeoProvider>
+    </ThemeProvider>
   )
 }
 

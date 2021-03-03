@@ -1,10 +1,8 @@
 import React, { useState, useEffect } from 'react'
-import Link from 'next/link'
-import Image from 'next/image'
-import ActiveLink from '@/atoms/ActiveLink'
-import Hamburger from '@/atoms/Hamburger'
-import DarkModeToggle from '@/atoms/DarkModeToggle'
-import Menu from '@/atoms/Menu'
+import ActiveLink from '@/components/Navbar/ActiveLink'
+import Hamburger from '@/components/Navbar/Hamburger'
+import DarkModeToggle from '@/components/Navbar/DarkModeToggle'
+import Menu from '@/components/Navbar/Menu'
 
 export default function Navbar({ mounted }) {
   const [isScrolling, setScrolling] = useState(false)
@@ -46,6 +44,11 @@ export default function Navbar({ mounted }) {
             <ActiveLink
               text='Projects 🚧'
               href='/projects'
+              activeClassName='active'
+            />
+            <ActiveLink
+              text='Snippets 🚧'
+              href='/snippets'
               activeClassName='active'
             />
             <ActiveLink text='About' href='/about' activeClassName='active' />

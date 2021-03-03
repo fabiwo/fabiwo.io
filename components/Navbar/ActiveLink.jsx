@@ -1,7 +1,6 @@
 import { useRouter } from 'next/router'
-import PropTypes from 'prop-types'
 import Link from 'next/link'
-import React, { Children } from 'react'
+import React from 'react'
 
 const ActiveLink = ({ activeClassName, href, text }) => {
   const { asPath } = useRouter()
@@ -25,10 +24,6 @@ const ActiveLink = ({ activeClassName, href, text }) => {
       </a>
     </Link>
   )
-}
-
-ActiveLink.propTypes = {
-  activeClassName: PropTypes.string.isRequired,
 }
 
 export default ActiveLink

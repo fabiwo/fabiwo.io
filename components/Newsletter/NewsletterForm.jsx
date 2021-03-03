@@ -1,7 +1,7 @@
 import React, { useState, useRef } from 'react'
-import ErrorMessage from '@/atoms/ErrorMessage'
-import SuccessMessage from '@/atoms/SuccessMessage'
-import CubeSpinner from '@/atoms/CubeSpinner'
+import ErrorMessage from '@/components/Newsletter/ErrorMessage'
+import SuccessMessage from '@/components/Newsletter/SuccessMessage'
+import CubeSpinner from '@/components/Newsletter/CubeSpinner'
 
 const NewsletterForm = () => {
   const [form, setForm] = useState(false)
