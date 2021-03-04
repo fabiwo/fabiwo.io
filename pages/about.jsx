@@ -47,7 +47,7 @@ export default function About() {
               <InlineLink href='https://twitter.com/ffabiwo' text='@ffabiwo' />
             </p>
           </section>
-          <div className='flex flex-col mx-auto mb-10'>
+          <div className='mb-5'>
             <Image
               src='/static/images/fabiwo.jpg'
               alt='No entries found placeholder'

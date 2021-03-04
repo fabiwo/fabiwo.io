@@ -26,7 +26,9 @@ export default function Home({ newesPosts, allProjectData }) {
               quality={100}
             />
           </div>
-          <h1 className='mb-5 text-6xl font-black'>Hi. I&rsquo;m Fabian.</h1>
+          <h1 className='mb-5 text-5xl font-black md:text-6xl'>
+            Hi. I&rsquo;m Fabian.
+          </h1>
           <h2 className='text-lg text-gray-800 dark:text-gray-200'>
             A chemical engineer and self taught front-end developer.
           </h2>
@@ -43,7 +45,7 @@ export default function Home({ newesPosts, allProjectData }) {
               </button>
             </Link>
             <a
-              className='flex items-center justify-center px-4 py-2 mt-5 font-semibold text-white transition duration-300 ease-in-out bg-purple-500 rounded-md shadow hover:bg-purple-600 dark:bg-purple-600 w-44 dark:hover:bg-purple-700 active:shadow-lg active:bg-blue-700 focus:outline-none'
+              className='flex items-center justify-center px-4 py-2 mt-5 font-semibold text-white transition duration-300 ease-in-out bg-blue-500 rounded-md shadow hover:bg-blue-600 dark:bg-blue-600 w-44 dark:hover:bg-blue-700 active:shadow-lg active:bg-blue-700 focus:outline-none'
               target='_blank'
               rel='noopener noreferrer'
               href='mailto:fabiandwolff@gmail.com'
