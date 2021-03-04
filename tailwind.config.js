@@ -27,6 +27,10 @@ module.exports = {
           900: '#131518',
         },
       },
+      transitionProperty: {
+        height: 'height',
+        width: 'width',
+      },
       typography: (theme) => ({
         DEFAULT: {
           css: {

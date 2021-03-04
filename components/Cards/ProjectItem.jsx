@@ -30,7 +30,7 @@ export default function ProjectItem({
             priority
           />
         </div>
-        <div className='flex flex-col p-10'>
+        <div className='flex flex-col p-5 sm:p-10'>
           <div className='flex flex-col'>
             <h1 className='text-2xl font-bold'>{title}</h1>
             <h2 className='pb-4 font-light text-gray-500 md:text-lg dark:text-gray-300'>

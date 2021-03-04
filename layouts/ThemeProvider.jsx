@@ -1,4 +1,5 @@
 import Navbar from '@/components/Navbar/Navbar'
+import NavbarFullScreen from '@/components/Navbar/NavbarFullScreen'
 import Footer from '@/components/Footer/Footer'
 import ScrollToTop from '@/components/ScrollToTop'
 import { useState, useEffect } from 'react'
@@ -18,9 +19,9 @@ export default function ThemeProvider({ children }) {
 
   return (
     <>
-      <Navbar mounted={mounted} />
+      <NavbarFullScreen mounted={mounted} />
       {/* Main Page or Post Content */}
-      <main>{children}</main>
+      <main className='mt-14'>{children}</main>
       <Footer />
       <ScrollToTop />
     </>
