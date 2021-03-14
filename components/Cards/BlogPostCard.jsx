@@ -37,9 +37,9 @@ export function SimpleBlogPost({ id, title, description, date }) {
   return (
     <Link href={`/blog/${id}`}>
       <li className='text-blue-500 transition duration-100 cursor-pointer'>
-        <h2 className='text-xl font-medium hover:underline'>{title}</h2>
         <Date dateString={date} />
-        <p className='text-gray-800 dark:text-outer-space-50'>{description}</p>
+        <h2 className='my-2 text-2xl font-medium hover:underline'>{title}</h2>
+        <p className='text-gray-600 dark:text-outer-space-50'>{description}</p>
       </li>
     </Link>
   )

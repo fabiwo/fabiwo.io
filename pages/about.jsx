@@ -29,9 +29,9 @@ export default function About() {
             </ul>
             <p>
               I discovered my passion for programming during my thesis where I
-              taught myself Matlab to automate a bunch of experimental data
-              analysis. Since then I fell in love with learning new programming
-              languages and frameworks
+              taught myself Matlab to automate the experimental data analysis.
+              Since then I fell in love with learning new programming languages
+              and frameworks
             </p>
             <p>
               I would love to share my journey with you and provide information
