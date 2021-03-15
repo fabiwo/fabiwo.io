@@ -7,6 +7,7 @@ import 'katex/dist/katex.min.css'
 
 import { ThemeProvider } from 'next-themes'
 import { DefaultSeo } from 'next-seo'
+import Head from 'next/head'
 
 export default function App({ Component, pageProps }) {
   return (
@@ -28,6 +29,15 @@ export default function App({ Component, pageProps }) {
           cardType: 'summary_large_image',
         }}
       />
+      <Head>
+        <script
+          async
+          defer
+          data-domain='fabiwo.io'
+          src='https://plausible.io/js/plausible.js'
+        ></script>
+      </Head>
+
       <Component {...pageProps} />
     </ThemeProvider>
   )
