@@ -1,3 +1,7 @@
-const CodeBlock = () => <div className='text-xl text-blue-600'>Test</div>
+const CodeBlock = ({ text }) => (
+  <span className='whitespace-nowrap p-1.5 font-medium text-blue-600 bg-blue-100 rounded'>
+    {text}
+  </span>
+)
 
 export default CodeBlock

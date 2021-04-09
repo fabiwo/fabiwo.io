@@ -32,116 +32,178 @@ pre:before {
 
 pre[class*="js"]:before {
     content: "JS";
-    color: #ff7a18 !important;
+    color: #b5b9c2 !important;
 }
 
 pre[class*="css"]:before {
     content: "CSS";
-    color: #ff7a18 !important;
+    color: #b5b9c2 !important;
 }
 
 pre[class*="scss"]:before {
     content: "SCSS";
-    color: #ff7a18 !important;
+    color: #b5b9c2 !important;
 }
 
 pre[class*="python"]:before {
     content: "Python";
-    color: #ff7a18 !important;
+    color: #b5b9c2 !important;
 }
 
+pre[class*="bash"]:before {
+    content: "Bash";
+    color: #b5b9c2 !important;
+}
+
+pre[class*="html"]:before {
+    content: "HTML";
+    color: #b5b9c2 !important;
+}
+
+pre[class*="language-"]::-moz-selection, pre[class*="language-"] ::-moz-selection,
+code[class*="language-"]::-moz-selection, code[class*="language-"] ::-moz-selection {
+  text-shadow: none;
+  background: #383e49;
+}
+
+pre[class*="language-"]::selection, pre[class*="language-"] ::selection,
+code[class*="language-"]::selection, code[class*="language-"] ::selection {
+  text-shadow: none;
+  background: #9aa2b1;
+}
+
+@media print {
+  code[class*="language-"],
+  pre[class*="language-"] {
+    text-shadow: none;
+  }
+}
 /* Code blocks */
 pre[class*="language-"] {
-    padding: 1.25rem;
-    margin: .5em 0;
-    border-radius: 5px;
-    overflow: auto;
-
+  padding: 2em 1.5em;
+  margin: .5em 0;
+  overflow: auto;
 }
 
-:not(pre)>code[class*="language-"],
+:not(pre) > code[class*="language-"],
 pre[class*="language-"] {
-    background: #2f3a46;
+  background: #282c34;
 }
 
 /* Inline code */
-:not(pre)>code[class*="language-"] {
-    padding: .1em;
-    border-radius: .3em;
-    white-space: normal;
+:not(pre) > code[class*="language-"] {
+  padding: .1em;
+  border-radius: .3em;
+  white-space: normal;
 }
 
 .token.comment,
-.token.block-comment,
 .token.prolog,
 .token.doctype,
 .token.cdata {
-    color: #999;
+  color: #5C6370;
 }
 
 .token.punctuation {
-    color: #ccc;
-}
-
-.token.tag,
-.token.attr-name,
-.token.namespace,
-.token.deleted {
-    color: #e2777a;
-}
-
-.token.function-name {
-    color: #6196cc;
-}
-
-.token.boolean,
-.token.number,
-.token.function {
-    color: #f08d49;
-}
-
-.token.property,
-.token.class-name,
-.token.constant,
-.token.symbol {
-    color: #f8c555;
+  color: #abb2bf;
 }
 
 .token.selector,
-.token.important,
-.token.atrule,
-.token.keyword,
-.token.builtin {
-    color: #cc99cd;
+.token.tag {
+  color: #e06c75;
+}
+
+.token.property,
+.token.boolean,
+.token.number,
+.token.constant,
+.token.symbol,
+.token.attr-name,
+.token.deleted {
+  color: #d19a66;
 }
 
 .token.string,
 .token.char,
 .token.attr-value,
-.token.regex,
-.token.variable {
-    color: #7ec699;
+.token.builtin,
+.token.inserted {
+  color: #98c379;
 }
 
 .token.operator,
 .token.entity,
-.token.url {
-    color: #67cdcc;
+.token.url,
+.language-css .token.string,
+.style .token.string {
+  color: #56b6c2;
+}
+
+.token.atrule,
+.token.keyword {
+  color: #c678dd;
+}
+
+.token.function {
+  color: #61afef;
+}
+
+.token.regex,
+.token.important,
+.token.variable {
+  color: #c678dd;
 }
 
 .token.important,
 .token.bold {
-    font-weight: bold;
+  font-weight: bold;
 }
 
 .token.italic {
-    font-style: italic;
+  font-style: italic;
 }
 
 .token.entity {
-    cursor: help;
+  cursor: help;
 }
 
-.token.inserted {
-    color: green;
+pre.line-numbers {
+	position: relative;
+	padding-left: 3.8em;
+	counter-reset: linenumber;
+}
+
+pre.line-numbers > code {
+	position: relative;
+}
+
+.line-numbers .line-numbers-rows {
+	position: absolute;
+	pointer-events: none;
+	top: 0;
+	font-size: 100%;
+	left: -3.8em;
+	width: 3em; /* works for line-numbers below 1000 lines */
+	letter-spacing: -1px;
+	border-right: 0;
+
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+
+}
+
+.line-numbers-rows > span {
+	pointer-events: none;
+	display: block;
+	counter-increment: linenumber;
+}
+
+.line-numbers-rows > span:before {
+	content: counter(linenumber);
+	color: #5C6370;
+	display: block;
+	padding-right: 0.8em;
+	text-align: right;
 }

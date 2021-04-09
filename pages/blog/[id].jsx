@@ -33,7 +33,7 @@ export default function Post({ source, headings, frontMatter, postId }) {
           title: frontMatter.title,
           images: [
             {
-              url: frontMatter.image,
+              url: `https://fabiwo.io/${frontMatter.image}`,
               width: 800,
               height: 600,
               alt: frontMatter.alt,
@@ -49,7 +49,7 @@ export default function Post({ source, headings, frontMatter, postId }) {
 
       <MainLayout>
         <article className='w-full max-w-3xl mx-auto mb-10'>
-          <h1 className='mb-1 text-4xl font-black md:text-5xl'>
+          <h1 className='mb-1 text-4xl font-extrabold md:text-4xl'>
             {frontMatter.title}
           </h1>
           <div className='flex flex-col py-5 space-y-3 md:flex-row '>
@@ -88,7 +88,7 @@ export default function Post({ source, headings, frontMatter, postId }) {
             />
           </div>
           <TableOfContent headings={headings} />
-          <section className='w-full mt-5 prose md:prose-lg prose-blue max-w-none dark:prose-dark'>
+          <section className='w-full mt-5 prose prose-blue max-w-none dark:prose-dark'>
             {content}
           </section>
         </article>

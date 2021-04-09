@@ -36,9 +36,11 @@ export default function BlogPostCard({
 export function SimpleBlogPost({ id, title, description, date }) {
   return (
     <Link href={`/blog/${id}`}>
-      <li className='text-blue-500 transition duration-100 cursor-pointer'>
+      <li className='cursor-pointer'>
         <Date dateString={date} />
-        <h2 className='my-2 text-2xl font-medium hover:underline'>{title}</h2>
+        <h2 className='my-1.5 text-xl dark:text-white text-gray-800 font-medium'>
+          {title}
+        </h2>
         <p className='text-gray-600 dark:text-outer-space-50'>{description}</p>
       </li>
     </Link>

@@ -1,0 +1,293 @@
+---
+title: The Simplest Way to Download SVG/DOM Elements
+description: An easy and practical guide on how to download SVG or any DOM element as SVG, PNG or PDF.
+date: '2021-04-11'
+author: Fabian Wolff
+image: /static/images/blog/07-04-21_download-the-dom/thumbnail.png
+alt: Thumbnail Downloading DOM Elements as SVG,PNG,PDF
+tags:
+  - svg
+  - pdf
+  - png
+  - dom
+  - javascript
+---
+
+While I was working on my ternary graph builder <InlineLink href='https://fabiwo.io/blog/ternary-equilibrium' text='Ternary Equilibrium'/>, I wanted to include a feature that enables the user to download the finished graph in a common picture format (SVG, PNG, PDF).
+
+The graph was an SVG element with additional styling and web fonts. The solution therefore needed to:
+
+1. Grab the SVG element
+2. Embed necessary styles
+3. Embed web fonts
+4. Convert into SVG/PNG/PDF
+5. Download the resulting file
+
+After some research, I came across an external library <InlineLink href='https://github.com/exupero/saveSvgAsPng' text='saveSvgAsPng'/> that did exactly what I was searching for. I had to use an additional library <InlineLink href='https://github.com/MrRio/jsPDF' text='jsPDF'/> for the PDF conversion.
+
+In the following article we will use these libraries on a simple SVG Element and you will learn how to download your own elements🙏.
+
+If you read till the end, you will also learn how to download any DOM element with a little trick. I will also give you some additional useful options for the functions we will use.
+
+## Quick Access
+
+- <InlineNavLink href='#putting-things-together-' text='Final Implementation' />
+- <InlineNavLink href='#svg-element-🟥' text='Codepen SVG Element 🟥' />
+- <InlineNavLink href='#any-dom-element-' text='Codepen DOM Element🎉' />
+- Libraries: <InlineLink href='https://github.com/exupero/saveSvgAsPng' text='saveSvgAsPng'/>,<InlineLink href='https://github.com/MrRio/jsPDF' text='jsPDF'/>
+
+## Example Element
+
+The following code will render a red rectangle with a height and width of 50px, that is centered inside a svg container.
+
+```html
+<svg id='iamsvg' width="100" height="100" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+  <rect fill="red" x="25" y="25" width="50" height="50">
+</svg>
+```
+
+<Centre>
+  <Image
+    alt={`Explanation of our example svg element`}
+    src={`/static/images/blog/07-04-21_download-the-dom/svg-explanation.png`}
+    width={1920}
+    height={1080}
+  />
+</Centre>
+
+## SVG, PNG
+
+### Dependencies
+
+We start by installing our dependencies.
+
+```bash
+npm install save-svg-as-png jspdf
+```
+
+We then import our dependencies into our main javascript file.
+
+```js
+import * as saveSvgAsPng from 'save-svg-as-png'
+import { jsPDF } from 'jspdf'
+```
+
+### Downloading the Element
+
+If you look back at the example SVG element, I gave it an id of <CodeBlock text="#iamsvg"/> . You therefore select the SVG element with <CodeBlock text="document.getElementById('iamsvg')"/>.
+
+```js
+const node = document.getElementbyId('iamsvg')
+```
+
+Define a filename with an appropriate extension name. In this example, we download our element as an SVG file and therefore use the .svg-extension.
+
+```js
+const filename = 'myfilename.svg' // or 'myfilename.png'
+```
+
+To download our element we then just have to call the saveSvg method from <InlineLink href='https://github.com/exupero/saveSvgAsPng' text='saveSvgAsPng'/>. This is also the time to use additional options as an argument inside the function. Check out the ones <InlineNavLink href='#additional-useful-options' text='I find useful'/>.
+
+```js
+saveSvgAsPng.saveSvg(node, filename)
+// or
+saveSvgAsPng.saveSvgAsPng(node, filename)
+```
+
+## PDF
+
+As already mentioned in the introduction, we make use of <InlineLink href='https://github.com/MrRio/jsPDF' text='jsPDF'/> for creating and working with the PDF documents. Our approach comes down to the following steps:
+
+1. Generate a DataURL with saveSvgAsPng
+2. Generate an empty PDF document
+3. Add our dataURL inside the PDF document
+4. Download the PDF document
+
+### Generate a DataURL
+
+We make use of the <CodeBlock text="saveSvgAsPng.svgAsPngUri"/> method, which creates a dataURL of the internally created image instead of directly downloading it. This enables us to do whatever we want with the image afterwards. The method returns the dataURL inside a Promise. All following steps will be inside the <CodeBlock text=".then"/> call. Click <button className="p-1 rounded bg-blue-500 text-white" onClick={() => {alert("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEsAAABLCAYAAAA4TnrqAAABG0lEQVR4Xu3aMQ7CMBQFwZ+bwcnhZtBwAK9kORSTehXHo1fmGs+ywLVcCgdWGAEsWEEgpJYFKwiE1LJgBYGQWhasIBBSy4IVBEJqWbCCQEgtC1YQCKll3YH1mXmEc4+m18x7x4HblvXDeu34qM3veMJaF4W1bjWwYAWBkFoWrCAQUsuCFQRCalmwgkBILQtWEAipZcEKAiG1LFhBIKSWBSsIhNSyYAWBkFoWrCAQUsuCFQRCalmwgkBILQtWEAipZcEKAiG1LFhBIKSWBSsIhNSyYAWBkP7tssIdzqV/9wPuuavfd9K2X7vvu8K5k2EFa1iwgkBILQtWEAipZcEKAiG1LFhBIKSWBSsIhNSyYAWBkFoWrCAQUssKWF8ninNMHOh3ZwAAAABJRU5ErkJggg==")}}>here</button> to see how a dataURL looks like.
+
+```js
+saveSvgAsPng.svgAsPngUri(svgNode).then((dataUrl) => {
+  // Do the PDF 🧙‍♂️ with the dataURL
+})
+```
+
+### Generate an Empty PDF Document
+
+We create an empty PDF document inside the the <CodeBlock text=".then"/> statement by calling <CodeBlock text="new jsPDF()"/>
+
+```js
+// .then() before
+const doc = new jsPDF()
+```
+
+### Add the Picture to the PDF
+
+We take the dataURL and add it as a PNG image inside the newly created pdf document.
+
+```js
+doc.addImage(uri, 'PNG', 0, 0)
+```
+
+The <CodeBlock text="addImage"/> function receives two additional arguments, the x-coordinate, and y-coordinate of the image (see <InlineLink href='https://artskydj.github.io/jsPDF/docs/module-addImage.html' text='addImage Documentation'/>).
+
+### Download the PDF
+
+The last step is to just use the <CodeBlock text=".save"/> method on our document and pass in the filename.
+
+```js
+// Save it 🎉
+const filename = 'myfilename.pdf'
+doc.save(filename)
+```
+
+Congratulations, you downloaded your element as an PDF 2/2✅.
+
+## Putting Things Together ✨
+
+### SVG/PNG Implementation
+
+```js
+import * as saveSvgAsPng from 'save-svg-as-png'
+
+const node = document.getElementbyId('iamsvg')
+const filename = 'myfilename.svg'
+
+saveSvgAsPng.saveSvg(node, filename)
+// saveSvgAsPng.saveSvgAsPng(node, filename)
+```
+
+### PDF Implementation
+
+```js
+import * as saveSvgAsPng from 'save-svg-as-png'
+import { jsPDF } from 'jspdf'
+
+const node = document.getElementbyId('iamsvg')
+const filename = 'myfilename.svg'
+
+saveSvgAsPng.svgAsPngUri(svgNode).then((dataUrl) => {
+  const doc = new jsPDF()
+  doc.addImage(uri, 'PNG', 0, 0).save(filename)
+})
+```
+
+## Additional Useful Options🔥
+
+### Downloading any DOM Element
+
+We can download any DOM element with a little trick. Just embed your element inside a <CodeBlock text="foreignObject"/> and we can use the same principles as already described.
+
+```html
+<svg
+  id="iamforeign"
+  width="100"
+  height="100"
+  viewBox="0 0 100 100"
+  xmlns="http://www.w3.org/2000/svg"
+>
+  <foreignObject x="25" y="25" width="100" height="100">
+    <div>🎉</div>
+  </foreignObject>
+</svg>
+```
+
+### Scaling Raster Images
+
+It might be desirable to get the resulting picture in a larger resolution for presentations. We can use the <CodeBlock text="scale"/> option for achieving exactly that. The following option scales our resulting image by a factor of 2.5.
+
+```js
+const options = { scale: 2.5 }
+saveSvgAsPng.saveSvgAsPng(svgNode, filename, options)
+```
+
+### Excluding Unused CSS
+
+In the default settings, all styles of your page will get embedded into the image. That might not be a problem if you are just having a simple site, but as you probably can imagine, things add up. You therefore should probably use the <CodeBlock text="excludeUnusedCss"/> option.
+
+```js
+const options = { excludeUnusedCss: true }
+saveSvgAsPng.saveSvgAsPng(svgNode, filename, options)
+```
+
+### Centering the Image inside the PDF
+
+Centering the image inside our PDF document only requires some simple math and applying an offset in x- and y-direction.
+
+```js
+saveSvgAsPng.svgAsPngUri(svgNode).then((dataUrl) => {
+  // Creates 100x100 mm pdf document with mm units
+  const options = { format: [100, 100], unit: 'mm' }
+  const doc = new jsPDF(options)
+  // Get the document dimensions for centering of image
+  const pageHeight = doc.internal.pageSize.height
+  const pageWidth = doc.internal.pageSize.width
+  // Define image dimensions yourself or get them from the element
+  const imgWidth = 50
+  const imgHeight = 50
+  // Calculate the left and top offset for centering the image
+  const xOffset = (pageWidth - imgWidth) / 2
+  const yOffset = (pageHeight - imgHeight) / 2
+  // Add the image with left and top offset & specify the image dimensions
+  doc
+    .addImage(uri, 'PNG', xOffset, yOffset, imgWidth, imgHeight)
+    .save('myfilename.pdf')
+})
+```
+
+## Codepen
+
+### SVG Element 🟥
+
+<iframe
+  height='444'
+  className='w-full'
+  scrolling='no'
+  title='Download SVG Element as SVG, PNG, PDF'
+  src='https://codepen.io/ffabiwo/embed/eYBxaeL?height=265&theme-id=dark&default-tab=js,result'
+  frameBorder='no'
+  loading='lazy'
+>
+  See the Pen{' '}
+  <a href='https://codepen.io/ffabiwo/pen/eYBxaeL'>
+    Download SVG Element as SVG, PNG, PDF
+  </a>{' '}
+  by Fabian Wolff (<a href='https://codepen.io/ffabiwo'>@ffabiwo</a>) on{' '}
+  <a href='https://codepen.io'>CodePen</a>.
+</iframe>
+
+### Any DOM Element 🎉
+
+<iframe
+  height='444'
+  className='w-full'
+  scrolling='no'
+  title='Download DOM Element as SVG, PNG, PDF'
+  src='https://codepen.io/ffabiwo/embed/abpbMzB?height=444&theme-id=dark&default-tab=css,result'
+  frameBorder='no'
+  loading='lazy'
+>
+  See the Pen{' '}
+  <a href='https://codepen.io/ffabiwo/pen/abpbMzB'>
+    Download DOM Element as SVG, PNG, PDF
+  </a>{' '}
+  by Fabian Wolff (<a href='https://codepen.io/ffabiwo'>@ffabiwo</a>) on{' '}
+  <a href='https://codepen.io'>CodePen</a>.
+</iframe>
+
+## Wrapping up
+
+**That's all guys!** Thank you for reading! I hope you learned something new and can incorporate it into your own projects. If you have any questions, be free to write me <InlineLink href='https://twitter.com/ffabiwo' text='@ffabiwo'/>!
+
+## Resources
+
+- <InlineLink href='https://nytimes.github.io/svg-crowbar' text='svg-crowbar' />
+- <InlineLink
+    href='https://github.com/tsayen/dom-to-image'
+    text='dom-to-image'
+  />
+- <InlineLink
+    href='https://observablehq.com/@mbostock/saving-svg'
+    text='M.Bostock article'
+  />

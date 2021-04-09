@@ -85,7 +85,7 @@ const NewsletterForm = () => {
             <input
               ref={nameEl}
               aria-label='Name for newsletter'
-              placeholder='Pepe Frog'
+              placeholder='John Doe'
               type='text'
               id='name'
               name='name'
@@ -100,7 +100,7 @@ const NewsletterForm = () => {
             <input
               ref={inputEl}
               aria-label='Email for newsletter'
-              placeholder='pepethefrog@gmail.com'
+              placeholder='johndoe@mail.com'
               type='email'
               id='email'
               name='email'
