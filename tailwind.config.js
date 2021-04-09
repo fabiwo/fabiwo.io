@@ -1,6 +1,7 @@
 const { spacing } = require('tailwindcss/defaultTheme')
 
 module.exports = {
+  mode: 'jit',
   purge: [
     './components/**/*.jsx',
     './components/**/*.js',
@@ -34,15 +35,6 @@ module.exports = {
       typography: (theme) => ({
         DEFAULT: {
           css: {
-            color: theme('colors.gray.700'),
-            h2: {
-              'scroll-margin-top': spacing[32],
-              'font-weight': 800,
-            },
-            'h3,h4': {
-              'scroll-margin-top': spacing[32],
-              'font-weight': 600,
-            },
             blockquote: {
               textAlign: 'center',
               borderLeftColor: '#377ebd',
@@ -60,13 +52,9 @@ module.exports = {
             color: theme('colors.gray.300'),
             h2: {
               color: theme('colors.gray.100'),
-              'scroll-margin-top': spacing[32],
-              'font-weight': 900,
             },
             'h3,h4': {
               color: theme('colors.gray.100'),
-              'scroll-margin-top': spacing[32],
-              'font-weight': 800,
             },
             blockquote: {
               textAlign: 'center',
