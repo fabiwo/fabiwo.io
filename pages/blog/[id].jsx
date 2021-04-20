@@ -49,7 +49,7 @@ export default function Post({ source, headings, frontMatter, postId }) {
 
       <MainLayout>
         <article className='w-full max-w-3xl mx-auto mb-10'>
-          <h1 className='mb-1 text-4xl font-extrabold md:text-4xl'>
+          <h1 className='mb-1 text-3xl font-bold md:text-5xl'>
             {frontMatter.title}
           </h1>
           <div className='flex flex-col py-5 space-y-3 md:flex-row '>

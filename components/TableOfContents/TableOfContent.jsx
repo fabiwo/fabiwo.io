@@ -1,5 +1,5 @@
 const TableOfContent = ({ headings }) => (
-  <aside className='fixed z-40 invisible max-w-xs p-6 rounded-md lg:visible left-7 top-36'>
+  <aside className='fixed z-40 invisible max-w-xs p-6 rounded-md xl:visible left-7 top-36'>
     <h6 className='mb-5 text-sm font-bold'>TABLE OF CONTENT</h6>
     <ul className='space-y-3'>
       {headings

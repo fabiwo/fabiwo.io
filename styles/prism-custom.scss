@@ -30,35 +30,35 @@ pre:before {
     padding: 0;
 }
 
-pre[class*="js"]:before {
-    content: "JS";
-    color: #b5b9c2 !important;
-}
+// pre[class*="js"]:before {
+//     content: "JS";
+//     color: #b5b9c2 !important;
+// }
 
-pre[class*="css"]:before {
-    content: "CSS";
-    color: #b5b9c2 !important;
-}
+// pre[class*="css"]:before {
+//     content: "CSS";
+//     color: #b5b9c2 !important;
+// }
 
-pre[class*="scss"]:before {
-    content: "SCSS";
-    color: #b5b9c2 !important;
-}
+// pre[class*="scss"]:before {
+//     content: "SCSS";
+//     color: #b5b9c2 !important;
+// }
 
-pre[class*="python"]:before {
-    content: "Python";
-    color: #b5b9c2 !important;
-}
+// pre[class*="python"]:before {
+//     content: "Python";
+//     color: #b5b9c2 !important;
+// }
 
-pre[class*="bash"]:before {
-    content: "Bash";
-    color: #b5b9c2 !important;
-}
+// pre[class*="bash"]:before {
+//     content: "Bash";
+//     color: #b5b9c2 !important;
+// }
 
-pre[class*="html"]:before {
-    content: "HTML";
-    color: #b5b9c2 !important;
-}
+// pre[class*="html"]:before {
+//     content: "HTML";
+//     color: #b5b9c2 !important;
+// }
 
 pre[class*="language-"]::-moz-selection, pre[class*="language-"] ::-moz-selection,
 code[class*="language-"]::-moz-selection, code[class*="language-"] ::-moz-selection {
