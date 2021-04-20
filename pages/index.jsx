@@ -2,7 +2,7 @@ import MainLayout from '@/layouts/MainLayout'
 import Image from 'next/image'
 import Link from 'next/link'
 import SectionHeading from '@/layouts/SectionHeading'
-import ProjectItem from '@/components/Cards/ProjectItem'
+import ProjectCardBig from '@/components/Cards/ProjectItem'
 import { SimpleBlogPost } from '@/components/Cards/BlogPostCard'
 import PostContainer from '@/layouts/PostContainer'
 import PageSection from '@/layouts/PageSection'
@@ -85,7 +85,7 @@ export default function Home({ newesPosts, allProjectData }) {
         <SectionHeading>PROJECTS</SectionHeading>
         <PageSection>
           {allProjectData.map((project) => (
-            <ProjectItem
+            <ProjectCardBig
               key={project.id}
               title={project.title}
               description={project.description}

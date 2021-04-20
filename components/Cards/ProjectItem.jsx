@@ -1,7 +1,7 @@
 import ToolImage from '@/components/Cards/ToolImage'
 import Image from 'next/image'
 
-export default function ProjectItem({
+export default function ProjectCardBig({
   title,
   description,
   category,
