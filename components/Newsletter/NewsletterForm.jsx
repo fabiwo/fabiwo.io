@@ -111,7 +111,7 @@ const NewsletterForm = () => {
           </label>
         </div>
         <button
-          className='px-10 py-2 font-medium text-white transition duration-300 ease-in-out bg-blue-500 rounded-md shadow hover:bg-blue-600 active:shadow-lg active:bg-blue-700 focus:outline-none '
+          className='inline-flex items-center justify-center px-4 py-2 text-base font-medium text-white bg-blue-500 border border-transparent rounded-md shadow-sm hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 w-44'
           type='submit'
         >
           Subscribe

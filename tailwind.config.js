@@ -1,7 +1,7 @@
 const { spacing } = require('tailwindcss/defaultTheme')
 
 module.exports = {
-  mode: 'jit',
+  // mode: 'jit',
   purge: [
     './components/**/*.jsx',
     './components/**/*.js',
