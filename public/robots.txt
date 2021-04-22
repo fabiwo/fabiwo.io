@@ -1,2 +1,9 @@
+# *
 User-agent: *
+Allow: /
+
+# Host
+Host: https://fabiwo.io
+
+# Sitemaps
 Sitemap: https://fabiwo.io/sitemap.xml

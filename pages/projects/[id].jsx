@@ -14,6 +14,36 @@ export default function Post({ source, headings, frontMatter, postId }) {
 
   return (
     <ThemeProvider>
+      <NextSeo
+        titleTemplate='%s'
+        title={frontMatter.title}
+        description={frontMatter.description}
+        canonical={`https://fabiwo.io/projects/${postId}`}
+        openGraph={{
+          type: 'article',
+          article: {
+            publishedTime: frontMatter.date,
+            tags: frontMatter.tags,
+          },
+          locale: 'en_IE',
+          url: `https://fabiwo.io/projects/${postId}`,
+          site_name: 'Fabian Wolff',
+          title: frontMatter.title,
+          images: [
+            {
+              url: `https://fabiwo.io/${frontMatter.images[0].path}`,
+              width: 800,
+              height: 600,
+              alt: frontMatter.alt,
+            },
+          ],
+        }}
+        twitter={{
+          handle: '@ffabiwo',
+          site: '@ffabiwo',
+          cardType: 'summary_large_image',
+        }}
+      />
       <MainLayout withNewsletter={false}>
         <article className='w-full max-w-3xl mx-auto mb-10 '>
           <h1 className='text-3xl font-bold md:text-5xl'>
