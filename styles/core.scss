@@ -19,6 +19,11 @@ html {
     scroll-behavior: smooth;
 }
 
+::selection {
+    color: rgba(37, 99, 235, 1);
+    background:rgba(219, 234, 254, 1);
+}
+
 .katex {
     font-size: 1.25rem !important;
     font-weight: 700 !important;

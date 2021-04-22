@@ -21,7 +21,7 @@ export default function Blog({ allPostsData }) {
 
   return (
     <ThemeProvider>
-      <MainLayout>
+      <MainLayout withNewsletter={false}>
         <NextSeo title='Blog' canonical='https://fabiwo.io/blog' />
         <SectionHeading>BLOG</SectionHeading>
         <p className='mb-10 text-lg text-gray-800 dark:text-gray-100'>
