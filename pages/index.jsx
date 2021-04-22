@@ -69,8 +69,8 @@ export default function Home({ newesPosts, allProjectData }) {
             ))}
           </PostContainer>
         </PageSection>
-        <SectionHeading>PROJECTS</SectionHeading>
-        <PageSection>
+        {/* <SectionHeading>CURRENT PROJECT</SectionHeading> */}
+        {/* <PageSection>
           {allProjectData.map((project) => (
             <ProjectCardBig
               key={project.id}
@@ -80,10 +80,10 @@ export default function Home({ newesPosts, allProjectData }) {
               image={project.image}
               alt={project.alt}
               href={project.href}
-              tools={project.tools}
+              tools={project.technologies}
             />
           ))}
-        </PageSection>
+        </PageSection> */}
       </MainLayout>
     </ThemeProvider>
   )

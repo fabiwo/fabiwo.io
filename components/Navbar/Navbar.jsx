@@ -42,15 +42,15 @@ export default function Navbar({ mounted }) {
           <ActiveLink text='Home' href='/' activeClassName='active' />
           <ActiveLink text='Blog' href='/blog' activeClassName='active' />
           <ActiveLink
-            text='Projects 🚧'
+            text='Projects'
             href='/projects'
             activeClassName='active'
           />
-          <ActiveLink
+          {/* <ActiveLink
             text='Snippets 🚧'
             href='/snippets'
             activeClassName='active'
-          />
+          /> */}
           <ActiveLink text='About' href='/about' activeClassName='active' />
         </Menu>
         <DarkModeToggle mounted={mounted} />
