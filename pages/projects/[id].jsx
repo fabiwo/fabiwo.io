@@ -1,7 +1,7 @@
 import ThemeProvider from '@/layouts/ThemeProvider'
 import MainLayout from '@/layouts/MainLayout'
 import { getAllSlugIds, getSlugData } from '@/lib/mdx'
-import { getUniqueId } from '@/lib/uniqueId'
+import { v4 as uuidv4 } from 'uuid'
 import hydrate from 'next-mdx-remote/hydrate'
 import MDXComponents from '@/components/MDXComponents'
 import Image from 'next/image'
@@ -69,7 +69,7 @@ export default function Post({ source, headings, frontMatter, postId }) {
               <h2 className='font-semibold'>PROJECT TYPE</h2>
               <ul>
                 {frontMatter.types.map((type) => (
-                  <li key={getUniqueId()}>{type}</li>
+                  <li key={uuidv4()}>{type}</li>
                 ))}
               </ul>
             </div>
@@ -77,7 +77,7 @@ export default function Post({ source, headings, frontMatter, postId }) {
               <h2 className='font-semibold'>TECHNOLOGIES</h2>
               <ul>
                 {frontMatter.technologies.map((technology) => (
-                  <li key={getUniqueId()}>{technology.name}</li>
+                  <li key={uuidv4()}>{technology.name}</li>
                 ))}
               </ul>
             </div>
@@ -143,7 +143,7 @@ export default function Post({ source, headings, frontMatter, postId }) {
                 src={image.path}
                 alt={image.alt}
                 priority='true'
-                key={getUniqueId()}
+                key={uuidv4()}
               />
             ))}
           </div>

@@ -4,7 +4,7 @@ import ThemeProvider from '@/layouts/ThemeProvider'
 import SimpleProjectCard from '@/components/SimpleProjectCard'
 import { NextSeo } from 'next-seo'
 import { getSortedSlugs } from '@/lib/mdx'
-import { getUniqueId } from '@/lib/uniqueId'
+import { v4 as uuidv4 } from 'uuid'
 
 export default function Projects({ allProjectData }) {
   return (
@@ -15,7 +15,7 @@ export default function Projects({ allProjectData }) {
         <div className='w-full my-10 space-y-3'>
           {allProjectData.map((project) => (
             <SimpleProjectCard
-              key={getUniqueId()}
+              key={uuidv4()}
               id={project.id}
               title={project.title}
               description={project.description}
