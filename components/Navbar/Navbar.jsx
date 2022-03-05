@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import ActiveLink from '@/components/Navbar/ActiveLink'
 import Hamburger from '@/components/Navbar/Hamburger'
-import DarkModeToggle from '@/components/Navbar/DarkModeToggle'
+// import DarkModeToggle from '@/components/Navbar/DarkModeToggle'
 import Menu from '@/components/Navbar/Menu'
 
 export default function Navbar({ mounted }) {
@@ -24,7 +24,7 @@ export default function Navbar({ mounted }) {
 
   return (
     <nav
-      className={`md:sticky md:bg-white md:dark:bg-outer-space-600 md:shadow top-0 mb-14 z-50${
+      className={`md:sticky md:bg-white md:shadow top-0 mb-14 z-50${
         isScrolling ? ' scrolled' : ''
       }`}
     >
@@ -53,7 +53,7 @@ export default function Navbar({ mounted }) {
           /> */}
           <ActiveLink text='About' href='/about' activeClassName='active' />
         </Menu>
-        <DarkModeToggle mounted={mounted} />
+        {/* <DarkModeToggle mounted={mounted} /> */}
       </div>
     </nav>
   )

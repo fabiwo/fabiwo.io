@@ -11,7 +11,7 @@ export default function ProjectCardBig({
   tools,
 }) {
   return (
-    <div className='transition duration-300 ease-out transform bg-white rounded-md shadow cursor-pointer dark:bg-outer-space-600 dark:border-outer-space-500 hover:-translate-y-1 hover:shadow-lg'>
+    <div className='transition duration-300 ease-out transform bg-white rounded-md shadow cursor-pointer hover:-translate-y-1 hover:shadow-lg'>
       <a href={href} target='_blank' rel='noopener noreferrer'>
         <div className='relative'>
           <div className='absolute top-0 flex flex-col pt-5 right-5'>
@@ -33,7 +33,7 @@ export default function ProjectCardBig({
         <div className='flex flex-col p-5 sm:p-10'>
           <div className='flex flex-col'>
             <h1 className='text-2xl font-bold'>{title}</h1>
-            <h2 className='pb-4 font-light text-gray-500 md:text-lg dark:text-gray-300'>
+            <h2 className='pb-4 font-light text-gray-500 md:text-lg'>
               {category}
             </h2>
             <p>{description}</p>

@@ -56,7 +56,7 @@ const NewsletterForm = () => {
   }
 
   return (
-    <div className='relative w-full p-6 my-4 border border-gray-300 rounded-md shadow-lg dark:border-outer-space-700 dark:bg-outer-space-600 bg-gray-50'>
+    <div className='relative w-full p-6 my-4 border border-gray-300 rounded-md shadow-lg bg-gray-50'>
       <svg
         xmlns='http://www.w3.org/2000/svg'
         width='383'
@@ -90,7 +90,7 @@ const NewsletterForm = () => {
               id='name'
               name='name'
               required
-              className='w-full px-4 py-2 mt-1 text-gray-900 bg-gray-100 border rounded-md dark:text-outer-space-300 dark:border-transparent focus:bg-gray-100 dark:bg-outer-space-700 dark:placeholder-outer-space-400 dark:focus:bg-outer-space-800 active:ring-red-500 focus:outline-none focus:ring-2 focus:ring-blue-400'
+              className='w-full px-4 py-2 mt-1 text-gray-900 bg-gray-100 border rounded-md focus:bg-gray-100 active:ring-red-500 focus:outline-none focus:ring-2 focus:ring-blue-400'
             />
           </label>
         </div>
@@ -106,7 +106,7 @@ const NewsletterForm = () => {
               name='email'
               autoComplete='email'
               required
-              className='w-full px-4 py-2 mt-1 text-gray-900 bg-gray-100 border rounded-md dark:text-outer-space-300 dark:border-transparent focus:bg-gray-100 dark:bg-outer-space-700 dark:placeholder-outer-space-400 dark:focus:bg-outer-space-800 active:ring-red-500 focus:outline-none focus:ring-2 focus:ring-blue-400'
+              className='w-full px-4 py-2 mt-1 text-gray-900 bg-gray-100 border rounded-md focus:bg-gray-100 active:ring-red-500 focus:outline-none focus:ring-2 focus:ring-blue-400'
             />
           </label>
         </div>

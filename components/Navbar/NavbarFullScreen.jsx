@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import ActiveLink from '@/components/Navbar/ActiveLink'
 import Hamburger from '@/components/Navbar/Hamburger'
-import DarkModeToggle from '@/components/Navbar/DarkModeToggle'
+// import DarkModeToggle from '@/components/Navbar/DarkModeToggle'
 
 const NavbarFullScreen = ({ mounted }) => {
   const [isOpen, setOpen] = useState(false)
@@ -9,7 +9,7 @@ const NavbarFullScreen = ({ mounted }) => {
   return (
     <>
       <nav
-        className={`transition-width duration-500 ease-in-out fixed md:sticky md:shadow top-0 left-0 z-50 bg-white dark:bg-outer-space-600 ${
+        className={`transition-width duration-500 ease-in-out fixed md:sticky md:shadow top-0 left-0 z-50 bg-white ${
           isOpen ? 'w-full' : 'w-0 md:w-full'
         } h-screen md:h-auto overflow-hidden`}
       >
@@ -31,7 +31,7 @@ const NavbarFullScreen = ({ mounted }) => {
             <ActiveLink text='About' href='/about' activeClassName='active' />
           </div>
           <div className='mb-7 md:mb-0 px-7 md:px-0'>
-            <DarkModeToggle mounted={mounted} />
+            {/* <DarkModeToggle mounted={mounted} /> */}
           </div>
         </div>
       </nav>

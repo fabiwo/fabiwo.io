@@ -61,7 +61,7 @@ export default function Post({ source, headings, frontMatter, postId }) {
               {frontMatter.author ? frontMatter.author : 'Fabian Wolff'}
             </p>
           </div>
-          <section className='w-full my-5 prose prose-blue max-w-none dark:prose-dark'>
+          <section className='w-full my-5 prose prose-blue max-w-none'>
             {content}
           </section>
           <div className='grid grid-cols-3 gap-4 mb-10'>

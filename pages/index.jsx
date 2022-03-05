@@ -29,10 +29,10 @@ export default function Home({ newesPosts, allProjectData }) {
           <h1 className='mb-5 text-5xl font-black md:text-6xl'>
             Hi. I&rsquo;m Fabian.
           </h1>
-          <h2 className='text-lg text-gray-800 dark:text-gray-200'>
+          <h2 className='text-lg text-gray-800'>
             A chemical engineer and self taught developer.
           </h2>
-          <h2 className='text-lg text-gray-800 dark:text-gray-200'>
+          <h2 className='text-lg text-gray-800'>
             I write about solving things with code!😎
           </h2>
           <div className='flex items-center justify-center mt-5 space-x-5'>

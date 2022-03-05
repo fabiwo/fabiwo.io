@@ -24,7 +24,7 @@ export default function Blog({ allPostsData }) {
       <MainLayout>
         <NextSeo title='Blog' canonical='https://fabiwo.io/blog' />
         <SectionHeading>BLOG</SectionHeading>
-        <p className='mb-10 text-lg text-gray-800 dark:text-gray-100'>
+        <p className='mb-10 text-lg text-gray-800'>
           Search through all my posts 🔍
         </p>
         <SearchBar onChange={setSearchValue} />

@@ -68,7 +68,7 @@ export default function Post({ source, headings, frontMatter, postId }) {
                 <Date dateString={frontMatter.date} />
               </div>
             </div>
-            <div className='flex items-end flex-grow text-gray-800 dark:text-gray-300 md:justify-end'>
+            <div className='flex items-end flex-grow text-gray-800 md:justify-end'>
               <PostStats readTime={frontMatter.readTimeString} />
             </div>
           </div>
@@ -88,7 +88,7 @@ export default function Post({ source, headings, frontMatter, postId }) {
             />
           </div>
           <TableOfContent headings={headings} />
-          <section className='w-full mt-5 prose prose-blue max-w-none dark:prose-dark'>
+          <section className='w-full mt-5 prose prose-blue max-w-none'>
             {content}
           </section>
         </article>

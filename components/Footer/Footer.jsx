@@ -14,7 +14,7 @@ export default function Footer() {
 
   return (
     <footer className='flex flex-col items-center w-full max-w-2xl py-10 mx-auto'>
-      <hr className='w-4/5 mb-8 border-gray-300 border-1 dark:border-outer-space-600' />
+      <hr className='w-4/5 mb-8 border-gray-300 border-1' />
       <div className='flex justify-center space-x-4 md:space-x-5'>
         {socials.map((social) => (
           <SocialLink key={social.type} href={social.href}>

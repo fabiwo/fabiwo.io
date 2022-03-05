@@ -12,7 +12,7 @@ export default function About() {
         <NextSeo title='About' canonical='https://fabiwo.io/about' />
         <SectionHeading>ABOUT ME</SectionHeading>
         <article className='flex flex-wrap-reverse w-full mb-10'>
-          <section className='prose dark:prose-dark'>
+          <section className='prose'>
             <p>
               Hey, I’m Fabian. I am located in Mannheim 📍 and currently pursue
               a master&rsquo;s degree in Chemical Engineering 🧪. I am really

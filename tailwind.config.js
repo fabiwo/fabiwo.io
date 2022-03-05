@@ -47,53 +47,9 @@ module.exports = {
             },
           },
         },
-        dark: {
-          css: {
-            color: theme('colors.gray.300'),
-            h2: {
-              color: theme('colors.gray.100'),
-            },
-            'h3,h4': {
-              color: theme('colors.gray.100'),
-            },
-            blockquote: {
-              textAlign: 'center',
-              borderLeftColor: theme('colors.blue.500'),
-              borderLeftWidth: '0.35rem',
-              background: theme('colors.outer-space.600'),
-              padding: '1rem',
-              p: {
-                color: theme('colors.white'),
-              },
-              color: theme('colors.gray.300'),
-            },
-            hr: { borderColor: theme('colors.gray.700') },
-            ol: {
-              li: {
-                '&:before': { color: theme('colors.gray.500') },
-              },
-            },
-            ul: {
-              li: {
-                '&:before': { backgroundColor: theme('colors.gray.500') },
-              },
-            },
-            strong: { color: theme('colors.gray.300') },
-            thead: {
-              color: theme('colors.gray.100'),
-            },
-            tbody: {
-              tr: {
-                borderBottomColor: theme('colors.gray.700'),
-              },
-            },
-          },
-        },
       }),
     },
   },
-  variants: {
-    typography: ['dark'],
-  },
+  variants: {},
   plugins: [require('@tailwindcss/typography')],
 }
