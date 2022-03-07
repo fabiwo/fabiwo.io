@@ -5,15 +5,15 @@ import '../styles/utilities.scss'
 import '../styles/prism-custom.scss'
 import 'katex/dist/katex.min.css'
 
-import { ThemeProvider } from 'next-themes'
 import { DefaultSeo } from 'next-seo'
 import Head from 'next/head'
+import Script from 'next/script'
 
 export default function App({ Component, pageProps }) {
   return (
-    <ThemeProvider attribute='class'>
+    <>
       <DefaultSeo
-        titleTemplate='Fabian Wolff - %s'
+        titleTemplate='%s - Fabian Wolff'
         canonical='https://fabiwo.io/'
         description="This is Fabian's Blog where I solve problems with code"
         openGraph={{
@@ -30,15 +30,10 @@ export default function App({ Component, pageProps }) {
         }}
       />
       <Head>
-        <script
-          async
-          defer
-          data-domain='fabiwo.io'
-          src='https://plausible.io/js/plausible.js'
-        ></script>
+        <Script id='plausible' src='https://plausible.io/js/plausible.js' />
       </Head>
 
       <Component {...pageProps} />
-    </ThemeProvider>
+    </>
   )
 }

@@ -2,16 +2,12 @@ import ThemeProvider from '@/layouts/ThemeProvider'
 import MainLayout from '@/layouts/MainLayout'
 import { getAllSlugIds, getSlugData } from '@/lib/mdx'
 import { v4 as uuidv4 } from 'uuid'
-import hydrate from 'next-mdx-remote/hydrate'
+import { MDXRemote } from 'next-mdx-remote'
 import MDXComponents from '@/components/MDXComponents'
 import Image from 'next/image'
 import { NextSeo } from 'next-seo'
 
 export default function Post({ source, headings, frontMatter, postId }) {
-  const content = hydrate(source, {
-    components: MDXComponents,
-  })
-
   return (
     <ThemeProvider>
       <NextSeo
@@ -62,7 +58,7 @@ export default function Post({ source, headings, frontMatter, postId }) {
             </p>
           </div>
           <section className='w-full my-5 prose prose-blue max-w-none'>
-            {content}
+            <MDXRemote {...source} components={MDXComponents} />
           </section>
           <div className='grid grid-cols-3 gap-4 mb-10'>
             <div>

@@ -3,17 +3,13 @@ import MainLayout from '@/layouts/MainLayout'
 import Date from '@/components/Date'
 import TableOfContent from '@/components/TableOfContents/TableOfContent'
 import { getAllSlugIds, getSlugData } from '@/lib/mdx'
-import hydrate from 'next-mdx-remote/hydrate'
+import { MDXRemote } from 'next-mdx-remote'
 import MDXComponents from '@/components/MDXComponents'
 import PostStats from '@/components/Cards/PostStats'
 import Image from 'next/image'
 import { NextSeo } from 'next-seo'
 
 export default function Post({ source, headings, frontMatter, postId }) {
-  const content = hydrate(source, {
-    components: MDXComponents,
-  })
-
   return (
     <ThemeProvider>
       <NextSeo
@@ -89,7 +85,7 @@ export default function Post({ source, headings, frontMatter, postId }) {
           </div>
           <TableOfContent headings={headings} />
           <section className='w-full mt-5 prose prose-blue max-w-none'>
-            {content}
+            <MDXRemote {...source} components={MDXComponents} />
           </section>
         </article>
       </MainLayout>
