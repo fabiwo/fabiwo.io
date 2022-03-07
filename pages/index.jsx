@@ -54,7 +54,7 @@ export default function Home({ newesPosts, allProjectData }) {
             </a>
           </div>
         </section>
-        <SectionHeading>BLOG</SectionHeading>
+        <SectionHeading>Blog</SectionHeading>
         <PageSection>
           <PostContainer>
             {newesPosts.map((post) => (
@@ -69,21 +69,6 @@ export default function Home({ newesPosts, allProjectData }) {
             ))}
           </PostContainer>
         </PageSection>
-        {/* <SectionHeading>CURRENT PROJECT</SectionHeading> */}
-        {/* <PageSection>
-          {allProjectData.map((project) => (
-            <ProjectCardBig
-              key={project.id}
-              title={project.title}
-              description={project.description}
-              category={project.category}
-              image={project.image}
-              alt={project.alt}
-              href={project.href}
-              tools={project.technologies}
-            />
-          ))}
-        </PageSection> */}
       </MainLayout>
     </ThemeProvider>
   )

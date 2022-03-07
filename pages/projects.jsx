@@ -11,7 +11,7 @@ export default function Projects({ allProjectData }) {
     <ThemeProvider>
       <NextSeo title='Projects' canonical='https://fabiwo.io/projects' />
       <MainLayout withNewsletter={false}>
-        <SectionHeading>PROJECTS</SectionHeading>
+        <SectionHeading>Projects</SectionHeading>
         <div className='w-full my-10 space-y-3'>
           {allProjectData.map((project) => (
             <SimpleProjectCard

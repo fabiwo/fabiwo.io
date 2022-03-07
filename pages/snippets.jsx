@@ -8,7 +8,7 @@ export default function Snippets() {
     <ThemeProvider>
       <NextSeo title='Snippets' canonical='https://fabiwo.io/snippets' />
       <MainLayout>
-        <SectionHeading>SNIPPETS</SectionHeading>
+        <SectionHeading>Snippets</SectionHeading>
         <h1 className='py-5 text-3xl'>Under Construction 🚧👷</h1>
       </MainLayout>
     </ThemeProvider>

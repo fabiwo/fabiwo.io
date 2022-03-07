@@ -10,7 +10,7 @@ export default function About() {
     <ThemeProvider>
       <MainLayout>
         <NextSeo title='About' canonical='https://fabiwo.io/about' />
-        <SectionHeading>ABOUT ME</SectionHeading>
+        <SectionHeading>About me</SectionHeading>
         <article className='flex flex-wrap-reverse w-full mb-10'>
           <section className='prose'>
             <p>

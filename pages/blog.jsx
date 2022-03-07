@@ -23,7 +23,7 @@ export default function Blog({ allPostsData }) {
     <ThemeProvider>
       <MainLayout>
         <NextSeo title='Blog' canonical='https://fabiwo.io/blog' />
-        <SectionHeading>BLOG</SectionHeading>
+        <SectionHeading>Blog</SectionHeading>
         <p className='mb-10 text-lg text-gray-800'>
           Search through all my posts 🔍
         </p>
