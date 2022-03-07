@@ -23,11 +23,16 @@ const NavbarFullScreen = ({ mounted }) => {
               href='/projects'
               activeClassName='active'
             />
-            {/* <ActiveLink
-              text='Snippets 🚧'
+            <ActiveLink
+              text='Snippets'
               href='/snippets'
               activeClassName='active'
-            /> */}
+            />
+            <ActiveLink
+              text='Publications'
+              href='/publications'
+              activeClassName='active'
+            />
             <ActiveLink text='About' href='/about' activeClassName='active' />
           </div>
           <div className='mb-7 md:mb-0 px-7 md:px-0'>
