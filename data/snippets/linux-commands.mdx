@@ -1,0 +1,19 @@
+---
+title: Linux CLI
+description: A collection of useful linux CLI commands
+date: '2022-03-09'
+icon: /static/images/snippets/linux.svg
+type: snippet
+---
+
+**Search a directory for file containing speficic pattern**
+
+```bash
+grep -rnw '/path/to/somewhere/' -e 'pattern'
+```
+
+**Recursively search directory for files with pattern**
+
+```bash
+find . -type f -name "*.fig"
+```

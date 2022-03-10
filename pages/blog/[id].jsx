@@ -44,7 +44,7 @@ export default function Post({ source, headings, frontMatter, postId }) {
       />
 
       <MainLayout>
-        <article className='w-full max-w-3xl mx-auto mb-10'>
+        <article className='w-full max-w-2xl mx-auto mb-10'>
           <h1 className='mb-1 text-3xl font-bold md:text-5xl'>
             {frontMatter.title}
           </h1>

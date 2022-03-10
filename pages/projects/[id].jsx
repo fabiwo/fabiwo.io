@@ -40,8 +40,8 @@ export default function Post({ source, headings, frontMatter, postId }) {
           cardType: 'summary_large_image',
         }}
       />
-      <MainLayout withNewsletter={false}>
-        <article className='w-full max-w-3xl mx-auto mb-10 '>
+      <MainLayout>
+        <article className='w-full max-w-2xl mx-auto mb-10 '>
           <h1 className='text-3xl font-bold md:text-5xl'>
             {frontMatter.title}
           </h1>
