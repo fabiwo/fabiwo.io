@@ -20,8 +20,7 @@ export default function ThemeProvider({ children }) {
   return (
     <>
       <NavbarFullScreen mounted={mounted} />
-      {/* Main Page or Post Content */}
-      <main className='mt-14'>{children}</main>
+      <main className=''>{children}</main>
       <Footer />
       <ScrollToTop />
     </>

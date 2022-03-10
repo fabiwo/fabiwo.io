@@ -40,7 +40,7 @@ class MyDocument extends Document {
           <meta name='theme-color' content='#df4f4f' />
           {/* Global Site Tag (gtag.js) - Google Analytics */}
         </Head>
-        <body className='transition-colors duration-150 ease-out bg-gray-50'>
+        <body className='w-full h-full bg-white'>
           <Main />
           <NextScript />
         </body>

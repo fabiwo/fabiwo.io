@@ -74,8 +74,8 @@ const NewsletterForm = () => {
         Join the newsletter
       </h5>
       <p className='my-1 opacity-90'>
-        Be part of my journey and get informed about interesting{' '}
-        <strong>new articles</strong>,<strong> topics</strong> and{' '}
+        Be part of my journey and get informed about interesting
+        <strong>new articles</strong>,<strong> topics</strong> and
         <strong>projects</strong> 🚀
       </p>
       <form className='relative my-4 space-y-2' onSubmit={subscribe}>

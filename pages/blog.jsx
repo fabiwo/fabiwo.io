@@ -23,23 +23,14 @@ export default function Blog({ allPostsData }) {
     <ThemeProvider>
       <MainLayout>
         <NextSeo title='Blog' canonical='https://fabiwo.io/blog' />
-        <SectionHeading>Blog</SectionHeading>
-        <p className='mb-10 text-lg text-gray-800'>
-          Search through all my posts 🔍
+        <h1 className='mb-5 text-4xl font-bold text-gray-900'>Blog</h1>
+        <p className='mb-5 text-gray-800'>
+          Go through all my writings. Use the search below to filter by title.
         </p>
         <SearchBar onChange={setSearchValue} />
         <FoundTag number={filteredBlogPosts.length} />
         <section className='w-full mb-10'>
-          {!filteredBlogPosts.length && (
-            <Centre>
-              <Image
-                src='/static/images/astronaut.svg'
-                alt='No entries found placeholder'
-                width={500}
-                height={500}
-              />
-            </Centre>
-          )}
+          {!filteredBlogPosts.length && <h1>No articles found!</h1>}
           <PostContainer>
             {filteredBlogPosts.map((post) => (
               <SimpleBlogPost

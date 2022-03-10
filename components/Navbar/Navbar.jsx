@@ -36,7 +36,7 @@ export default function Navbar({ mounted }) {
           className='fixed w-screen h-screen bg-black bg-opacity-30'
         />
       )}
-      <div className='flex items-center justify-between max-w-3xl py-2 mx-auto px-7 md:justify-between'>
+      <div className='flex items-center justify-between max-w-2xl py-2 mx-auto px-7 md:justify-between'>
         <Hamburger isOpen={isOpen} setOpen={setOpen} />
         <Menu isOpen={isOpen} setOpen={setOpen}>
           <ActiveLink text='Home' href='/' activeClassName='active' />
