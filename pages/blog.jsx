@@ -1,16 +1,12 @@
 import React, { useState } from 'react'
-import Image from 'next/image'
-import MainLayout from '@/layouts/MainLayout'
-import SectionHeading from '@/layouts/SectionHeading'
 import { SimpleBlogPost } from '@/components/Cards/BlogPostCard'
 import PostContainer from '@/layouts/PostContainer'
-import Centre from '@/layouts/Centre'
 import SearchBar from '@/components/Search/SearchBar'
 import FoundTag from '@/components/Search/FoundTag'
 import ThemeProvider from '@/layouts/ThemeProvider'
 import { NextSeo } from 'next-seo'
-
 import { getSortedSlugs } from '@/lib/mdx'
+import { RouteHeading } from '@/layouts/SectionHeading'
 
 export default function Blog({ allPostsData }) {
   const [searchValue, setSearchValue] = useState('')
@@ -21,25 +17,16 @@ export default function Blog({ allPostsData }) {
 
   return (
     <ThemeProvider>
-      <MainLayout withNewsletter={false}>
-        <NextSeo title='Blog' canonical='https://fabiwo.io/blog' />
-        <SectionHeading>BLOG</SectionHeading>
-        <p className='mb-10 text-lg text-gray-800 dark:text-gray-100'>
-          Search through all my posts 🔍
+      <NextSeo title='Blog' canonical='https://fabiwo.io/blog' />
+      <RouteHeading>Blog</RouteHeading>
+      <div className='flex flex-col justify-center items-start max-w-2xl mx-auto'>
+        <p className='mb-5 text-zinc-800'>
+          Go through all my writings. Use the search below to filter by title.
         </p>
         <SearchBar onChange={setSearchValue} />
         <FoundTag number={filteredBlogPosts.length} />
         <section className='w-full mb-10'>
-          {!filteredBlogPosts.length && (
-            <Centre>
-              <Image
-                src='/static/images/astronaut.svg'
-                alt='No entries found placeholder'
-                width={500}
-                height={500}
-              />
-            </Centre>
-          )}
+          {!filteredBlogPosts.length && <h1>No articles found!</h1>}
           <PostContainer>
             {filteredBlogPosts.map((post) => (
               <SimpleBlogPost
@@ -53,7 +40,7 @@ export default function Blog({ allPostsData }) {
             ))}
           </PostContainer>
         </section>
-      </MainLayout>
+      </div>
     </ThemeProvider>
   )
 }

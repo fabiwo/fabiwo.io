@@ -9,6 +9,8 @@ const CubeLoadingSpinner = () => {
   )
 }
 
-const Cube = ({ nr }) => <div className={`bg-blue-500 sk-cube sk-cube${nr}`} />
+const Cube = ({ nr }) => (
+  <div className={`bg-indigo-500 sk-cube sk-cube${nr}`} />
+)
 
 export default CubeLoadingSpinner

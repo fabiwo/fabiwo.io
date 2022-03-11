@@ -12,7 +12,7 @@ export default function BlogPostCard({
 }) {
   return (
     <Link href={`/blog/${id}`}>
-      <li className='flex flex-col w-full bg-white border rounded-md shadow cursor-pointer dark:bg-outer-space-600 dark:border-outer-space-500 md:flex-row hover:shadow-md'>
+      <li className='flex flex-col w-full bg-white border rounded-md shadow cursor-pointer md:flex-row hover:shadow-md'>
         <div className='relative h-56 md:w-56 md:h-auto'>
           <Image
             src={image || '/static/images/placeholder.svg'}
@@ -23,9 +23,7 @@ export default function BlogPostCard({
         </div>
         <div className='flex flex-col max-w-sm py-6 px-7'>
           <h2 className='text-lg font-bold '>{title}</h2>
-          <p className='my-2 text-sm text-gray-500 dark:text-gray-300'>
-            {description}
-          </p>
+          <p className='my-2 text-sm text-zinc-500'>{description}</p>
           <Date dateString={date} />
         </div>
       </li>
@@ -33,15 +31,14 @@ export default function BlogPostCard({
   )
 }
 
-export function SimpleBlogPost({ id, title, description, date }) {
+export function SimpleBlogPost({ id, title, description }) {
   return (
     <Link href={`/blog/${id}`}>
       <li className='cursor-pointer'>
-        <Date dateString={date} />
-        <h2 className='my-1.5 text-xl dark:text-white text-gray-800 font-medium'>
-          {title}
-        </h2>
-        <p className='text-gray-600 dark:text-outer-space-50'>{description}</p>
+        <h2 className='mb-1.5 font-medium'>{title}</h2>
+        <p className='text-justify text-zinc-600 text-sm line-clamp-3 sm:line-clamp-4'>
+          {description}
+        </p>
       </li>
     </Link>
   )
@@ -80,7 +77,7 @@ export function NewestBlogPostCard({
         </ul>
         <div className='flex flex-col flex-grow p-10'>
           <h1 className='text-2xl font-bold mb-0.5'>{title}</h1>
-          <h3 className='mb-1 text-lg text-gray-600'>{description}</h3>
+          <h3 className='mb-1 text-lg text-zinc-600'>{description}</h3>
         </div>
       </article>
     </Link>

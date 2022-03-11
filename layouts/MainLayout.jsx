@@ -1,10 +1,3 @@
-import NewsletterForm from '@/components/Newsletter/NewsletterForm'
-
-export default function MainLayout({ children, withNewsletter = true }) {
-  return (
-    <div className='relative flex flex-col items-start justify-center max-w-3xl mx-auto px-7'>
-      {children}
-      {withNewsletter && <NewsletterForm />}
-    </div>
-  )
+export default function MainLayout({ children }) {
+  return <main className='flex flex-col justify-center px-8'>{children}</main>
 }

@@ -5,10 +5,10 @@ const SearchBar = ({ onChange }) => (
       type='text'
       onChange={(e) => onChange(e.target.value)}
       placeholder='Search articles'
-      className='w-full px-4 py-3 rounded-md shadow-lg dark:text-outer-space-300 dark:border-transparent dark:bg-outer-space-700 dark:placeholder-outer-space-400 dark:focus:bg-outer-space-800 active:ring-red-500 focus:outline-none focus:ring-2 focus:ring-blue-400'
+      className='w-full px-3 py-2 rounded-md active:ring-indigo-500 focus:outline-none focus:ring-2 focus:ring-indigo-400 outline outline-1	outline-zinc-200'
     />
     <svg
-      className='absolute w-5 h-5 text-gray-400 right-4 top-4 dark:text-gray-300'
+      className='absolute w-5 h-5 text-zinc-400 right-3 top-3'
       xmlns='http://www.w3.org/2000/svg'
       fill='none'
       viewBox='0 0 24 24'

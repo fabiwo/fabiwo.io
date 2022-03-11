@@ -1,19 +1,13 @@
 import ThemeProvider from '@/layouts/ThemeProvider'
-import MainLayout from '@/layouts/MainLayout'
-import Date from '@/components/Date'
-import TableOfContent from '@/components/TableOfContents/TableOfContent'
+import Date, { LastEdited } from '@/components/Date'
 import { getAllSlugIds, getSlugData } from '@/lib/mdx'
-import hydrate from 'next-mdx-remote/hydrate'
+import { MDXRemote } from 'next-mdx-remote'
 import MDXComponents from '@/components/MDXComponents'
 import PostStats from '@/components/Cards/PostStats'
 import Image from 'next/image'
 import { NextSeo } from 'next-seo'
 
-export default function Post({ source, headings, frontMatter, postId }) {
-  const content = hydrate(source, {
-    components: MDXComponents,
-  })
-
+export default function Post({ source, frontMatter, postId }) {
   return (
     <ThemeProvider>
       <NextSeo
@@ -46,53 +40,57 @@ export default function Post({ source, headings, frontMatter, postId }) {
           cardType: 'summary_large_image',
         }}
       />
-
-      <MainLayout>
-        <article className='w-full max-w-3xl mx-auto mb-10'>
-          <h1 className='mb-1 text-3xl font-bold md:text-5xl'>
-            {frontMatter.title}
-          </h1>
-          <div className='flex flex-col py-5 space-y-3 md:flex-row '>
-            <div className='flex space-x-2'>
-              <Image
-                alt='Fabian Wolff'
-                height={40}
-                width={40}
-                src='/static/images/fabiwo.jpg'
-                className='rounded-full'
-              />
-              <div className='flex flex-col justify-end'>
-                <p className='text-sm font-semibold'>
-                  {frontMatter.author ? frontMatter.author : 'Fabian Wolff'}
-                </p>
-                <Date dateString={frontMatter.date} />
-              </div>
-            </div>
-            <div className='flex items-end flex-grow text-gray-800 dark:text-gray-300 md:justify-end'>
-              <PostStats readTime={frontMatter.readTimeString} />
-            </div>
-          </div>
-          <div>
+      <article className='flex flex-col items-start justify-center w-full max-w-2xl mx-auto mb-10'>
+        <h1 className='mb-1 text-2xl font-bold md:text-5xl'>
+          {frontMatter.title}
+        </h1>
+        <div className='flex flex-col py-5 space-y-3 md:flex-row '>
+          <div className='flex space-x-2'>
             <Image
-              width={500}
-              height={500 / (16 / 10)}
-              layout='responsive'
-              className='object-cover '
-              src={
-                frontMatter.image
-                  ? frontMatter.image
-                  : '/static/images/placeholder.svg'
-              }
-              alt={frontMatter.alt}
-              priority='true'
+              alt='Fabian Wolff'
+              height={40}
+              width={40}
+              src='/static/images/fabiwo.jpg'
+              className='rounded-full'
             />
+            <div className='flex flex-col justify-end'>
+              <p className='text-sm font-semibold'>
+                {frontMatter.author ? frontMatter.author : 'Fabian Wolff'}
+              </p>
+              <Date dateString={frontMatter.date} />
+            </div>
           </div>
-          <TableOfContent headings={headings} />
-          <section className='w-full mt-5 prose prose-blue max-w-none dark:prose-dark'>
-            {content}
-          </section>
-        </article>
-      </MainLayout>
+          <div className='flex items-end flex-grow text-zinc-800 md:justify-end'>
+            <PostStats readTime={`${frontMatter.readTime.toFixed(0)} min`} />
+          </div>
+        </div>
+        <div className='mb-5'>
+          <Image
+            width={500}
+            height={500 / (16 / 10)}
+            layout='responsive'
+            className='object-cover'
+            src={
+              frontMatter.image
+                ? frontMatter.image
+                : '/static/images/placeholder.svg'
+            }
+            alt={frontMatter.alt}
+            priority='true'
+          />
+        </div>
+        <div className='w-full prose-sm sm:prose prose-indigo max-w-none'>
+          <MDXRemote {...source} components={MDXComponents} />
+          <LastEdited dateString={frontMatter.lastEdited} />
+        </div>
+      </article>
+
+      {/* <div className='w-full'>
+          <DisqusComments
+            identifier={`blog/${postId}`}
+            title={frontMatter.title}
+          />
+        </div> */}
     </ThemeProvider>
   )
 }

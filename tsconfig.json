@@ -19,10 +19,12 @@
       ]
     },
     "target": "es5",
+    "module": "esnext",
     "lib": [
-      "dom",
-      "dom.iterable",
-      "esnext"
+            "dom",
+            "es5",
+            "scripthost",
+            "es2015.promise"
     ],
     "allowJs": true,
     "skipLibCheck": true,
@@ -30,22 +32,22 @@
     "forceConsistentCasingInFileNames": true,
     "noEmit": true,
     "esModuleInterop": true,
-    "module": "esnext",
     "moduleResolution": "node",
     "resolveJsonModule": true,
     "isolatedModules": true,
-    "jsx": "preserve"
+    "jsx": "preserve",
+    "incremental": true
   },
   "exclude": [
     "node_modules/*",
     ".next",
-    "out",
+    "out"
   ],
   "include": [
     "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx",
     "**/*.js",
-    "**/*.jsx",
+    "**/*.jsx"
   ]
 }

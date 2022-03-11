@@ -1,63 +1,43 @@
-import MainLayout from '@/layouts/MainLayout'
 import Image from 'next/image'
-import Link from 'next/link'
-import SectionHeading from '@/layouts/SectionHeading'
-import ProjectCardBig from '@/components/Cards/ProjectItem'
 import { SimpleBlogPost } from '@/components/Cards/BlogPostCard'
 import PostContainer from '@/layouts/PostContainer'
-import PageSection from '@/layouts/PageSection'
 import { getSortedSlugs } from '@/lib/mdx'
 import ThemeProvider from '@/layouts/ThemeProvider'
 import { NextSeo } from 'next-seo'
 
-export default function Home({ newesPosts, allProjectData }) {
+export default function Home({ featuredPosts }) {
   return (
     <ThemeProvider>
       <NextSeo title='Home' canonical='https://fabiwo.io/' />
-      <MainLayout>
-        <section className='flex flex-col justify-center w-full mb-20 text-center'>
-          <div className='flex justify-center w-full mb-14'>
+      <div className='flex flex-col justify-center items-start max-w-2xl mx-auto'>
+        <div className='flex flex-col-reverse items-start w-full sm:flex-row mb-12'>
+          <div className='pr-8'>
+            <h1 className='mb-1 text-3xl font-bold sm:text-5xl'>
+              Fabian Wolff
+            </h1>
+            <h2 className='mb-4 text-zinc-800 text-sm sm:text-base'>
+              Chemical Engineering Student
+            </h2>
+            <p className='text-zinc-700 text-sm sm:text-base'>
+              Passionate about the intersection between engineering, science,
+              and computers
+            </p>
+          </div>
+          <div className='w-[125px] sm:w-[176px] relative mb-8 sm:mb-0 sm:mr-auto m-auto'>
             <Image
               src='/static/images/fabiwo.jpg'
-              alt='No entries found placeholder'
-              width={150}
-              height={150}
-              className='object-cover rounded-full'
+              alt='profile image'
+              width={125}
+              height={125}
+              className='object-cover rounded-lg'
               quality={100}
             />
           </div>
-          <h1 className='mb-5 text-5xl font-black md:text-6xl'>
-            Hi. I&rsquo;m Fabian.
-          </h1>
-          <h2 className='text-lg text-gray-800 dark:text-gray-200'>
-            A chemical engineer and self taught developer.
-          </h2>
-          <h2 className='text-lg text-gray-800 dark:text-gray-200'>
-            I write about solving things with code!😎
-          </h2>
-          <div className='flex items-center justify-center mt-5 space-x-5'>
-            <Link href='/about'>
-              <button
-                type='button'
-                className='inline-flex items-center justify-center px-4 py-2 text-base font-medium text-white bg-blue-500 border border-transparent rounded-md shadow-sm hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 w-44'
-              >
-                More about me
-              </button>
-            </Link>
-            <a
-              className='inline-flex items-center justify-center px-4 py-2 text-base font-medium text-white bg-blue-500 border border-transparent rounded-md shadow-sm hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 w-44'
-              target='_blank'
-              rel='noopener noreferrer'
-              href='mailto:fabiandwolff@gmail.com'
-            >
-              Get in touch
-            </a>
-          </div>
-        </section>
-        <SectionHeading>BLOG</SectionHeading>
-        <PageSection>
+        </div>
+        <h1 className='text-lg font-bold text-zinc-900'>Writing</h1>
+        <section className='w-full mb-6 py-4'>
           <PostContainer>
-            {newesPosts.map((post) => (
+            {featuredPosts.map((post) => (
               <SimpleBlogPost
                 key={post.id}
                 id={post.id}
@@ -68,23 +48,28 @@ export default function Home({ newesPosts, allProjectData }) {
               />
             ))}
           </PostContainer>
-        </PageSection>
-        {/* <SectionHeading>CURRENT PROJECT</SectionHeading> */}
-        {/* <PageSection>
-          {allProjectData.map((project) => (
-            <ProjectCardBig
-              key={project.id}
-              title={project.title}
-              description={project.description}
-              category={project.category}
-              image={project.image}
-              alt={project.alt}
-              href={project.href}
-              tools={project.technologies}
-            />
-          ))}
-        </PageSection> */}
-      </MainLayout>
+          {/* <a
+          className='flex h-6 mt-4 leading-5 text-zinc-500 transition-all rounded-lg hover:text-zinc-800'
+          href='/blog'
+        >
+          Read all posts
+          <svg
+            xmlns='http://www.w3.org/2000/svg'
+            fill='none'
+            viewBox='0 0 24 24'
+            className='w-6 h-6 ml-1'
+          >
+            <path
+              stroke='currentColor'
+              strokeLinecap='round'
+              strokeLinejoin='round'
+              strokeWidth='2'
+              d='M17.5 12h-15m11.667-4l3.333 4-3.333-4zm3.333 4l-3.333 4 3.333-4z'
+            ></path>
+          </svg>
+        </a> */}
+        </section>
+      </div>
     </ThemeProvider>
   )
 }
@@ -92,11 +77,25 @@ export default function Home({ newesPosts, allProjectData }) {
 export async function getStaticProps() {
   const allPostsData = getSortedSlugs('blog')
   const allProjectData = getSortedSlugs('projects')
-  const nNewest = 3
-  const newesPosts = allPostsData.splice(0, nNewest)
+
+  // N newest posts
+  // const nNewest = 1
+  // const recentPost = allPostsData.splice(0, nNewest)
+
+  // Declare which posts you would like to have featured by id
+  // const featuredIds = ['download-the-dom', 'ternary-equilibrium']
+  // let featuredPosts = []
+  // for (let id of featuredIds) {
+  //   const match = allPostsData.filter((post) => post.id === id)
+  //   featuredPosts.push(match[0])
+  // }
+
+  //! For now only show all posts until more are produced
+  const featuredPosts = allPostsData
+
   return {
     props: {
-      newesPosts,
+      featuredPosts,
       allProjectData,
     },
   }
