@@ -1,5 +1,4 @@
 import ThemeProvider from '@/layouts/ThemeProvider'
-import MainLayout from '@/layouts/MainLayout'
 import { getAllSlugIds, getSlugData } from '@/lib/mdx'
 import { v4 as uuidv4 } from 'uuid'
 import { MDXRemote } from 'next-mdx-remote'
@@ -8,7 +7,7 @@ import Image from 'next/image'
 import { NextSeo } from 'next-seo'
 import { LastEdited } from '@/components/Date'
 
-export default function Post({ source, headings, frontMatter, postId }) {
+export default function Post({ source, frontMatter, postId }) {
   return (
     <ThemeProvider>
       <NextSeo

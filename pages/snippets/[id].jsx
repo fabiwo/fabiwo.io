@@ -1,7 +1,5 @@
 import ThemeProvider from '@/layouts/ThemeProvider'
-import MainLayout from '@/layouts/MainLayout'
 import { getAllSlugIds, getSlugData } from '@/lib/mdx'
-import { v4 as uuidv4 } from 'uuid'
 import { MDXRemote } from 'next-mdx-remote'
 import MDXComponents from '@/components/MDXComponents'
 import Image from 'next/image'

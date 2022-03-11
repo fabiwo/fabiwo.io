@@ -31,7 +31,7 @@ export default function BlogPostCard({
   )
 }
 
-export function SimpleBlogPost({ id, title, description, date }) {
+export function SimpleBlogPost({ id, title, description }) {
   return (
     <Link href={`/blog/${id}`}>
       <li className='cursor-pointer'>

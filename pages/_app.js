@@ -28,9 +28,7 @@ export default function App({ Component, pageProps }) {
           cardType: 'summary_large_image',
         }}
       />
-      <Head>
-        <Script id='plausible' src='https://plausible.io/js/plausible.js' />
-      </Head>
+      <Script id='plausible' src='https://plausible.io/js/plausible.js' />
 
       <Component {...pageProps} />
     </>

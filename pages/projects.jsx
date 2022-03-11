@@ -1,4 +1,3 @@
-import MainLayout from '@/layouts/MainLayout'
 import ThemeProvider from '@/layouts/ThemeProvider'
 import SimpleProjectCard, {
   ExternalProjectCard,
@@ -6,7 +5,7 @@ import SimpleProjectCard, {
 import { NextSeo } from 'next-seo'
 import { getSortedSlugs } from '@/lib/mdx'
 import { v4 as uuidv4 } from 'uuid'
-import SectionHeading, { RouteHeading } from '@/layouts/SectionHeading'
+import { RouteHeading } from '@/layouts/SectionHeading'
 import CardGrid from '@/layouts/CardGrid'
 
 export default function Projects({ allProjectData }) {
@@ -39,7 +38,7 @@ export default function Projects({ allProjectData }) {
           {allProjectData.map((project) => (
             <SimpleProjectCard
               key={uuidv4()}
-              dir={'projects'}
+              dir='projects'
               id={project.id}
               title={project.title}
               description={project.description}

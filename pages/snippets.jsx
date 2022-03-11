@@ -1,10 +1,9 @@
-import MainLayout from '@/layouts/MainLayout'
 import ThemeProvider from '@/layouts/ThemeProvider'
 import SnippetCard from 'components/SnippetCard'
 import { getSortedSlugs } from '@/lib/mdx'
 import { v4 as uuidv4 } from 'uuid'
 import { NextSeo } from 'next-seo'
-import SectionHeading, { RouteHeading } from '@/layouts/SectionHeading'
+import { RouteHeading } from '@/layouts/SectionHeading'
 import CardGrid from '@/layouts/CardGrid'
 
 const contentName = 'snippets'

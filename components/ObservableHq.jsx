@@ -1,7 +1,6 @@
 import React, { useRef, useEffect } from 'react'
 import { Runtime, Inspector } from '@observablehq/runtime'
 import ThemeProvider from '@/layouts/ThemeProvider'
-import MainLayout from '@/layouts/MainLayout'
 
 export function ObservableLayout({ children }) {
   return (

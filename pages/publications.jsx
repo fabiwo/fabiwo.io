@@ -1,10 +1,8 @@
-import MainLayout from '@/layouts/MainLayout'
 import { getSortedSlugs } from '@/lib/mdx'
 import ThemeProvider from '@/layouts/ThemeProvider'
-import { v4 as uuidv4 } from 'uuid'
 import { NextSeo } from 'next-seo'
 import ListOfReferences from 'components/ListOfReferences'
-import SectionHeading, { RouteHeading } from '@/layouts/SectionHeading'
+import { RouteHeading } from '@/layouts/SectionHeading'
 
 const contentName = 'publications'
 

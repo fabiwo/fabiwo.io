@@ -1,5 +1,3 @@
-import MainLayout from '@/layouts/MainLayout'
-import SectionHeading, { RouteHeading } from '@/layouts/SectionHeading'
 import ThemeProvider from '@/layouts/ThemeProvider'
 import { NextSeo } from 'next-seo'
 import Image from 'next/image'

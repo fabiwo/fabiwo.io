@@ -25,7 +25,7 @@ const NavbarFullScreen = ({ mounted, isNavbarOpen, setNavbarOpen }) => {
           {isOpen ? (
             <ul className='items-center h-screen w-full flex flex-col absolute bg-zinc-50 z-50'>
               {routes.map((d) => (
-                <Link href={d.href}>
+                <Link key={uuidv4()} href={d.href}>
                   <span
                     key={uuidv4()}
                     className='px-3 py-2 rounded-lg cursor-pointer text-zinc-800 hover:font-bold focus:outline-none transition-all'
@@ -39,7 +39,12 @@ const NavbarFullScreen = ({ mounted, isNavbarOpen, setNavbarOpen }) => {
 
           {/* Normal state */}
           {routes.map((d) => (
-            <ActiveLink text={d.text} href={d.href} activeClassName='active' />
+            <ActiveLink
+              key={uuidv4()}
+              text={d.text}
+              href={d.href}
+              activeClassName='active'
+            />
           ))}
         </div>
       </nav>

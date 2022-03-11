@@ -1,6 +1,4 @@
 import React, { useState } from 'react'
-import Image from 'next/image'
-import MainLayout from '@/layouts/MainLayout'
 import { SimpleBlogPost } from '@/components/Cards/BlogPostCard'
 import PostContainer from '@/layouts/PostContainer'
 import SearchBar from '@/components/Search/SearchBar'
@@ -8,7 +6,7 @@ import FoundTag from '@/components/Search/FoundTag'
 import ThemeProvider from '@/layouts/ThemeProvider'
 import { NextSeo } from 'next-seo'
 import { getSortedSlugs } from '@/lib/mdx'
-import SectionHeading, { RouteHeading } from '@/layouts/SectionHeading'
+import { RouteHeading } from '@/layouts/SectionHeading'
 
 export default function Blog({ allPostsData }) {
   const [searchValue, setSearchValue] = useState('')

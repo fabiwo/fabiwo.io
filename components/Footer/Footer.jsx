@@ -1,9 +1,3 @@
-import github from 'public/static/images/social/github.svg'
-import mail from 'public/static/images/social/mail.svg'
-import linkedin from 'public/static/images/social/linkedin.svg'
-import observablehq from 'public/static/images/social/observablehq.svg'
-import twitter from 'public/static/images/social/twitter.svg'
-
 const SocialLink = ({ children, href }) => (
   <a
     target='_blank'

@@ -1,17 +1,13 @@
 import ThemeProvider from '@/layouts/ThemeProvider'
-import MainLayout from '@/layouts/MainLayout'
-import Date from '@/components/Date'
-import TableOfContent from '@/components/TableOfContents/TableOfContent'
+import Date, { LastEdited } from '@/components/Date'
 import { getAllSlugIds, getSlugData } from '@/lib/mdx'
 import { MDXRemote } from 'next-mdx-remote'
 import MDXComponents from '@/components/MDXComponents'
 import PostStats from '@/components/Cards/PostStats'
 import Image from 'next/image'
 import { NextSeo } from 'next-seo'
-import DisqusComments from '@/components/DisqusComments'
-import { LastEdited } from '@/components/Date'
 
-export default function Post({ source, headings, frontMatter, postId }) {
+export default function Post({ source, frontMatter, postId }) {
   return (
     <ThemeProvider>
       <NextSeo

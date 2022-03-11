@@ -1,13 +1,11 @@
-import MainLayout from '@/layouts/MainLayout'
 import Image from 'next/image'
-import SectionHeading from '@/layouts/SectionHeading'
 import { SimpleBlogPost } from '@/components/Cards/BlogPostCard'
 import PostContainer from '@/layouts/PostContainer'
 import { getSortedSlugs } from '@/lib/mdx'
 import ThemeProvider from '@/layouts/ThemeProvider'
 import { NextSeo } from 'next-seo'
 
-export default function Home({ featuredPosts, allProjectData }) {
+export default function Home({ featuredPosts }) {
   return (
     <ThemeProvider>
       <NextSeo title='Home' canonical='https://fabiwo.io/' />
