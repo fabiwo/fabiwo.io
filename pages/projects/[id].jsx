@@ -80,7 +80,6 @@ export default function Post({ source, headings, frontMatter, postId }) {
             <h2 className='font-semibold'>Links</h2>
             <div className='flex flex-col'>
               <a
-                className='inline'
                 href={frontMatter.href}
                 target='_blank'
                 rel='noreferrer'
