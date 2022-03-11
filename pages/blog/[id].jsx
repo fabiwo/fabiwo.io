@@ -8,6 +8,8 @@ import Image from 'next/image'
 import { NextSeo } from 'next-seo'
 
 export default function Post({ source, frontMatter, postId }) {
+  console.log(frontMatter.image)
+
   return (
     <ThemeProvider>
       <NextSeo
@@ -44,7 +46,7 @@ export default function Post({ source, frontMatter, postId }) {
         <h1 className='mb-1 text-2xl font-bold md:text-5xl'>
           {frontMatter.title}
         </h1>
-        <div className='flex flex-col py-5 space-y-3 md:flex-row '>
+        <div className='flex flex-col py-5 space-y-3 md:flex-row justify-between w-full'>
           <div className='flex space-x-2'>
             <Image
               alt='Fabian Wolff'
@@ -64,7 +66,8 @@ export default function Post({ source, frontMatter, postId }) {
             <PostStats readTime={`${frontMatter.readTime.toFixed(0)} min`} />
           </div>
         </div>
-        <div className='mb-5'>
+
+        <div className='mb-5 w-full'>
           <Image
             width={500}
             height={500 / (16 / 10)}
