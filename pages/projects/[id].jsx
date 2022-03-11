@@ -102,7 +102,6 @@ export default function Post({ source, headings, frontMatter, postId }) {
                 Website
               </a>
               <a
-                className='inline'
                 href={frontMatter.post}
                 target='_blank'
                 rel='noreferrer'
