@@ -1,16 +1,14 @@
 import React, { useState } from 'react'
 import Image from 'next/image'
 import MainLayout from '@/layouts/MainLayout'
-import SectionHeading from '@/layouts/SectionHeading'
 import { SimpleBlogPost } from '@/components/Cards/BlogPostCard'
 import PostContainer from '@/layouts/PostContainer'
-import Centre from '@/layouts/Centre'
 import SearchBar from '@/components/Search/SearchBar'
 import FoundTag from '@/components/Search/FoundTag'
 import ThemeProvider from '@/layouts/ThemeProvider'
 import { NextSeo } from 'next-seo'
-
 import { getSortedSlugs } from '@/lib/mdx'
+import SectionHeading, { RouteHeading } from '@/layouts/SectionHeading'
 
 export default function Blog({ allPostsData }) {
   const [searchValue, setSearchValue] = useState('')
@@ -21,10 +19,10 @@ export default function Blog({ allPostsData }) {
 
   return (
     <ThemeProvider>
-      <MainLayout>
-        <NextSeo title='Blog' canonical='https://fabiwo.io/blog' />
-        <h1 className='mb-5 text-4xl font-bold text-gray-900'>Blog</h1>
-        <p className='mb-5 text-gray-800'>
+      <NextSeo title='Blog' canonical='https://fabiwo.io/blog' />
+      <RouteHeading>Blog</RouteHeading>
+      <div className='flex flex-col justify-center items-start max-w-2xl mx-auto'>
+        <p className='mb-5 text-zinc-800'>
           Go through all my writings. Use the search below to filter by title.
         </p>
         <SearchBar onChange={setSearchValue} />
@@ -44,7 +42,7 @@ export default function Blog({ allPostsData }) {
             ))}
           </PostContainer>
         </section>
-      </MainLayout>
+      </div>
     </ThemeProvider>
   )
 }

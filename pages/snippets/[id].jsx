@@ -6,6 +6,7 @@ import { MDXRemote } from 'next-mdx-remote'
 import MDXComponents from '@/components/MDXComponents'
 import Image from 'next/image'
 import { NextSeo } from 'next-seo'
+import { LastEdited } from '@/components/Date'
 
 const contentName = 'snippets'
 
@@ -27,14 +28,6 @@ export default function Snippet({ source, frontMatter, postId }) {
           url: `https://fabiwo.io/${contentName}/${postId}`,
           site_name: 'Fabian Wolff',
           title: frontMatter.title,
-          // images: [
-          //   {
-          //     url: `https://fabiwo.io/${frontMatter.images[0].path}`,
-          //     width: 800,
-          //     height: 600,
-          //     alt: frontMatter.alt,
-          //   },
-          // ],
         }}
         twitter={{
           handle: '@ffabiwo',
@@ -42,30 +35,29 @@ export default function Snippet({ source, frontMatter, postId }) {
           cardType: 'summary_large_image',
         }}
       />
-      <MainLayout>
-        <article className='w-full max-w-2xl mx-auto mb-10'>
-          <div className='flex items-start justify-between w-full mb-8'>
-            <div>
-              <h1 className='mb-1 text-3xl font-bold md:text-5xl'>
-                {frontMatter.title}
-              </h1>
-              <p className='mb-5 text-lg text-gray-800'>
-                {frontMatter.description}
-              </p>
-            </div>
-            <Image
-              width={50}
-              height={50}
-              className='object-contain'
-              src={frontMatter.icon}
-            />
-          </div>
 
-          <section className='w-full prose prose-blue max-w-none'>
-            <MDXRemote {...source} components={MDXComponents} />
-          </section>
-        </article>
-      </MainLayout>
+      <article className='flex flex-col items-start justify-center w-full max-w-2xl mx-auto mb-10'>
+        <div className='flex items-start justify-between w-full mb-4'>
+          <div>
+            <h1 className='mb-1 text-3xl font-bold md:text-5xl'>
+              {frontMatter.title}
+            </h1>
+            <p className='mb-5 text-lg text-zinc-800'>
+              {frontMatter.description}
+            </p>
+          </div>
+          <Image
+            width={50}
+            height={50}
+            className='object-contain'
+            src={frontMatter.icon}
+          />
+        </div>
+        <div className='w-full prose-sm sm:prose prose-indigo max-w-none'>
+          <MDXRemote {...source} components={MDXComponents} />
+          <LastEdited dateString={frontMatter.lastEdited} />
+        </div>
+      </article>
     </ThemeProvider>
   )
 }

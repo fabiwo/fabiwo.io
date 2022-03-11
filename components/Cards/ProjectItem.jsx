@@ -33,7 +33,7 @@ export default function ProjectCardBig({
         <div className='flex flex-col p-5 sm:p-10'>
           <div className='flex flex-col'>
             <h1 className='text-2xl font-bold'>{title}</h1>
-            <h2 className='pb-4 font-light text-gray-500 md:text-lg'>
+            <h2 className='pb-4 font-light text-zinc-500 md:text-lg'>
               {category}
             </h2>
             <p>{description}</p>

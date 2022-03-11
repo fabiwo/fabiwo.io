@@ -16,16 +16,16 @@ tags:
   - dataviz
 ---
 
-This is the officially launch of my own space on the internet and my first application <InlineLink href='https://www.ternary-equilibrium.com/' text='Ternary Equilibrium'/>.🥳
+This is the officially launch of my own space on the internet and my first application [Ternary Equilibrium](https://ternary-equilibrium.vercel.app//).🥳
 
 It was quite a bumpy road learning web development whilst also building an application.
 I learned a lot and am really happy to finally release my work and share it with others! 🎉
 
 You will first get a brief introduction to why we use ternary graphs and how to read them. After that we will dive straight into building our own!
 
-The project is inspired by the <InlineLink href='https://observablehq.com/@toja/d3-ternary-plot' text='observable notebook of Torben Jansen'/> which served as a starting point.
+The project is inspired by the [observable notebook of Torben Jansen](https://observablehq.com/@toja/d3-ternary-plot) which served as a starting point.
 
-If you already know about ternary graphs and want to start building, you can go to <InlineNavLink href='#how-to-use-' text='How to Use 🌍'/> or just <InlineLink href='https://www.ternary-equilibrium.com/' text='launch the application 🚀'/>.
+If you already know about ternary graphs and want to start building, you can go to [How to Use 🌍](#how-to-use-) or just [launch the application 🚀](https://ternary-equilibrium.vercel.app//).
 
 ## Why did I develop Ternary Equilibrium?
 
@@ -35,15 +35,15 @@ The bigger concept behind Ternary Equilibrium is an **easy-to-use** and **easy-t
 
 ## What is a Ternary Graph
 
-In general a ternary graph is a **triangular diagram** used to display the proportion of **three variables** (<span className="text-red-500 font-bold">a</span>,<span className="text-blue-500 font-bold">b</span>,<span className="text-green-500 font-bold">c</span>) that together compound to a constant.
-Usually the constant is either 1.0 or 100%. Because (<span className="text-red-500 font-bold">a</span>+<span className="text-blue-500 font-bold">b</span>+<span className="text-green-500 font-bold">c</span>)=100% adding a point to the graph only requires two coordinates.  The graph, therefore, has two degrees of freedom.
+In general a ternary graph is a **triangular diagram** used to display the proportion of **three variables** (<span className="text-red-500 font-bold">a</span>,<span className="text-indigo-500 font-bold">b</span>,<span className="text-green-500 font-bold">c</span>) that together compound to a constant.
+Usually the constant is either 1.0 or 100%. Because (<span className="text-red-500 font-bold">a</span>+<span className="text-indigo-500 font-bold">b</span>+<span className="text-green-500 font-bold">c</span>)=100% adding a point to the graph only requires two coordinates.  The graph, therefore, has two degrees of freedom.
 
 ## Reading a Ternary Graph
 
 The three variables get displayed on three axes. For convenience I am going to name the axes:
 
 1. <span className='text-red-500 font-bold'>left</span>
-2. <span className='text-blue-500 font-bold'>bottom</span>
+2. <span className='text-indigo-500 font-bold'>bottom</span>
 3. <span className='text-green-500 font-bold'>right</span>
 
 The values on each axis increase counterclockwise from 0 to 100.
@@ -58,14 +58,14 @@ The values on each axis increase counterclockwise from 0 to 100.
 </Centre>
 
 **Each vertice of the triangle represents a composition of 100% for one component** and
-therefore 0% for the other two components (see the triangle in the next picture). To describe the composition more conveniently [<span className="text-red-500 font-bold">30</span>, <span className="text-blue-500 font-bold">20</span>, <span className="text-green-500 font-bold">50</span>] equals a composition of <span className="text-red-500 font-bold">30% left</span>, <span className="text-blue-500 font-bold">20% bottom</span>, <span className="text-green-500 font-bold">50% right</span> (starting from the left axis and rotating counterclockwise). The **bottom left vertice (red circle)** therefore has the composition[<span className="text-red-500 font-bold">100</span>,<span className="text-blue-500 font-bold">0</span>,<span className="text-green-500 font-bold">0</span>], the
-**bottom right vertice (blue circle)** [<span className="text-red-500 font-bold">0</span>,<span className="text-blue-500 font-bold">100</span>,<span className="text-green-500 font-bold">0</span>] and the **top vertice (green circle)**
-[<span className="text-red-500 font-bold">0</span>,<span className="text-blue-500 font-bold">0</span>,<span className="text-green-500 font-bold">100</span>].
+therefore 0% for the other two components (see the triangle in the next picture). To describe the composition more conveniently [<span className="text-red-500 font-bold">30</span>, <span className="text-indigo-500 font-bold">20</span>, <span className="text-green-500 font-bold">50</span>] equals a composition of <span className="text-red-500 font-bold">30% left</span>, <span className="text-indigo-500 font-bold">20% bottom</span>, <span className="text-green-500 font-bold">50% right</span> (starting from the left axis and rotating counterclockwise). The **bottom left vertice (red circle)** therefore has the composition[<span className="text-red-500 font-bold">100</span>,<span className="text-indigo-500 font-bold">0</span>,<span className="text-green-500 font-bold">0</span>], the
+**bottom right vertice (blue circle)** [<span className="text-red-500 font-bold">0</span>,<span className="text-indigo-500 font-bold">100</span>,<span className="text-green-500 font-bold">0</span>] and the **top vertice (green circle)**
+[<span className="text-red-500 font-bold">0</span>,<span className="text-indigo-500 font-bold">0</span>,<span className="text-green-500 font-bold">100</span>].
 
 Next, we focus on **how to read an actual point inside the triangle**.
 
-If you look at the graph below, the black point has a composition of [<span className="text-red-500 font-bold">30</span>,<span className="text-blue-500 font-bold">20</span>,<span className="text-green-500 font-bold">50</span>]. To
-understand this you have to **follow each of the lines** [<span className="text-red-500 font-bold">red</span>,<span className="text-blue-500 font-bold">blue</span>,<span className="text-green-500 font-bold">green</span>] **from the point, back to the corresponding axis**. You then just read the value from the axis.
+If you look at the graph below, the black point has a composition of [<span className="text-red-500 font-bold">30</span>,<span className="text-indigo-500 font-bold">20</span>,<span className="text-green-500 font-bold">50</span>]. To
+understand this you have to **follow each of the lines** [<span className="text-red-500 font-bold">red</span>,<span className="text-indigo-500 font-bold">blue</span>,<span className="text-green-500 font-bold">green</span>] **from the point, back to the corresponding axis**. You then just read the value from the axis.
 
 <Centre>
   <Image
@@ -126,7 +126,7 @@ The application is made up of 4 tabs (left bar):
 - **Styling Tab**: Apply pre-made stylesheets or create your own by styling the graph with the provided options.
 - **Trace Tab**: Shows all added datasets, style equilibrium points, two-phase-region, tie-lines.
 
-First, you need to import data into the table in the data tab. Each point you add should fill every column to a sum of 100 or 1 e.g [<span className="text-red-500 font-bold">20</span>,<span className="text-blue-500 font-bold">30</span>,<span className="text-green-500 font-bold">50</span>].
+First, you need to import data into the table in the data tab. Each point you add should fill every column to a sum of 100 or 1 e.g [<span className="text-red-500 font-bold">20</span>,<span className="text-indigo-500 font-bold">30</span>,<span className="text-green-500 font-bold">50</span>].
 
 The table is split into three columns:
 
@@ -163,7 +163,7 @@ The most convenient way to add data is to use an Excel or CSV file. Here are two
 1. Activate the **Data Tab**.
 2. Upload a **.csv** or **.xlsx** file (drag&drop or file menu) / Use a **example dataset** / Type in your values.
 3. Add the data to the plot by clicking on the **green "Add" button**.
-4. Continue to <InlineNavLink href='#6-explore-' text='Explore 🍩'/> / Repeat with another dataset.
+4. Continue to [Explore 🍩](#6-explore-). Repeat with another dataset.
 
 ### Where do I find the data tab?
 
@@ -290,6 +290,6 @@ You are close to the finish line 🏁. Now you only have to **export what you cr
 - **.svg**
 - **.png**
 
-## Final Words
+## Wrapping Up
 
 First blog post is done 🥳! Thank you for reading. I would love to get your thoughts and feedback. Write me on my socials down below 👇👇👇

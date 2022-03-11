@@ -4,6 +4,7 @@ import ThemeProvider from '@/layouts/ThemeProvider'
 import { v4 as uuidv4 } from 'uuid'
 import { NextSeo } from 'next-seo'
 import ListOfReferences from 'components/ListOfReferences'
+import SectionHeading, { RouteHeading } from '@/layouts/SectionHeading'
 
 const contentName = 'publications'
 
@@ -14,17 +15,17 @@ export default function Snippets({ papers, patents }) {
         title='Snippets'
         canonical={`https://fabiwo.io/${contentName}`}
       />
-      <MainLayout>
-        <h1 className='mb-5 text-4xl font-bold text-gray-900'>Publications</h1>
+      <div className='flex flex-col justify-center items-start max-w-2xl mx-auto'>
+        <RouteHeading>Publications</RouteHeading>
         <div className='mb-10'>
-          <h2 className='mb-5 text-xl font-bold text-gray-900'>Paper</h2>
+          <h2 className='mb-5 text-xl font-bold text-zinc-900'>Paper</h2>
           <ListOfReferences references={papers} />
         </div>
-        <div>
-          <h2 className='mb-5 text-xl font-bold text-gray-900'>Patent</h2>
+        <div className='mb-10'>
+          <h2 className='mb-5 text-xl font-bold text-zinc-900'>Patent</h2>
           <ListOfReferences references={patents} />
         </div>
-      </MainLayout>
+      </div>
     </ThemeProvider>
   )
 }

@@ -1,0 +1,129 @@
+---
+title: MDX & MD Cheatsheet
+description: Serves as a database for Markdown and MDX syntax
+date: '2022-03-10'
+author: Fabian Wolff
+icon: /static/images/snippets/mdx.svg
+type: snippet
+---
+
+# H1
+
+## H2
+
+### H3
+
+### Bold
+
+**bold text**
+
+### Italic
+
+_italicized text_
+
+### Blockquote
+
+> blockquote
+
+### Ordered List
+
+1. First item
+2. Second item
+3. Third item
+
+### Unordered List
+
+- First item
+- Second item
+- Third item
+
+### Inline Code
+
+This is <CodeBlock text='Inline Code' />
+
+### Horizontal Rule
+
+---
+
+### External Link
+
+[Markdown Guide](https://www.markdownguide.org)
+
+### Internal Link
+
+[Links to top of page](#h1).
+
+### Image
+
+![alt text](https://www.markdownguide.org/assets/images/tux.png)
+
+## Extended Syntax
+
+These elements extend the basic syntax by adding additional features. Not all Markdown applications support these elements.
+
+### Table
+
+| Syntax    | Description |
+| --------- | ----------- |
+| Header    | Title       |
+| Paragraph | Text        |
+
+### Footnote
+
+Here's a sentence with a footnote. [^1]
+
+[^1]: This is the footnote.
+
+### Strikethrough
+
+~one~ or ~~two~~ tildes.
+
+### Task List
+
+- [x] Write the press release
+- [ ] Update the website
+- [ ] Contact the media
+
+### Emoji
+
+That is so funny! 🤣
+
+(See also [Copying and Pasting Emoji](https://www.markdownguide.org/extended-syntax/#copying-and-pasting-emoji))
+
+### Subscript
+
+H<sub>2</sub>O
+
+### Superscript
+
+X<sup>2</sup>
+
+# Remark & Rehype Tests
+
+## Autolink URL
+
+www.example.com, https://example.com, and contact@example.com.
+
+## Math Support
+
+Lift($L$) can be determined by Lift Coefficient ($C_L$) like the following
+equation.
+
+$$
+L = \frac{1}{2} \rho v^2 S C_L
+$$
+
+## Code Blocks
+
+```js:lib/test.js
+import * as saveSvgAsPng from 'save-svg-as-png'
+import { jsPDF } from 'jspdf'
+```
+
+```js:lib/test2.js {1,3-4} showLineNumbers
+function fancyAlert(arg) {
+  if (arg) {
+    $.facebox({ div: '#foo' })
+  }
+}
+```

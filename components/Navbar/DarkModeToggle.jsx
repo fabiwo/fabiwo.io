@@ -7,7 +7,7 @@ const DarkModeToggle = ({ mounted }) => {
     <button
       aria-label='Toggle Dark Mode'
       type='button'
-      className='flex items-center justify-center w-10 h-10 p-3 bg-gray-200 rounded focus:outline-none'
+      className='flex items-center justify-center w-10 h-10 p-3 bg-zinc-200 rounded focus:outline-none'
       onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
     >
       {mounted && (theme === 'light' ? '🌞' : '🌚')}

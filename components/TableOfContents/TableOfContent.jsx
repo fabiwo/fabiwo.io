@@ -7,7 +7,7 @@ const TableOfContent = ({ headings }) => (
         .map((heading) => (
           <li className='py-0.5' key={heading.headingText}>
             <a
-              className='text-sm text-gray-700 transition duration-75 border-b-2 border-blue-300 border-dotted hover:bg-blue-100'
+              className='text-sm text-zinc-700 transition duration-75 border-b-2 border-indigo-300 border-dotted hover:bg-indigo-100'
               href={`#${heading.headingId}`}
             >
               {heading.headingText}

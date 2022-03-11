@@ -4,7 +4,7 @@ import Link from 'next/link'
 const ActiveLink = ({ activeClassName, href, text }) => {
   const { asPath } = useRouter()
 
-  const fullClass = `font-semibold text-gray-800 ${activeClassName}`
+  const fullClass = `font-semibold text-zinc-800 ${activeClassName}`
 
   let isActive = ''
   if (href === '/') {
@@ -17,7 +17,7 @@ const ActiveLink = ({ activeClassName, href, text }) => {
     <Link href={href}>
       <button
         type='button'
-        className={`px-3 py-1 text-xl rounded-md text-gray-800 cursor-pointer md:text-base hover:bg-gray-100 hover:text-gray-800 focus:outline-none ${
+        className={`px-3 py-1 text-md rounded-md hidden md:inline-flex cursor-pointer text-zinc-800 hover:bg-zinc-100 hover:text-zinc-800 focus:outline-none ${
           isActive ? fullClass : ''
         }`}
       >

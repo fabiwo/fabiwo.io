@@ -4,6 +4,8 @@ import SnippetCard from 'components/SnippetCard'
 import { getSortedSlugs } from '@/lib/mdx'
 import { v4 as uuidv4 } from 'uuid'
 import { NextSeo } from 'next-seo'
+import SectionHeading, { RouteHeading } from '@/layouts/SectionHeading'
+import CardGrid from '@/layouts/CardGrid'
 
 const contentName = 'snippets'
 
@@ -14,15 +16,13 @@ export default function Snippets({ snippets, templates }) {
         title='Snippets & Templates'
         canonical={`https://fabiwo.io/${contentName}`}
       />
-      <MainLayout>
-        <h1 className='mb-5 text-4xl font-bold text-gray-900'>
-          Snippets & Templates
-        </h1>
-        <p className='mb-5 text-gray-800'>
+      <div className='flex flex-col justify-center items-start max-w-2xl mx-auto'>
+        <RouteHeading>Snippets Templates</RouteHeading>
+        <p className='mb-5 text-zinc-800'>
           A collection of snippets and templates I use or have used.
         </p>
-        <h2 className='mb-5 text-xl font-bold text-gray-900'>Snippets</h2>
-        <div className='grid w-full grid-cols-2 gap-4 mb-5'>
+        <h2 className='mb-5 text-xl font-bold text-zinc-900'>Snippets</h2>
+        <CardGrid>
           {snippets.map((d) => (
             <SnippetCard
               key={uuidv4()}
@@ -32,9 +32,9 @@ export default function Snippets({ snippets, templates }) {
               icon={d.icon}
             />
           ))}
-        </div>
-        <h2 className='mb-5 text-xl font-bold text-gray-900'>Templates</h2>
-        <div className='grid w-full grid-cols-2 gap-4 mb-5'>
+        </CardGrid>
+        <h2 className='mb-5 text-xl font-bold text-zinc-900'>Templates</h2>
+        <CardGrid>
           {templates.map((d) => (
             <SnippetCard
               key={uuidv4()}
@@ -44,8 +44,8 @@ export default function Snippets({ snippets, templates }) {
               icon={d.icon}
             />
           ))}
-        </div>
-      </MainLayout>
+        </CardGrid>
+      </div>
     </ThemeProvider>
   )
 }

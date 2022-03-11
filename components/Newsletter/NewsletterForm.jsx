@@ -56,21 +56,21 @@ const NewsletterForm = () => {
   }
 
   return (
-    <div className='relative w-full p-6 my-4 border border-gray-300 rounded-md shadow-lg bg-gray-50'>
+    <div className='relative w-full p-6 my-4 border border-zinc-300 rounded-md shadow-lg bg-zinc-50'>
       <svg
         xmlns='http://www.w3.org/2000/svg'
         width='383'
         height='383'
         fill='none'
         viewBox='0 0 383 383'
-        className='absolute z-0 w-12 h-12 text-blue-500 fill-current -top-5 -left-5 hover-rotate'
+        className='absolute z-0 w-12 h-12 text-indigo-500 fill-current -top-5 -left-5 hover-rotate'
       >
         <path
           className='rotate'
           d='M161.5 17.3205C180.064 6.60254 202.936 6.60254 221.5 17.3205L327.344 78.4295C345.908 89.1475 357.344 108.955 357.344 130.391V252.609C357.344 274.045 345.908 293.853 327.344 304.571L221.5 365.679C202.936 376.397 180.064 376.397 161.5 365.679L55.6561 304.571C37.0921 293.853 25.6561 274.045 25.6561 252.609V130.391C25.6561 108.955 37.0921 89.1475 55.6561 78.4295L161.5 17.3205Z'
         />
       </svg>
-      <h5 className='text-lg font-semibold text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-green-500'>
+      <h5 className='text-lg font-semibold text-transparent bg-clip-text bg-gradient-to-r from-indigo-500 to-green-500'>
         Join the newsletter
       </h5>
       <p className='my-1 opacity-90'>
@@ -90,7 +90,7 @@ const NewsletterForm = () => {
               id='name'
               name='name'
               required
-              className='w-full px-4 py-2 mt-1 text-gray-900 bg-gray-100 border rounded-md focus:bg-gray-100 active:ring-red-500 focus:outline-none focus:ring-2 focus:ring-blue-400'
+              className='w-full px-4 py-2 mt-1 text-zinc-900 bg-zinc-100 border rounded-md focus:bg-zinc-100 active:ring-red-500 focus:outline-none focus:ring-2 focus:ring-indigo-400'
             />
           </label>
         </div>
@@ -106,12 +106,12 @@ const NewsletterForm = () => {
               name='email'
               autoComplete='email'
               required
-              className='w-full px-4 py-2 mt-1 text-gray-900 bg-gray-100 border rounded-md focus:bg-gray-100 active:ring-red-500 focus:outline-none focus:ring-2 focus:ring-blue-400'
+              className='w-full px-4 py-2 mt-1 text-zinc-900 bg-zinc-100 border rounded-md focus:bg-zinc-100 active:ring-red-500 focus:outline-none focus:ring-2 focus:ring-indigo-400'
             />
           </label>
         </div>
         <button
-          className='inline-flex items-center justify-center px-4 py-2 text-base font-medium text-white bg-blue-500 border border-transparent rounded-md shadow-sm hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 w-44'
+          className='inline-flex items-center justify-center px-4 py-2 text-base font-medium text-white bg-indigo-500 border border-transparent rounded-md shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 w-44'
           type='submit'
         >
           Subscribe

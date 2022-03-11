@@ -1,7 +1,3 @@
 export default function MainLayout({ children }) {
-  return (
-    <div className='relative flex flex-col items-start justify-center max-w-2xl mx-auto px-7'>
-      {children}
-    </div>
-  )
+  return <main className='flex flex-col justify-center px-8'>{children}</main>
 }

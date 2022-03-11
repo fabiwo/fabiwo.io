@@ -13,7 +13,7 @@ tags:
   - javascript
 ---
 
-While I was working on my ternary graph builder <InlineLink href='https://fabiwo.io/blog/ternary-equilibrium' text='Ternary Equilibrium'/>, I wanted to include a feature that enables the user to download the finished graph in a common picture format (SVG, PNG, PDF).
+While I was working on my ternary graph builder [Ternary Equilibrium](https://fabiwo.io/blog/ternary-equilibrium), I wanted to include a feature that enables the user to download the finished graph in a common picture format (SVG, PNG, PDF).
 
 The graph was an SVG element with additional styling and web fonts. The solution therefore needed to:
 
@@ -23,7 +23,7 @@ The graph was an SVG element with additional styling and web fonts. The solution
 4. Convert into SVG/PNG/PDF
 5. Download the resulting file
 
-After some research, I came across an external library <InlineLink href='https://github.com/exupero/saveSvgAsPng' text='saveSvgAsPng'/> that did exactly what I was searching for. I had to use an additional library <InlineLink href='https://github.com/MrRio/jsPDF' text='jsPDF'/> for the PDF conversion.
+After some research, I came across an external library [saveSvgAsPng](https://github.com/exupero/saveSvgAsPng) that did exactly what I was searching for. I had to use an additional library [jsPDF](https://github.com/MrRio/jsPDF) for the PDF conversion.
 
 In the following article we will use these libraries on a simple SVG Element and you will learn how to download your own elements🙏.
 
@@ -31,10 +31,10 @@ If you read till the end, you will also learn how to download any DOM element wi
 
 ## Quick Access
 
-- <InlineNavLink href='#putting-things-together-' text='Final Implementation' />
-- <InlineNavLink href='#svg-element-🟥' text='Codepen SVG Element 🟥' />
-- <InlineNavLink href='#any-dom-element-' text='Codepen DOM Element🎉' />
-- Libraries: <InlineLink href='https://github.com/exupero/saveSvgAsPng' text='saveSvgAsPng'/>,<InlineLink href='https://github.com/MrRio/jsPDF' text='jsPDF'/>
+- [Final Implementation](#putting-things-together-)
+- [Codepen SVG Element 🟥](#svg-element-🟥)
+- [Codepen DOM Element🎉](#any-dom-element-)
+- Libraries: [saveSvgAsPng](https://github.com/exupero/saveSvgAsPng), [jsPDF](https://github.com/MrRio/jsPDF)
 
 ## Example Element
 
@@ -86,7 +86,7 @@ Define a filename with an appropriate extension name. In this example, we downlo
 const filename = 'myfilename.svg' // or 'myfilename.png'
 ```
 
-To download our element we then just have to call the saveSvg method from <InlineLink href='https://github.com/exupero/saveSvgAsPng' text='saveSvgAsPng'/>. This is also the time to use additional options as an argument inside the function. Check out the ones <InlineNavLink href='#additional-useful-options' text='I find useful'/>.
+To download our element we then just have to call the saveSvg method from [saveSvgAsPng](https://github.com/exupero/saveSvgAsPng). This is also the time to use additional options as an argument inside the function. Check out the ones [I find useful](#additional-useful-options).
 
 ```js
 saveSvgAsPng.saveSvg(node, filename)
@@ -96,7 +96,7 @@ saveSvgAsPng.saveSvgAsPng(node, filename)
 
 ## PDF
 
-As already mentioned in the introduction, we make use of <InlineLink href='https://github.com/MrRio/jsPDF' text='jsPDF'/> for creating and working with the PDF documents. Our approach comes down to the following steps:
+As already mentioned in the introduction, we make use of [jsPDF](https://github.com/MrRio/jsPDF) for creating and working with the PDF documents. Our approach comes down to the following steps:
 
 1. Generate a DataURL with saveSvgAsPng
 2. Generate an empty PDF document
@@ -105,7 +105,7 @@ As already mentioned in the introduction, we make use of <InlineLink href='https
 
 ### Generate a DataURL
 
-We make use of the <CodeBlock text="saveSvgAsPng.svgAsPngUri"/> method, which creates a dataURL of the internally created image instead of directly downloading it. This enables us to do whatever we want with the image afterwards. The method returns the dataURL inside a Promise. All following steps will be inside the <CodeBlock text=".then"/> call. Click <button className="p-1 rounded bg-blue-500 text-white" onClick={() => {alert("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEsAAABLCAYAAAA4TnrqAAABG0lEQVR4Xu3aMQ7CMBQFwZ+bwcnhZtBwAK9kORSTehXHo1fmGs+ywLVcCgdWGAEsWEEgpJYFKwiE1LJgBYGQWhasIBBSy4IVBEJqWbCCQEgtC1YQCKll3YH1mXmEc4+m18x7x4HblvXDeu34qM3veMJaF4W1bjWwYAWBkFoWrCAQUsuCFQRCalmwgkBILQtWEAipZcEKAiG1LFhBIKSWBSsIhNSyYAWBkFoWrCAQUsuCFQRCalmwgkBILQtWEAipZcEKAiG1LFhBIKSWBSsIhNSyYAWBkP7tssIdzqV/9wPuuavfd9K2X7vvu8K5k2EFa1iwgkBILQtWEAipZcEKAiG1LFhBIKSWBSsIhNSyYAWBkFoWrCAQUssKWF8ninNMHOh3ZwAAAABJRU5ErkJggg==")}}>here</button> to see how a dataURL looks like.
+We make use of the <CodeBlock text="saveSvgAsPng.svgAsPngUri"/> method, which creates a dataURL of the internally created image instead of directly downloading it. This enables us to do whatever we want with the image afterwards. The method returns the dataURL inside a Promise. All following steps will be inside the <CodeBlock text=".then"/> call. Click <button className="p-1 rounded bg-indigo-500 text-white" onClick={() => {alert("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEsAAABLCAYAAAA4TnrqAAABG0lEQVR4Xu3aMQ7CMBQFwZ+bwcnhZtBwAK9kORSTehXHo1fmGs+ywLVcCgdWGAEsWEEgpJYFKwiE1LJgBYGQWhasIBBSy4IVBEJqWbCCQEgtC1YQCKll3YH1mXmEc4+m18x7x4HblvXDeu34qM3veMJaF4W1bjWwYAWBkFoWrCAQUsuCFQRCalmwgkBILQtWEAipZcEKAiG1LFhBIKSWBSsIhNSyYAWBkFoWrCAQUsuCFQRCalmwgkBILQtWEAipZcEKAiG1LFhBIKSWBSsIhNSyYAWBkP7tssIdzqV/9wPuuavfd9K2X7vvu8K5k2EFa1iwgkBILQtWEAipZcEKAiG1LFhBIKSWBSsIhNSyYAWBkFoWrCAQUssKWF8ninNMHOh3ZwAAAABJRU5ErkJggg==")}}>here</button> to see how a dataURL looks like.
 
 ```js
 saveSvgAsPng.svgAsPngUri(svgNode).then((dataUrl) => {
@@ -130,7 +130,7 @@ We take the dataURL and add it as a PNG image inside the newly created pdf docum
 doc.addImage(uri, 'PNG', 0, 0)
 ```
 
-The <CodeBlock text="addImage"/> function receives two additional arguments, the x-coordinate, and y-coordinate of the image (see <InlineLink href='https://artskydj.github.io/jsPDF/docs/module-addImage.html' text='addImage Documentation'/>).
+The <CodeBlock text="addImage"/> function receives two additional arguments, the x-coordinate, and y-coordinate of the image (see [addImage Documentation](https://artskydj.github.io/jsPDF/docs/module-addImage.html).
 
 ### Download the PDF
 
@@ -278,16 +278,10 @@ saveSvgAsPng.svgAsPngUri(svgNode).then((dataUrl) => {
 
 ## Wrapping up
 
-**That's all guys!** Thank you for reading! I hope you learned something new and can incorporate it into your own projects. If you have any questions, be free to write me <InlineLink href='https://twitter.com/ffabiwo' text='@ffabiwo'/>!
+**That's all guys!** Thank you for reading! I hope you learned something new and can incorporate it into your own projects. If you have any questions, be free to write me [@ffabiwo](https://twitter.com/ffabiwo)!
 
 ## Resources
 
-- <InlineLink href='https://nytimes.github.io/svg-crowbar' text='svg-crowbar' />
-- <InlineLink
-    href='https://github.com/tsayen/dom-to-image'
-    text='dom-to-image'
-  />
-- <InlineLink
-    href='https://observablehq.com/@mbostock/saving-svg'
-    text='M.Bostock article'
-  />
+- [svg-crowbar](https://nytimes.github.io/svg-crowbar)
+- [dom-to-image](https://github.com/tsayen/dom-to-image)
+- [M.Bostock article](https://observablehq.com@mbostock/saving-svg)

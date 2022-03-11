@@ -1,6 +1,7 @@
 import '../styles/core.scss'
 import '../styles/utilities.scss'
 import '../styles/prism/prism-nord.scss'
+import '../styles/prism/highlight.scss'
 import 'katex/dist/katex.min.css'
 
 import { DefaultSeo } from 'next-seo'
