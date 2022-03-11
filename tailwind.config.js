@@ -19,13 +19,16 @@ module.exports = {
           css: {
             blockquote: {
               textAlign: 'center',
-              borderLeftColor: '#377ebd',
+              borderLeftColor: '#d4d4d8',
               borderLeftWidth: '0.35rem',
-              background: '#e0e0e0',
               padding: '1rem',
+              backgroundColor: '#f4f4f5',
               p: {
-                color: '#4B4B4B',
+                color: '#27272a',
               },
+            },
+            a: {
+              textUnderlineOffset: '2px',
             },
           },
         },
