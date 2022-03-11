@@ -1,11 +1,54 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:news="http://www.google.com/schemas/sitemap-news/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:mobile="http://www.google.com/schemas/sitemap-mobile/1.0" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
-<url><loc>https://fabiwo.io</loc><changefreq>daily</changefreq><priority>0.7</priority><lastmod>2021-04-22T05:52:23.544Z</lastmod></url>
-<url><loc>https://fabiwo.io/about</loc><changefreq>daily</changefreq><priority>0.7</priority><lastmod>2021-04-22T05:52:23.545Z</lastmod></url>
-<url><loc>https://fabiwo.io/blog</loc><changefreq>daily</changefreq><priority>0.7</priority><lastmod>2021-04-22T05:52:23.545Z</lastmod></url>
-<url><loc>https://fabiwo.io/projects</loc><changefreq>daily</changefreq><priority>0.7</priority><lastmod>2021-04-22T05:52:23.545Z</lastmod></url>
-<url><loc>https://fabiwo.io/snippets</loc><changefreq>daily</changefreq><priority>0.7</priority><lastmod>2021-04-22T05:52:23.545Z</lastmod></url>
-<url><loc>https://fabiwo.io/projects/ternary-equilibrium</loc><changefreq>daily</changefreq><priority>0.7</priority><lastmod>2021-04-22T05:52:23.545Z</lastmod></url>
-<url><loc>https://fabiwo.io/blog/download-the-dom</loc><changefreq>daily</changefreq><priority>0.7</priority><lastmod>2021-04-22T05:52:23.545Z</lastmod></url>
-<url><loc>https://fabiwo.io/blog/ternary-equilibrium</loc><changefreq>daily</changefreq><priority>0.7</priority><lastmod>2021-04-22T05:52:23.545Z</lastmod></url>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>https://fabiwo.io/about</loc>
+  </url>
+
+  <url>
+    <loc>https://fabiwo.io/blog</loc>
+  </url>
+
+  <url>
+    <loc>https://fabiwo.io</loc>
+  </url>
+
+  <url>
+    <loc>https://fabiwo.io/projects</loc>
+  </url>
+
+  <url>
+    <loc>https://fabiwo.io/publications</loc>
+  </url>
+
+  <url>
+    <loc>https://fabiwo.io/snippets</loc>
+  </url>
+
+  <url>
+    <loc>https://fabiwo.io/projects/observable/thermal-resistance</loc>
+  </url>
+
+  <url>
+    <loc>https://fabiwo.io/blog/download-the-dom</loc>
+  </url>
+
+  <url>
+    <loc>https://fabiwo.io/blog/ternary-equilibrium</loc>
+  </url>
+
+  <url>
+    <loc>https://fabiwo.io/projects/ternary-equilibrium</loc>
+  </url>
+
+  <url>
+    <loc>https://fabiwo.io/snippets/latex-thesis</loc>
+  </url>
+
+  <url>
+    <loc>https://fabiwo.io/snippets/linux-commands</loc>
+  </url>
+
+  <url>
+    <loc>https://fabiwo.io/snippets/mdx-md-cheatsheet</loc>
+  </url>
 </urlset>

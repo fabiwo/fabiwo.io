@@ -2,20 +2,24 @@ const fs = require('fs')
 const globby = require('globby')
 const prettier = require('prettier')
 
-;
-
-(async () => {
+;(async () => {
   const prettierConfig = await prettier.resolveConfig('./.prettierrc.js')
 
   // Ignore Next.js specific files (e.g., _app.js) and API routes.
-  const staticPages = await globby([
-    'pages/**/*{.js,.mdx}',
-    '!pages/_*.js',
-    '!pages/api',
-    '!pages/blog/',
-  ])
+  const staticPages = globby
+    .sync([
+      'pages/**/*{.jsx,.mdx}',
+      '!pages/_*.js',
+      '!pages/*/[*]{.jsx,.mdx}',
+      '!pages/api',
+      '!pages/blog/',
+    ])
+    .filter((d) => !d.includes('['))
 
-  const dynamicPages = await globby(['data/blog/*{.mdx, .md}'])
+  const dynamicDirs = ['blog', 'projects', 'snippets', 'projects/observable']
+  const dynamicPages = dynamicDirs
+    .map((d) => globby.sync([`data/${d}/*{.mdx, .md}`]))
+    .flat()
 
   const allPages = [...staticPages, ...dynamicPages]
 
@@ -25,11 +29,9 @@ const prettier = require('prettier')
             ${allPages
               .map((page) => {
                 const path = page
-                  .replace('pages', '')
+                  .split('.')[0]
                   .replace('data', '')
-                  .replace('.js', '')
-                  .replace('.mdx', '')
-                  .replace('.md', '')
+                  .replace('pages', '')
                 const route = path === '/index' ? '' : path
 
                 return `
