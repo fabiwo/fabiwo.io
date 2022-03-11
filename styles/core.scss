@@ -20,13 +20,23 @@ html {
   scroll-behavior: smooth;
 }
 
-.katex {
+#__next {
+  @apply bg-zinc-50;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.math-inline > .katex {
   font-size: 1.25rem !important;
-  font-weight: 700 !important;
+}
+
+.katex {
+  font-size: 2rem !important;
 }
 
 .inline_code {
-  @apply inline-block px-3 py-1 m-0 text-lg font-bold text-blue-600 bg-blue-200 rounded-md #{!important};
+  @apply inline-block px-3 py-1 m-0 text-lg font-bold text-indigo-600 bg-indigo-200 rounded-md #{!important};
 
   &:before {
     content: '' !important;
@@ -38,10 +48,30 @@ html {
 }
 
 // Text selection color
-::-moz-selection {
-  @apply text-blue-800 bg-blue-100;
+::selection {
+  @apply text-indigo-800 bg-indigo-100;
 }
 
-::selection {
-  @apply text-blue-800 bg-blue-100;
+// Autolink heading
+.prose .anchor {
+  @apply absolute invisible no-underline;
+
+  margin-left: -1em;
+  padding-right: 0.5em;
+  width: 80%;
+  max-width: 700px;
+  cursor: pointer;
+}
+
+.anchor:hover {
+  @apply visible;
+}
+
+.prose .anchor:after {
+  @apply text-zinc-300;
+  content: '#';
+}
+
+.prose *:hover > .anchor {
+  @apply visible;
 }
