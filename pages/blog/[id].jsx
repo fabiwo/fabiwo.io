@@ -42,8 +42,8 @@ export default function Post({ source, frontMatter, postId }) {
           cardType: 'summary_large_image',
         }}
       />
-      <article className='flex flex-col items-start justify-center w-full max-w-2xl mx-auto mb-10'>
-        <h1 className='mb-1 text-2xl font-bold md:text-5xl'>
+      <article className='flex flex-col items-start justify-center w-full max-w-prose mx-auto mb-16'>
+        <h1 className='mb-1 text-2xl font-bold md:text-5xl tracking-tight'>
           {frontMatter.title}
         </h1>
         <div className='flex flex-col py-5 space-y-3 md:flex-row justify-between w-full'>
@@ -67,7 +67,7 @@ export default function Post({ source, frontMatter, postId }) {
           </div>
         </div>
 
-        <div className='mb-5 w-full'>
+        <div className='w-full prose-sm sm:prose prose-zinc'>
           <Image
             width={500}
             height={500 / (16 / 10)}
@@ -81,8 +81,6 @@ export default function Post({ source, frontMatter, postId }) {
             alt={frontMatter.alt}
             priority='true'
           />
-        </div>
-        <div className='w-full prose-sm sm:prose prose-indigo max-w-none'>
           <MDXRemote {...source} components={MDXComponents} />
           <LastEdited dateString={frontMatter.lastEdited} />
         </div>
