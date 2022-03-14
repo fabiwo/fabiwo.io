@@ -29,6 +29,7 @@ module.exports = {
             },
             a: {
               textUnderlineOffset: '2px',
+              '--tw-prose-links': theme('colors.indigo[600]'),
             },
           },
         },
