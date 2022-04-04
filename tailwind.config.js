@@ -29,6 +29,10 @@ module.exports = {
             },
             a: {
               textUnderlineOffset: '2px',
+              color: theme('colors.zinc.700'),
+              '&:hover': {
+                color: theme('colors.indigo.700'),
+              },
             },
           },
         },

@@ -13,7 +13,7 @@ export default function Snippets({ papers, patents }) {
         title='Snippets'
         canonical={`https://fabiwo.io/${contentName}`}
       />
-      <div className='flex flex-col justify-center items-start max-w-2xl mx-auto'>
+      <div className='flex flex-col justify-center items-start max-w-prose mx-auto'>
         <RouteHeading>Publications</RouteHeading>
         <div className='mb-10'>
           <h2 className='mb-5 text-xl font-bold text-zinc-900'>Paper</h2>

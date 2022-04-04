@@ -34,7 +34,7 @@ export default function Snippet({ source, frontMatter, postId }) {
         }}
       />
 
-      <article className='flex flex-col items-start justify-center w-full max-w-2xl mx-auto mb-10'>
+      <article className='flex flex-col items-start justify-center w-full max-w-prose mx-auto mb-10'>
         <div className='flex items-start justify-between w-full mb-4'>
           <div>
             <h1 className='mb-1 text-3xl font-bold md:text-5xl'>

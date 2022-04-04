@@ -6,7 +6,7 @@ export default function About() {
   return (
     <ThemeProvider>
       <NextSeo title='About' canonical='https://fabiwo.io/about' />
-      <div className='flex flex-col justify-center items-start max-w-2xl mx-auto'>
+      <div className='flex flex-col justify-center items-start max-w-prose mx-auto'>
         <article className='flex flex-wrap-reverse w-full mb-10'>
           <section className='prose-sm sm:prose'>
             <p>

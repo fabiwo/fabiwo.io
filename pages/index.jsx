@@ -9,7 +9,7 @@ export default function Home({ featuredPosts }) {
   return (
     <ThemeProvider>
       <NextSeo title='Home' canonical='https://fabiwo.io/' />
-      <div className='flex flex-col justify-center items-start max-w-2xl mx-auto'>
+      <div className='flex flex-col justify-center items-start max-w-prose mx-auto'>
         <div className='flex flex-col-reverse items-start w-full sm:flex-row mb-12'>
           <div className='pr-8'>
             <h1 className='mb-1 text-3xl font-bold sm:text-5xl'>

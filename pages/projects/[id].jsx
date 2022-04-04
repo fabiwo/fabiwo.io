@@ -41,7 +41,7 @@ export default function Post({ source, frontMatter, postId }) {
         }}
       />
 
-      <article className='w-full max-w-2xl mx-auto mb-10 '>
+      <article className='w-full max-w-prose mx-auto mb-10 '>
         <h1 className='text-3xl font-bold md:text-5xl'>{frontMatter.title}</h1>
         <div className='inline-flex items-center mt-5 space-x-2'>
           <Image

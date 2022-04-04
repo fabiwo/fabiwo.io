@@ -15,7 +15,7 @@ export default function Snippets({ snippets, templates }) {
         title='Snippets & Templates'
         canonical={`https://fabiwo.io/${contentName}`}
       />
-      <div className='flex flex-col justify-center items-start max-w-2xl mx-auto'>
+      <div className='flex flex-col justify-center items-start max-w-prose mx-auto'>
         <RouteHeading>Snippets Templates</RouteHeading>
         <p className='mb-5 text-zinc-800'>
           A collection of snippets and templates I use or have used.
