@@ -1,3 +1,5 @@
+import { v4 as uuidv4 } from 'uuid'
+
 export default function ListOfReferences({ references }) {
   return (
     <ul className='space-y-5'>
@@ -10,7 +12,7 @@ export default function ListOfReferences({ references }) {
         }
         return (
           <>
-            <li className='relative bg-white'>
+            <li key={uuidv4()} className='relative'>
               <a
                 className='block mb-2 font-semibold underline-offset-2 hover:underline hover:decoration-indigo-700 '
                 target='_blank'
