@@ -1,4 +1,3 @@
-import Navbar from '@/components/Navbar/Navbar'
 import NavbarFullScreen from '@/components/Navbar/NavbarFullScreen'
 import Footer from '@/components/Footer/Footer'
 import ScrollToTop from '@/components/ScrollToTop'

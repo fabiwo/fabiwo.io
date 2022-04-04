@@ -1,11 +1,11 @@
 import ThemeProvider from '@/layouts/ThemeProvider'
-import Date, { LastEdited } from '@/components/Date'
+import { LastEdited } from '@/components/Date'
 import { getAllSlugIds, getSlugData } from '@/lib/mdx'
 import { MDXRemote } from 'next-mdx-remote'
 import MDXComponents from '@/components/MDXComponents'
-import PostStats from '@/components/Cards/PostStats'
 import Image from 'next/image'
 import { NextSeo } from 'next-seo'
+import { parseISO, format } from 'date-fns'
 
 export default function Post({ source, frontMatter, postId }) {
   console.log(frontMatter.image)
@@ -42,45 +42,45 @@ export default function Post({ source, frontMatter, postId }) {
           cardType: 'summary_large_image',
         }}
       />
-      <article className='flex flex-col items-start justify-center w-full max-w-prose mx-auto mb-16'>
-        <h1 className='mb-1 text-2xl font-bold md:text-5xl tracking-tight'>
+      <article className='flex flex-col items-start justify-center w-full max-w-prose mx-auto mb-10'>
+        <h1 className='text-2xl font-semibold md:text-5xl'>
           {frontMatter.title}
         </h1>
-        <div className='flex flex-col py-5 space-y-3 md:flex-row justify-between w-full'>
-          <div className='flex space-x-2'>
-            <Image
-              alt='Fabian Wolff'
-              height={40}
-              width={40}
-              src='/static/images/fabiwo.jpg'
-              className='rounded-full'
-            />
-            <div className='flex flex-col justify-end'>
-              <p className='text-sm font-semibold'>
-                {frontMatter.author ? frontMatter.author : 'Fabian Wolff'}
-              </p>
-              <Date dateString={frontMatter.date} />
+        <div className='flex flex-col py-5 md:flex-row justify-between w-full'>
+          <div className='flex space-x-2 items-center'>
+            <div className='flex items-center'>
+              <Image
+                alt='Fabian Wolff'
+                height={25}
+                width={25}
+                src='/static/images/fabiwo.jpg'
+                className='rounded-full object-cover'
+              />
             </div>
+            <p className='text-xs'>
+              {`${frontMatter.author} / `}
+              {`${format(parseISO(frontMatter.date), 'dd. LLLL yyyy')}`}
+            </p>
           </div>
-          <div className='flex items-end flex-grow text-zinc-800 md:justify-end'>
-            <PostStats readTime={`${frontMatter.readTime.toFixed(0)} min`} />
-          </div>
+          <p className='text-xs mt-2'>{`${frontMatter.readTime.toFixed(
+            0,
+          )} min read`}</p>
         </div>
+        {frontMatter.image ? (
+          <div className='mb-5 w-full'>
+            <Image
+              width={500}
+              height={500 / (16 / 10)}
+              layout='responsive'
+              className='object-cover'
+              src={frontMatter.image}
+              alt={frontMatter.alt}
+              priority='true'
+            />
+          </div>
+        ) : null}
 
-        <div className='w-full prose-sm sm:prose prose-zinc'>
-          <Image
-            width={500}
-            height={500 / (16 / 10)}
-            layout='responsive'
-            className='object-cover'
-            src={
-              frontMatter.image
-                ? frontMatter.image
-                : '/static/images/placeholder.svg'
-            }
-            alt={frontMatter.alt}
-            priority='true'
-          />
+        <div className='flex flex-col w-full prose-sm sm:prose prose-indigo max-w-prose'>
           <MDXRemote {...source} components={MDXComponents} />
           <LastEdited dateString={frontMatter.lastEdited} />
         </div>

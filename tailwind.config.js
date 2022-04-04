@@ -29,7 +29,10 @@ module.exports = {
             },
             a: {
               textUnderlineOffset: '2px',
-              '--tw-prose-links': theme('colors.indigo[600]'),
+              color: theme('colors.zinc.700'),
+              '&:hover': {
+                color: theme('colors.indigo.700'),
+              },
             },
           },
         },

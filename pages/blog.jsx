@@ -19,7 +19,7 @@ export default function Blog({ allPostsData }) {
     <ThemeProvider>
       <NextSeo title='Blog' canonical='https://fabiwo.io/blog' />
       <RouteHeading>Blog</RouteHeading>
-      <div className='flex flex-col justify-center items-start max-w-2xl mx-auto'>
+      <div className='flex flex-col justify-center items-start max-w-prose mx-auto'>
         <p className='mb-5 text-zinc-800'>
           Go through all my writings. Use the search below to filter by title.
         </p>

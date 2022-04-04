@@ -11,7 +11,7 @@ const SocialLink = ({ children, href }) => (
 
 export default function Footer() {
   return (
-    <footer className='flex flex-col items-center w-full max-w-2xl mb-10 mx-auto'>
+    <footer className='flex flex-col items-center w-full max-w-prose mb-10 mx-auto'>
       {/* <hr className='w-4/5 mb-8 border-zinc-300 border-1' /> */}
       <div className='flex justify-center space-x-3 sm:space-x-0'>
         <SocialLink href='https://github.com/fabiwo'>

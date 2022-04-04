@@ -80,3 +80,7 @@ html {
 .prose *:hover > .anchor {
   @apply visible;
 }
+
+.rehype-code-title {
+  @apply text-sm;
+}

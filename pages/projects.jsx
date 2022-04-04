@@ -29,7 +29,7 @@ export default function Projects({ allProjectData }) {
   return (
     <ThemeProvider>
       <NextSeo title='Projects' canonical='https://fabiwo.io/projects' />
-      <div className='flex flex-col justify-center items-start max-w-2xl mx-auto'>
+      <div className='flex flex-col justify-center items-start max-w-prose mx-auto'>
         <RouteHeading>Projects</RouteHeading>
         <p className='mb-5 text-zinc-800'>
           A curated list of my personal projects.
