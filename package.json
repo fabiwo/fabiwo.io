@@ -15,7 +15,6 @@
     "start": "next start"
   },
   "dependencies": {
-    "@fawol/visualizing-thermal-resistance-rth-plane-wall": "https://api.observablehq.com/@fawol/visualizing-thermal-resistance-rth-plane-wall@3417.tgz?v=3",
     "@observablehq/runtime": "4",
     "@tailwindcss/line-clamp": "^0.3.1",
     "@tailwindcss/typography": "^0.5.2",
